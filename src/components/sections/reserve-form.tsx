@@ -399,6 +399,10 @@ export function ReserveForm() {
           {isSubmitting ? "正在提交..." : "提交预约意向"}
         </button>
 
+        <p className="text-center text-xs leading-6 text-muted-foreground">
+          你提交的信息仅用于云酥记预约意向沟通与试吃通知，我们不会公开展示或出售你的联系方式。
+        </p>
+
         {submitError ? (
           <p className="rounded-2xl border border-primary/20 bg-primary/8 px-4 py-3 text-center text-sm leading-6 text-primary/90">
             {submitError}
