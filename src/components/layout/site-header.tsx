@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { siteConfig } from "@/data/site";
 
@@ -7,8 +8,15 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/72 backdrop-blur-xl">
       <div className="ysj-container flex min-h-16 items-center justify-between gap-4">
         <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="云酥坊首页">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-soft-gold/40 bg-card/75 text-sm font-semibold text-primary shadow-[0_12px_32px_rgb(36_32_29_/_7%)]">
-            云
+          <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border border-soft-gold/45 bg-card/80 shadow-[0_12px_32px_rgb(36_32_29_/_7%)]">
+            <Image
+              src="/images/logo/yunsufang-logo.png"
+              alt="云酥坊品牌 Logo"
+              fill
+              sizes="48px"
+              className="object-cover"
+              priority
+            />
           </span>
           <span className="flex min-w-0 flex-col leading-none">
             <span className="truncate text-base font-semibold tracking-normal">{siteConfig.name}</span>
