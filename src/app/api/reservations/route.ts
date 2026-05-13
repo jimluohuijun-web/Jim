@@ -125,6 +125,7 @@ export async function POST(request: NextRequest) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      typecast: true,
       fields: {
         Name: reservation.name,
         Contact: reservation.contact,
