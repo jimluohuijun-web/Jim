@@ -1,7 +1,8 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="64" height="64" rx="18" fill="#f8f3ea"/>
-  <circle cx="32" cy="32" r="23" fill="#fffaf1" stroke="#c8a968" stroke-width="1.5"/>
-  <path d="M20 36.5c2.8 3.1 7.8 3.7 11.4 1.2 3.8 2.6 9.1 1.6 11.7-2.2 4.2.1 7.7-3 7.7-7.1 0-3.9-3.2-7.1-7.2-7.1-.9 0-1.8.2-2.6.5-2-3.5-5.8-5.9-10.2-5.9-5.3 0-9.8 3.5-11.2 8.2-3.7.4-6.5 3.4-6.5 7 0 2.1.9 4 2.4 5.3" stroke="#d8d2c8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="32" y="39" text-anchor="middle" font-family="serif" font-size="24" font-weight="700" fill="#9f4f4a">云</text>
-  <path d="M47 15.5c2 1.4 3.4 3.4 4 5.7" stroke="#c8a968" stroke-width="1.2" stroke-linecap="round"/>
+  <rect width="64" height="64" rx="18" fill="#f8f1e6"/>
+  <circle cx="32" cy="32" r="23" fill="#fffaf2" stroke="#c9ad72" stroke-width="1.5"/>
+  <circle cx="32" cy="32" r="18" stroke="#6f9b83" stroke-width="1" stroke-dasharray="3 5" opacity=".55"/>
+  <path d="M18 38c3 3 8 3.5 12 1 4 2.7 9.2 1.4 11.8-2.5 4.1 0 7.2-3 7.2-6.8 0-3.9-3.2-6.9-7.1-6.9-.9 0-1.8.1-2.6.5-2-3.3-5.6-5.4-9.8-5.4-5 0-9.3 3.1-10.8 7.6-3.4.4-6 3.2-6 6.5 0 2.3 1.1 4.4 3 5.6" stroke="#d8d2c8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="32" y="40" text-anchor="middle" font-family="serif" font-size="24" font-weight="700" fill="#163c33">云</text>
+  <path d="M46 15c2 1.4 3.5 3.4 4 5.8" stroke="#c9ad72" stroke-width="1.2" stroke-linecap="round"/>
 </svg>

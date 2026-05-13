@@ -1,14 +1,14 @@
 export const siteConfig = {
-  name: "云酥记",
-  englishName: "Yun Su Ji",
+  name: "云酥坊",
+  englishName: "yunsucake",
   description:
-    "云酥记是一个面向温哥华市场的新中式手作甜点品牌，计划于 2026 年 7-8 月开启小批量试吃与预约意向收集，探索更轻盈、更温柔的东方酥香。",
+    "云酥坊 yunsucake 是一个面向温哥华市场的新中式手作点心品牌，主打手作酥点、加拿大本地季节风味与中秋节日礼盒预告。",
   locale: "zh-CN",
   market: "Vancouver",
   navItems: [
     { label: "首页", href: "/" },
-    { label: "产品系列", href: "/products" },
-    { label: "关于云酥记", href: "/about" },
+    { label: "点心系列", href: "/products" },
+    { label: "关于云酥坊", href: "/about" },
     { label: "温哥华预订", href: "/reserve" },
     { label: "活动 / 快闪", href: "/events" },
     { label: "联系我们", href: "/contact" },
@@ -16,20 +16,25 @@ export const siteConfig = {
 } as const;
 
 export const seoKeywords = [
-  "云酥记",
+  "云酥坊",
+  "yunsucake",
   "新中式甜点",
+  "新中式酥点",
   "温哥华甜点",
-  "手作甜点",
+  "手作点心",
   "东方点心",
+  "蛋黄酥",
+  "中秋月饼",
+  "中秋礼盒",
   "Vancouver dessert",
   "Chinese pastry",
-  "Yun Su Ji",
+  "yunsucake",
 ] as const;
 
 export const brandPalette = {
-  riceWhite: "#f8f3ea",
+  riceWhite: "#f8f1e6",
   mistGray: "#d8d2c8",
-  roseBean: "#9f4f4a",
-  softGold: "#c8a968",
-  ink: "#24201d",
+  roseBean: "#6f9b83",
+  softGold: "#c9ad72",
+  ink: "#163c33",
 } as const;

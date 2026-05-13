@@ -8,9 +8,9 @@ import { AboutTimeline } from "@/components/sections/about-timeline";
 import { AboutValues } from "@/components/sections/about-values";
 
 export const metadata: Metadata = {
-  title: "关于云酥记｜品牌故事与温哥华计划",
+  title: "关于云酥坊｜品牌故事与温哥华计划",
   description:
-    "了解云酥记的新中式手作甜点理念、品牌发起故事，以及 2026 年 7-8 月温哥华第一阶段小批量试吃准备计划。",
+    "了解云酥坊的新中式手作点心理念、品牌发起故事，以及 2026 年 7-8 月温哥华第一阶段小批量试吃与中秋礼盒预告计划。",
 };
 
 export default function AboutPage() {

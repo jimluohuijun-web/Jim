@@ -1,18 +1,19 @@
-# 云酥记品牌基础规范
+# 云酥坊品牌基础规范
 
 ## Brand
-- 中文名：云酥记
-- 英文辅助名：Yun Su Ji
+- 中文名：云酥坊
+- 英文辅助名：yunsucake
 - 市场：Vancouver
-- 品类：新中式手作甜点
-- 核心感受：云雾、米白、手作温度、东方点心、轻奢亲和
+- 品类：新中式手作点心、节日礼盒、加拿大本地季节风味
+- 核心感受：温暖米白、玉绿色、手作温度、东方点心、节日礼物、轻奢亲和
 
 ## Visual Tokens
-- Rice white: `#f8f3ea`
+- Rice white: `#f8f1e6`
 - Mist gray: `#d8d2c8`
-- Rose bean: `#9f4f4a`
-- Soft gold: `#c8a968`
-- Ink: `#24201d`
+- Jade green: `#6f9b83`
+- Deep jade: `#163c33`
+- Champagne gold: `#c9ad72`
+- Tea brown: `#735b43`
 
 ## Voice
 - 温柔、克制、细腻

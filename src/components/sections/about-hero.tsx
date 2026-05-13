@@ -16,7 +16,7 @@ export function AboutHero() {
           transition={{ duration: 0.72, ease }}
           className="text-sm uppercase tracking-[0.32em] text-primary/80"
         >
-          Yun Su Ji · About
+          yunsucake · About
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 22 }}
@@ -24,9 +24,9 @@ export function AboutHero() {
           transition={{ duration: 0.8, delay: 0.08, ease }}
           className="flex max-w-4xl flex-col gap-5"
         >
-          <h1 className="ysj-title-xl text-balance">关于云酥记</h1>
+          <h1 className="ysj-title-xl text-balance">关于云酥坊</h1>
           <p className="max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl md:leading-9">
-            云酥记，是一个从东方点心出发的新中式手作甜点品牌。我们希望把酥点做得更轻盈、更温柔，也更适合温哥华的日常生活。
+            云酥坊，是一个从东方点心出发的新中式手作点心品牌。我们希望把蛋黄酥、花酥、凤梨酥与节日礼盒做得更轻盈、更温柔，也更适合温哥华的日常生活。
           </p>
         </motion.div>
       </div>

@@ -18,7 +18,7 @@ const eventPlans = [
   {
     title: "东方下午茶分享",
     time: "筹备中",
-    description: "以云酥小方、豆沙雪酥、桂花云卷等产品为基础，探索适合朋友聚会和小型下午茶的分享形式。",
+    description: "以蛋黄酥、牡丹花酥、季节花酥与凤梨酥为基础，探索适合朋友聚会和小型下午茶的分享形式。",
     status: "形式规划中",
     icon: Coffee,
     image: pageMoodImages.afternoonTea,
@@ -26,7 +26,7 @@ const eventPlans = [
   {
     title: "节日礼盒预告",
     time: "后续开放",
-    description: "围绕中秋、圣诞、新年等节点，探索更适合送礼与分享的新中式甜点礼盒。",
+    description: "围绕中秋、圣诞、新年等节点，探索更适合送礼与分享的新中式点心礼盒。",
     status: "礼盒方向测试中",
     icon: Gift,
     image: pageMoodImages.giftboxConcept,

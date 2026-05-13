@@ -11,7 +11,7 @@ export function SiteFooter() {
             {siteConfig.name} · {siteConfig.englishName}
           </p>
           <p className="max-w-md leading-7">
-            面向温哥华的新中式手作甜点品牌，正在准备第一阶段小批量试吃与预约。
+            面向温哥华的新中式手作点心品牌，正在准备第一阶段小批量试吃、季节风味测试与中秋礼盒预告。
           </p>
         </div>
 
@@ -29,7 +29,7 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-2 lg:text-right">
           <p>当前为准备期，尚无固定门店。</p>
-          <p>© 2026 云酥记 Yun Su Ji. All rights reserved.</p>
+          <p>© 2026 云酥坊 yunsucake. All rights reserved.</p>
         </div>
       </div>
     </footer>

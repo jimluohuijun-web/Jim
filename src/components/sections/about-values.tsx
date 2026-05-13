@@ -11,7 +11,7 @@ const values = [
   },
   {
     title: "东方酥香",
-    description: "保留豆沙、芝麻、桂花、茶香等东方味觉记忆。",
+    description: "保留豆沙、莲蓉、咸蛋黄、玫瑰与茶香等东方味觉记忆。",
     icon: Wheat,
   },
   {
@@ -30,7 +30,7 @@ export function AboutValues() {
           <p className="text-sm uppercase tracking-[0.28em] text-primary/80">Brand Words</p>
           <h2 className="ysj-title-lg text-balance">三个关键词</h2>
           <p className="text-base leading-8 text-muted-foreground md:text-lg">
-            从口感、风味到制作节奏，慢慢靠近云酥记想呈现的温柔秩序。
+            从口感、风味到制作节奏，慢慢靠近云酥坊想呈现的温柔秩序。
           </p>
         </div>
 
