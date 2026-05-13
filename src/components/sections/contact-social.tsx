@@ -32,7 +32,7 @@ export function ContactSocial() {
             <h2 className="ysj-title-lg text-balance">社交媒体</h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-muted-foreground md:justify-self-end md:text-lg">
-            云酥记的社交媒体内容正在准备中。未来会陆续更新产品测试、试吃开放、礼盒灵感和温哥华活动信息。
+            云酥坊的社交媒体内容正在准备中。未来会陆续更新产品测试、试吃开放、礼盒灵感和温哥华活动信息。
           </p>
         </div>
 

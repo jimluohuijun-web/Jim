@@ -5,58 +5,59 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 import { BrandImage } from "@/components/ui/brand-image";
-import { productImages } from "@/data/images";
+import { fallbackImage, productImageMap } from "@/lib/site-images";
 import { cn } from "@/lib/utils";
-import type { Product, ProductTheme } from "@/data/products";
+import type { PastryProduct, ProductTheme } from "@/data/products";
 
 type ProductCardProps = {
-  product: Product;
+  product: PastryProduct;
   index?: number;
   compact?: boolean;
+  anchorId?: string;
 };
 
 const themeStyles: Record<
   ProductTheme,
   {
     aura: string;
-    dessert: string;
     stamp: string;
     line: string;
   }
 > = {
-  cloud: {
-    aura: "bg-mist-gray/28",
-    dessert: "from-cloud-white via-[#efe3d3] to-mist-gray",
-    stamp: "border-soft-gold/45 text-primary",
-    line: "bg-soft-gold",
-  },
-  rose: {
+  jade: {
     aura: "bg-primary/16",
-    dessert: "from-cloud-white via-[#eed0cc] to-[#d7b8b2]",
     stamp: "border-primary/35 text-primary",
     line: "bg-primary",
   },
-  gold: {
-    aura: "bg-soft-gold/20",
-    dessert: "from-cloud-white via-[#ecd9b8] to-[#c8a968]",
-    stamp: "border-soft-gold/55 text-[#8d6e34]",
-    line: "bg-soft-gold",
-  },
-  ink: {
-    aura: "bg-ink/10",
-    dessert: "from-cloud-white via-[#bbb2a7] to-[#4d463f]",
+  deepJade: {
+    aura: "bg-ink/12",
     stamp: "border-ink/25 text-ink",
     line: "bg-ink",
   },
+  gold: {
+    aura: "bg-soft-gold/20",
+    stamp: "border-soft-gold/55 text-[#8d6e34]",
+    line: "bg-soft-gold",
+  },
+  brown: {
+    aura: "bg-warm-stone/12",
+    stamp: "border-warm-stone/25 text-warm-stone",
+    line: "bg-warm-stone",
+  },
+  berry: {
+    aura: "bg-[#b57b72]/18",
+    stamp: "border-[#b57b72]/35 text-[#8e5149]",
+    line: "bg-[#b57b72]",
+  },
 };
 
-export function ProductCard({ product, index = 0, compact = false }: ProductCardProps) {
+export function ProductCard({ product, index = 0, compact = false, anchorId }: ProductCardProps) {
   const theme = themeStyles[product.theme];
-  const image = productImages[product.id];
+  const image = productImageMap[product.id] ?? fallbackImage;
 
   return (
     <motion.article
-      id={product.id}
+      id={anchorId ?? product.id}
       initial={{ opacity: 0, y: 22 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
@@ -115,30 +116,29 @@ export function ProductCard({ product, index = 0, compact = false }: ProductCard
 
           <div className="flex flex-1 flex-col justify-between gap-7">
             <div className="flex flex-col gap-5">
-              <p className="text-base leading-7 text-muted-foreground">{product.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {product.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-soft-gold/30 bg-cloud-white/48 px-3 py-1 text-xs text-muted-foreground"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <p className="text-base leading-7 text-muted-foreground">{product.tagline}</p>
+              <div className="grid gap-3 rounded-[1.15rem] border border-soft-gold/20 bg-cloud-white/45 p-4 text-sm leading-6 text-muted-foreground">
+                <p>
+                  <span className="text-xs uppercase tracking-[0.22em] text-primary/80">Flavor</span>
+                  <span className="mt-1 block text-foreground/82">{product.flavor}</span>
+                </p>
+                <p>
+                  <span className="text-xs uppercase tracking-[0.22em] text-primary/80">Occasion</span>
+                  <span className="mt-1 block">{product.occasion}</span>
+                </p>
               </div>
             </div>
 
             <div className="flex flex-col gap-5 border-t border-border/70 pt-5">
-              <div className="grid gap-2 text-sm text-muted-foreground">
-                <span className="text-xs uppercase tracking-[0.22em] text-primary/80">Flavors</span>
-                <span>{product.flavors.join(" / ")}</span>
-              </div>
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <span className={cn("h-px w-10", theme.line)} />
                   <span className="text-sm text-foreground">{product.status}</span>
                 </div>
-                <ArrowUpRight data-icon="inline-end" className="text-primary transition-transform duration-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-primary">
+                  {product.ctaLabel}
+                  <ArrowUpRight data-icon="inline-end" className="transition-transform duration-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
               </div>
             </div>
           </div>

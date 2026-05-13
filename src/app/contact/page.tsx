@@ -8,9 +8,9 @@ import { ContactRegion } from "@/components/sections/contact-region";
 import { ContactSocial } from "@/components/sections/contact-social";
 
 export const metadata: Metadata = {
-  title: "联系我们｜云酥记 Yun Su Ji",
+  title: "联系我们｜云酥坊 yunsucake",
   description:
-    "联系云酥记，找到预约试吃、产品咨询、活动快闪合作、品牌故事和社交媒体占位等适合入口。当前为温哥华第一阶段准备期。",
+    "联系云酥坊，找到预约试吃、点心咨询、活动快闪合作、品牌故事和社交媒体占位等适合入口。当前为温哥华第一阶段准备期。",
 };
 
 export default function ContactPage() {

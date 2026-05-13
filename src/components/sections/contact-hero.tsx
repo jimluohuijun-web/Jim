@@ -21,7 +21,7 @@ export function ContactHero() {
         >
           <div className="flex max-w-5xl flex-col gap-6">
             <p className="text-sm uppercase tracking-[0.32em] text-primary/80">
-              Yun Su Ji · Contact
+              yunsucake · Contact
             </p>
             <div className="flex flex-col gap-5">
               <h1 className="ysj-title-xl text-balance">联系我们</h1>

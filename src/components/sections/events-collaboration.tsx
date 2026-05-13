@@ -6,7 +6,7 @@ import { Handshake, MessageCircleHeart, Package, Store } from "lucide-react";
 const collaborations = [
   {
     title: "小型快闪合作",
-    description: "适合咖啡店、茶空间、生活方式空间的小批量甜点快闪。",
+    description: "适合咖啡店、茶空间、生活方式空间的小批量点心快闪。",
     icon: Store,
   },
   {

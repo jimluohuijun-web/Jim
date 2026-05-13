@@ -1,6 +1,6 @@
-# 云酥记 Yun Su Ji 官网
+# 云酥坊 yunsucake 官网
 
-云酥记 Yun Su Ji 是一个面向温哥华市场的新中式手作甜点品牌官网。当前网站用于品牌展示、产品介绍、预约意向收集，以及 2026 年 7-8 月温哥华第一阶段小批量试吃与活动 / 快闪预告。
+云酥坊 yunsucake 是一个面向温哥华市场的新中式手作点心品牌官网。当前网站用于品牌展示、招牌酥点、加拿大季节风味、中秋礼盒预告、预约意向收集，以及 2026 年 7-8 月温哥华第一阶段小批量试吃与活动 / 快闪预告。
 
 当前项目不接真实支付、不发送真实邮件。预约表单已预留 Airtable 接收方案：配置 Airtable 环境变量后会写入 Airtable；未配置时自动使用 mock fallback，便于本地开发、预览构建和视觉验收。
 
@@ -17,8 +17,8 @@
 ## 页面结构
 
 - `/` 首页
-- `/products` 产品系列
-- `/about` 关于云酥记
+- `/products` 点心系列
+- `/about` 关于云酥坊
 - `/reserve` 温哥华预约意向
 - `/events` 活动 / 快闪
 - `/contact` 联系我们
@@ -109,7 +109,7 @@ src/
     layout/            # Header、Footer、Shell
     sections/          # 页面 section 组件
     ui/                # shadcn/ui 基础组件
-  data/                # 产品、站点与品牌数据
+  data/                # 点心、站点与品牌数据
   lib/                 # 工具函数
 public/                # favicon、OG 图与静态资源
 ```
@@ -118,26 +118,33 @@ public/                # favicon、OG 图与静态资源
 
 网站图片统一放在 `public/images/`：
 
-- `public/images/brand/`：首页 Hero 与品牌主视觉
-- `public/images/products/`：产品图
+- `public/images/hero/`：首页 Hero 主视觉
+- `public/images/products/`：招牌酥点产品图
+- `public/images/seasonal/`：季节风味产品图
+- `public/images/mooncakes/`：中秋月饼预展示图
+- `public/images/gift-boxes/`：中秋礼盒预展示图
 - `public/images/pages/`：关于、预约、活动、联系等页面氛围图
 - `public/images/backgrounds/`：抽象背景与纹理
 - `public/images/social/`：后续社媒与营销备用图
 
-图片配置统一在 `src/data/images.ts`。其中包含：
+图片配置统一在 `src/lib/site-images.ts`，`src/data/images.ts` 仅做兼容 re-export。其中包含：
 
 - `siteImages`：全部图片配置
-- `heroImages`：首页 Hero 图片
-- `productImages`：按产品 id 映射产品图
+- `heroHome`：首页 Hero 图片
+- `signatureProducts`：招牌酥点图片
+- `seasonalProducts`：季节风味图片
+- `mooncakePreview`：中秋月饼图片
+- `giftBoxes` / `featuredMidAutumnGift`：中秋礼盒图片
+- `productImageMap`：按产品 id 映射图片
 - `pageMoodImages`：按页面或使用场景映射氛围图
 
-后续替换真实拍摄图时，优先保持同名文件替换。例如直接替换 `public/images/products/product-cloud-square.png`。如果更换文件名或格式，需要同步修改 `src/data/images.ts` 中的 `src`。
+后续替换真实拍摄图时，优先保持同名文件替换。例如直接替换 `public/images/products/classic-egg-yolk-pastry.png`。如果更换文件名或格式，需要同步修改 `src/lib/site-images.ts` 中的 `src`。
 
-图片风格应保持新中式、轻奢、温柔、云雾感、高级留白，避免廉价电商感、过度促销感和过强饱和度。
+图片风格应保持新中式、轻奢、温暖、玉绿色与香槟金点缀、柔和自然光、高级商业静物摄影感，避免廉价电商感、过度促销感和过强饱和度。
 
 ## 品牌与内容原则
 
-- 视觉保持米白、云雾灰、豆沙红、浅金、墨色。
+- 视觉保持温暖米白、象牙白、Jade Green 玉绿色、Deep Jade 深墨绿色、Champagne Gold 香槟金、Brown 茶棕色。
 - 文案保持温柔、克制、真实，不使用夸张促销语言。
 - 当前状态表达为准备中、计划中、预约意向收集中。
 - 不虚构门店、电话、社媒账号、合作案例、客户评价或正式售卖状态。

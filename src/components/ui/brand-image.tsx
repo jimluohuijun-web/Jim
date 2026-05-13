@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import type { ImageRatio } from "@/data/images";
+import type { ImageRatio } from "@/lib/site-images";
 import { cn } from "@/lib/utils";
 
 type BrandImageVariant = "card" | "hero" | "soft" | "plain";

@@ -22,7 +22,7 @@ export function ContactCta() {
               <span className="h-px w-16 bg-primary" />
               <h2 className="ysj-title-lg text-balance">先认识，再慢慢靠近</h2>
               <p className="text-base leading-8 text-muted-foreground md:text-lg">
-                云酥记正在从一个小而认真的起点出发。感谢你愿意提前关注这份东方酥香，我们会把每一次试吃、每一份反馈都当作品牌生长的一部分。
+                云酥坊正在从一个小而认真的起点出发。感谢你愿意提前关注这份东方酥香，我们会把每一次试吃、每一份反馈都当作品牌生长的一部分。
               </p>
             </div>
             <Link

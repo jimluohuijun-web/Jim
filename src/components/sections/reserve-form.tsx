@@ -164,7 +164,7 @@ export function ReserveForm() {
                   已收到你的预约意向
                 </h2>
                 <p className="text-base leading-8 text-muted-foreground">
-                  云酥记会在温哥华试吃和小批量预订开放时，优先通知你。
+                  云酥坊会在温哥华试吃和小批量预订开放时，优先通知你。
                 </p>
               </div>
             </div>
@@ -204,7 +204,7 @@ export function ReserveForm() {
               href="/products"
               className="ysj-button-secondary inline-flex min-h-12 items-center justify-center gap-2 px-6 text-sm font-medium"
             >
-              查看产品
+              查看点心系列
               <ArrowRight data-icon="inline-end" />
             </Link>
           </div>
@@ -312,7 +312,7 @@ export function ReserveForm() {
                   className={cn(
                     "flex cursor-pointer items-center justify-between gap-4 rounded-2xl border bg-cloud-white/48 p-4 transition-all duration-500",
                     checked
-                      ? "border-primary/45 shadow-[0_12px_30px_rgb(159_79_74_/_10%)]"
+                      ? "border-primary/45 shadow-[0_12px_30px_rgb(22_60_51_/_10%)]"
                       : "border-border hover:border-soft-gold/60"
                   )}
                 >
@@ -398,6 +398,10 @@ export function ReserveForm() {
         >
           {isSubmitting ? "正在提交..." : "提交预约意向"}
         </button>
+
+        <p className="text-center text-xs leading-6 text-muted-foreground">
+          你提交的信息仅用于云酥坊预约意向沟通与试吃通知，我们不会公开展示或出售你的联系方式。
+        </p>
 
         {submitError ? (
           <p className="rounded-2xl border border-primary/20 bg-primary/8 px-4 py-3 text-center text-sm leading-6 text-primary/90">

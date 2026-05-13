@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, CalendarDays } from "lucide-react";
+import { ArrowRight, Gift } from "lucide-react";
 
 import { BrandImage } from "@/components/ui/brand-image";
-import { heroImages } from "@/data/images";
+import { heroHome } from "@/lib/site-images";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -31,9 +31,9 @@ export function HomeHero() {
             className="flex flex-col gap-6"
           >
             <p className="text-sm uppercase tracking-[0.32em] text-primary/80">
-              Yun Su Ji · Vancouver
+              yunsucake · Vancouver
             </p>
-            <h1 className="ysj-title-xl max-w-4xl text-balance">云上酥香，一口东方</h1>
+            <h1 className="ysj-title-xl max-w-4xl text-balance">温哥华手作新中式酥点</h1>
           </motion.div>
 
           <motion.p
@@ -43,7 +43,7 @@ export function HomeHero() {
             transition={{ duration: 0.78, delay: 0.16, ease }}
             className="max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl md:leading-9"
           >
-            新中式手作甜点品牌「云酥记」，将东方点心的细腻、云雾般的轻盈口感，与温哥华的生活美学融合在一起。
+            从蛋黄酥、牡丹花酥到中秋月饼礼盒，云酥坊把东方点心做成一份温柔的礼物。
           </motion.p>
 
           <motion.div
@@ -54,18 +54,18 @@ export function HomeHero() {
             className="flex flex-col gap-3 sm:flex-row"
           >
             <Link
-              href="/reserve"
+              href="/products"
               className="ysj-button-primary inline-flex min-h-12 items-center justify-center gap-2 px-6 text-sm font-medium"
             >
-              <CalendarDays data-icon="inline-start" />
-              预约品尝
+              查看点心系列
+              <ArrowRight data-icon="inline-end" />
             </Link>
             <Link
-              href="/products"
+              href="/products#mid-autumn-preview"
               className="ysj-button-secondary inline-flex min-h-12 items-center justify-center gap-2 px-6 text-sm font-medium"
             >
-              查看产品
-              <ArrowRight data-icon="inline-end" />
+              <Gift data-icon="inline-start" />
+              中秋礼盒预告
             </Link>
           </motion.div>
         </div>
@@ -87,8 +87,8 @@ export function HomeHero() {
 
             <div className="relative">
               <BrandImage
-                src={heroImages.primary.src}
-                alt={heroImages.primary.alt}
+                src={heroHome.src}
+                alt={heroHome.alt}
                 ratio="4:5"
                 variant="plain"
                 priority
@@ -105,7 +105,7 @@ export function HomeHero() {
               <div className="absolute inset-x-5 bottom-5 rounded-[1.25rem] border border-soft-gold/20 bg-cloud-white/72 p-4 backdrop-blur-md">
                 <div className="grid grid-cols-[1fr_auto] items-end gap-5">
                   <p className="text-sm leading-6 text-muted-foreground">
-                    云雾般轻盈的口感，配以克制的东方甜香。
+                    牡丹花酥、蛋黄酥与中秋礼盒灵感，正在为温哥华第一阶段试吃做准备。
                   </p>
                   <span className="text-xs uppercase tracking-[0.24em] text-primary">VAN</span>
                 </div>

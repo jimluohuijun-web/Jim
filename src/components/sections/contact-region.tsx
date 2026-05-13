@@ -26,7 +26,7 @@ export function ContactRegion() {
             </div>
             <div className="flex flex-col gap-6">
               <p className="text-base leading-8 text-muted-foreground md:text-lg">
-                云酥记第一阶段将优先关注 Vancouver、Richmond、Burnaby 及周边区域。实际试吃、取货或活动安排，会根据预约人数、产品测试和可执行条件逐步确认。
+                云酥坊第一阶段将优先关注 Vancouver、Richmond、Burnaby 及周边区域。实际试吃、取货或活动安排，会根据预约人数、产品测试和可执行条件逐步确认。
               </p>
               <div className="grid gap-3 sm:grid-cols-3">
                 {notes.map((note) => (

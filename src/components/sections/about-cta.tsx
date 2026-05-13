@@ -20,7 +20,7 @@ export function AboutCta() {
           <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
             <div className="flex max-w-2xl flex-col gap-4">
               <span className="h-px w-16 bg-primary" />
-              <h2 className="ysj-title-lg text-balance">想第一时间认识云酥记？</h2>
+              <h2 className="ysj-title-lg text-balance">想第一时间认识云酥坊？</h2>
               <p className="text-base leading-8 text-muted-foreground md:text-lg">
                 如果你也喜欢轻盈、温柔的新中式甜点，可以先留下预约意向。我们会在温哥华试吃开放时优先通知你。
               </p>
@@ -37,7 +37,7 @@ export function AboutCta() {
                 href="/products"
                 className="ysj-button-secondary inline-flex min-h-12 items-center justify-center gap-2 px-6 text-sm font-medium"
               >
-                查看产品系列
+                查看点心系列
                 <ArrowRight data-icon="inline-end" />
               </Link>
             </div>

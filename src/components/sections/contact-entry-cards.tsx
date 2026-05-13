@@ -13,9 +13,9 @@ const entries = [
     icon: CalendarDays,
   },
   {
-    title: "产品咨询",
-    description: "想了解云酥小方、豆沙雪酥、桂花云卷等产品，可以先查看产品系列。",
-    button: "查看产品",
+    title: "点心咨询",
+    description: "想了解蛋黄酥、牡丹花酥、凤梨酥与中秋礼盒预告，可以先查看点心系列。",
+    button: "查看点心",
     href: "/products",
     icon: Gift,
   },
@@ -28,8 +28,8 @@ const entries = [
   },
   {
     title: "品牌故事",
-    description: "想了解云酥记的发起、理念和温哥华计划，可以先阅读品牌故事。",
-    button: "关于云酥记",
+    description: "想了解云酥坊的发起、理念和温哥华计划，可以先阅读品牌故事。",
+    button: "关于云酥坊",
     href: "/about",
     icon: BookOpen,
   },
@@ -42,7 +42,7 @@ export function ContactEntryCards() {
         <div className="flex max-w-3xl flex-col gap-4">
           <span className="h-px w-16 bg-soft-gold" />
           <p className="text-sm uppercase tracking-[0.28em] text-primary/80">Entry</p>
-          <h2 className="ysj-title-lg text-balance">你可以这样找到云酥记</h2>
+          <h2 className="ysj-title-lg text-balance">你可以这样找到云酥坊</h2>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2">

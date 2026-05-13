@@ -22,12 +22,12 @@ export function EventsHero() {
         >
           <div className="flex max-w-5xl flex-col gap-6">
             <p className="text-sm uppercase tracking-[0.32em] text-primary/80">
-              Yun Su Ji · Events
+              yunsucake · Events
             </p>
             <div className="flex flex-col gap-5">
               <h1 className="ysj-title-xl text-balance">活动 / 快闪</h1>
               <p className="max-w-4xl text-lg leading-8 text-muted-foreground md:text-xl md:leading-9">
-                云酥记正在为 2026 年 7-8 月的温哥华第一阶段亮相做准备。我们计划从小批量试吃、朋友分享、礼盒咨询和轻量快闪开始，让更多人提前认识这份轻盈的东方酥香。
+                云酥坊正在为 2026 年 7-8 月的温哥华第一阶段亮相做准备。我们计划从小批量试吃、朋友分享、礼盒咨询和轻量快闪开始，让更多人提前认识这份轻盈的东方酥香。
               </p>
             </div>
           </div>
