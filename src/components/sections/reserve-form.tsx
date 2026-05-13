@@ -28,6 +28,12 @@ type ReserveFormValues = {
 
 type ReserveFormErrors = Partial<Record<"name" | "contact" | "productIds", string>>;
 
+type ReservationResponse = {
+  ok: boolean;
+  message?: string;
+  errors?: ReserveFormErrors;
+};
+
 const initialValues: ReserveFormValues = {
   name: "",
   contact: "",
@@ -50,6 +56,7 @@ function FieldError({ message }: { message?: string }) {
 export function ReserveForm() {
   const [values, setValues] = useState<ReserveFormValues>(initialValues);
   const [errors, setErrors] = useState<ReserveFormErrors>({});
+  const [submitError, setSubmitError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedValues, setSubmittedValues] = useState<ReserveFormValues | null>(null);
 
@@ -101,15 +108,40 @@ export function ReserveForm() {
 
     const nextErrors = validate(values);
     setErrors(nextErrors);
+    setSubmitError("");
 
     if (Object.keys(nextErrors).length > 0) {
       return;
     }
 
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    setSubmittedValues(values);
-    setIsSubmitting(false);
+
+    try {
+      const response = await fetch("/api/reservations", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      const result = (await response.json()) as ReservationResponse;
+
+      if (!response.ok || !result.ok) {
+        if (result.errors) {
+          setErrors(result.errors);
+        }
+
+        setSubmitError(result.message ?? "预约意向暂时未能提交成功，请稍后再试。");
+        return;
+      }
+
+      setSubmittedValues(values);
+    } catch {
+      setSubmitError("网络暂时不稳定，请稍后再试。");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (submittedValues) {
@@ -366,6 +398,12 @@ export function ReserveForm() {
         >
           {isSubmitting ? "正在提交..." : "提交预约意向"}
         </button>
+
+        {submitError ? (
+          <p className="rounded-2xl border border-primary/20 bg-primary/8 px-4 py-3 text-center text-sm leading-6 text-primary/90">
+            {submitError}
+          </p>
+        ) : null}
 
         {selectedProducts.length > 0 ? (
           <p className="text-center text-sm leading-6 text-muted-foreground">

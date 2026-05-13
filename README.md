@@ -2,7 +2,7 @@
 
 云酥记 Yun Su Ji 是一个面向温哥华市场的新中式手作甜点品牌官网。当前网站用于品牌展示、产品介绍、预约意向收集，以及 2026 年 7-8 月温哥华第一阶段小批量试吃与活动 / 快闪预告。
 
-当前项目不接真实数据库、不接真实支付、不发送真实邮件；预约表单为前端 mock 提交流程，便于后续接入 Supabase、Airtable 或 Google Sheets。
+当前项目不接真实支付、不发送真实邮件。预约表单已预留 Airtable 接收方案：配置 Airtable 环境变量后会写入 Airtable；未配置时自动使用 mock fallback，便于本地开发、预览构建和视觉验收。
 
 ## 技术栈
 
@@ -58,6 +58,39 @@ cp .env.example .env.local
 NEXT_PUBLIC_SITE_URL=https://your-domain.example
 ```
 
+## 预约表单接收方案
+
+预约表单提交到 `POST /api/reservations`。
+
+- 如果未配置 Airtable 环境变量，API 会返回 mock 成功，方便本地开发和 Preview 验收。
+- 如果已配置 Airtable 环境变量，API 会在服务端写入 Airtable，不会把密钥暴露到浏览器。
+- 当前仍不接支付、不创建订单、不发送真实邮件。
+
+需要在 Vercel Project Environment Variables 中配置：
+
+```bash
+AIRTABLE_API_KEY=
+AIRTABLE_BASE_ID=
+AIRTABLE_TABLE_NAME=Reservations
+```
+
+建议 Airtable 表字段：
+
+- `Name`
+- `Contact`
+- `City`
+- `Preferred Time`
+- `Interested Products`
+- `Product IDs`
+- `Reservation Type`
+- `Notes`
+- `Notify Me`
+- `Source`
+- `Status`
+- `Submitted At`
+
+其中 `Interested Products` 建议为 Multiple select，`Preferred Time`、`Reservation Type`、`Status` 建议为 Single select，`Notify Me` 建议为 Checkbox，`Notes` 建议为 Long text。`Source` 默认由网站写入 `website`，`Status` 默认写入 `New`。
+
 ## Vercel 部署
 
 本项目是标准 Next.js App Router 项目，可直接部署到 Vercel。
@@ -65,7 +98,7 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.example
 - Build Command: `npm run build`
 - Install Command: 使用 Vercel 默认设置
 - Output Directory: Next.js 项目无需手动设置
-- Environment Variables: 当前 mock 版本无需真实密钥
+- Environment Variables: 未配置 Airtable 时可使用 mock fallback；正式收集预约前请配置 Airtable 变量
 
 ## 项目结构
 

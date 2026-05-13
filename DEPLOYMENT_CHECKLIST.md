@@ -23,11 +23,11 @@
 
 ## 功能边界
 
-- [x] 预约表单为前端 mock 提交。
-- [x] 未接入真实数据库。
+- [x] 预约表单已接入 `/api/reservations`，未配置 Airtable 时使用 mock fallback。
+- [ ] 正式宣传前，在 Vercel 配置 Airtable 环境变量并完成真实写入测试。
 - [x] 未接入真实支付。
 - [x] 未发送真实邮件或通知。
-- [ ] 后续接入 Supabase / Airtable / Google Sheets 前，补充隐私提示与数据处理说明。
+- [ ] 正式收集预约前，补充隐私提示与数据处理说明。
 
 ## Vercel 部署
 
@@ -35,7 +35,7 @@
 - [x] Build Command 使用 `npm run build`。
 - [x] Install Command 使用 Vercel 默认设置。
 - [x] Next.js Output Directory 无需手动设置。
-- [x] 当前 mock 版本不依赖真实密钥即可运行。
+- [x] 未配置 Airtable 时不依赖真实密钥即可运行。
 
 ## 上线前 QA
 
