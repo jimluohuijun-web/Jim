@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 
+import { BrandImage } from "@/components/ui/brand-image";
+import { pageMoodImages } from "@/data/images";
+
 export function AboutFounder() {
   return (
     <section className="ysj-section-tight border-y border-border/60 bg-background/50">
@@ -15,12 +18,19 @@ export function AboutFounder() {
         >
           <div className="absolute -right-24 top-8 size-80 rounded-full border border-soft-gold/25" />
           <div className="absolute -bottom-28 left-12 size-80 rounded-full bg-primary/10 blur-3xl" />
-          <div className="relative grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+          <div className="relative grid gap-8 lg:grid-cols-[0.72fr_0.78fr_1.08fr] lg:items-center">
             <div className="flex flex-col gap-4">
               <span className="h-px w-16 bg-soft-gold" />
               <p className="text-sm uppercase tracking-[0.28em] text-primary/80">Founder</p>
               <h2 className="ysj-title-lg text-balance">由「飞舞」发起</h2>
             </div>
+            <BrandImage
+              src={pageMoodImages.aboutFounder.src}
+              alt={pageMoodImages.aboutFounder.alt}
+              ratio="4:5"
+              variant="soft"
+              sizes="(min-width: 1024px) 26vw, 86vw"
+            />
             <div className="flex flex-col gap-6 text-base leading-8 text-muted-foreground md:text-lg md:leading-9">
               <p>
                 飞舞希望把东方甜点带到温哥华，但不是急着做一个普通电商甜点站。云酥记更想先从真实的品尝、朋友之间的分享和礼盒咨询开始。

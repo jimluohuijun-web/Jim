@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 import { CalendarDays, Gift, MapPin, Sparkles } from "lucide-react";
 
+import { BrandImage } from "@/components/ui/brand-image";
+import { pageMoodImages } from "@/data/images";
+
 const details = [
   {
     icon: CalendarDays,
@@ -45,6 +48,15 @@ export function ReserveInfoCard() {
             <h2 className="text-3xl font-semibold leading-tight text-balance">预约前的小提示</h2>
           </div>
         </div>
+
+        <BrandImage
+          src={pageMoodImages.reserveMood.src}
+          alt={pageMoodImages.reserveMood.alt}
+          ratio="4:5"
+          variant="soft"
+          sizes="(min-width: 1024px) 32vw, 88vw"
+          className="rounded-[1.35rem]"
+        />
 
         <div className="grid gap-4">
           {details.map((detail) => {

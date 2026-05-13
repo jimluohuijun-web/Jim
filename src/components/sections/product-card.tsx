@@ -4,6 +4,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
+import { BrandImage } from "@/components/ui/brand-image";
+import { productImages } from "@/data/images";
 import { cn } from "@/lib/utils";
 import type { Product, ProductTheme } from "@/data/products";
 
@@ -50,6 +52,7 @@ const themeStyles: Record<
 
 export function ProductCard({ product, index = 0, compact = false }: ProductCardProps) {
   const theme = themeStyles[product.theme];
+  const image = productImages[product.id];
 
   return (
     <motion.article
@@ -92,15 +95,22 @@ export function ProductCard({ product, index = 0, compact = false }: ProductCard
 
           <div
             className={cn(
-              "relative mx-auto my-9 flex items-center justify-center rounded-full bg-gradient-to-br shadow-[0_28px_58px_rgb(36_32_29_/_10%)] transition-transform duration-700 group-hover:scale-[1.015]",
-              theme.dessert,
-              compact ? "size-40" : "size-48"
+              "relative my-7 transition-transform duration-700 group-hover:scale-[1.012]",
+              compact ? "mx-auto w-full max-w-64" : "w-full"
             )}
           >
-            <span className="absolute inset-5 rounded-full border border-soft-gold/45" />
-            <span className="absolute size-24 rounded-[34%] bg-cloud-white/58 rotate-45" />
-            <span className="absolute h-24 w-2 rotate-45 rounded-full bg-primary/16" />
-            <span className="absolute h-24 w-2 -rotate-45 rounded-full bg-soft-gold/22" />
+            <span className={cn("absolute -inset-5 rounded-full blur-3xl", theme.aura)} />
+            <BrandImage
+              src={image.src}
+              alt={image.alt}
+              ratio="1:1"
+              variant="soft"
+              sizes={compact ? "(min-width: 1024px) 28vw, 78vw" : "(min-width: 768px) 42vw, 88vw"}
+              className={cn(
+                "relative rounded-[1.5rem]",
+                compact ? "shadow-[0_22px_58px_rgb(36_32_29_/_9%)]" : undefined
+              )}
+            />
           </div>
 
           <div className="flex flex-1 flex-col justify-between gap-7">

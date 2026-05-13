@@ -81,6 +81,27 @@ src/
 public/                # favicon、OG 图与静态资源
 ```
 
+## 图片库说明
+
+网站图片统一放在 `public/images/`：
+
+- `public/images/brand/`：首页 Hero 与品牌主视觉
+- `public/images/products/`：产品图
+- `public/images/pages/`：关于、预约、活动、联系等页面氛围图
+- `public/images/backgrounds/`：抽象背景与纹理
+- `public/images/social/`：后续社媒与营销备用图
+
+图片配置统一在 `src/data/images.ts`。其中包含：
+
+- `siteImages`：全部图片配置
+- `heroImages`：首页 Hero 图片
+- `productImages`：按产品 id 映射产品图
+- `pageMoodImages`：按页面或使用场景映射氛围图
+
+后续替换真实拍摄图时，优先保持同名文件替换。例如直接替换 `public/images/products/product-cloud-square.png`。如果更换文件名或格式，需要同步修改 `src/data/images.ts` 中的 `src`。
+
+图片风格应保持新中式、轻奢、温柔、云雾感、高级留白，避免廉价电商感、过度促销感和过强饱和度。
+
 ## 品牌与内容原则
 
 - 视觉保持米白、云雾灰、豆沙红、浅金、墨色。

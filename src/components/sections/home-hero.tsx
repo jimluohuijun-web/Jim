@@ -4,6 +4,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, CalendarDays } from "lucide-react";
 
+import { BrandImage } from "@/components/ui/brand-image";
+import { heroImages } from "@/data/images";
+
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const fadeUp = {
@@ -77,36 +80,41 @@ export function HomeHero() {
           }}
           className="relative mx-auto w-full max-w-[27rem]"
         >
-          <div className="ysj-card relative aspect-[0.86] overflow-hidden p-6 md:p-8">
+          <div className="ysj-card relative overflow-hidden p-4 md:p-5">
             <div className="absolute inset-x-8 top-8 h-20 rounded-full bg-white/35 blur-2xl" />
             <div className="absolute -right-14 top-20 size-56 rounded-full border border-soft-gold/35" />
             <div className="absolute -bottom-24 -left-16 size-72 rounded-full bg-mist-gray/28 blur-3xl" />
 
-            <div className="relative flex h-full flex-col justify-between">
-              <div className="flex items-start justify-between gap-6">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
-                    Handmade
+            <div className="relative">
+              <BrandImage
+                src={heroImages.primary.src}
+                alt={heroImages.primary.alt}
+                ratio="4:5"
+                variant="plain"
+                priority
+                sizes="(min-width: 768px) 42vw, 92vw"
+                className="rounded-[1.45rem]"
+              />
+
+              <div className="absolute left-5 top-5 rounded-full border border-soft-gold/35 bg-cloud-white/65 px-4 py-2 text-xs uppercase tracking-[0.24em] text-muted-foreground backdrop-blur-md">
+                Handmade
+              </div>
+              <div className="absolute right-5 top-5 flex size-14 items-center justify-center rounded-full border border-primary/25 bg-cloud-white/62 text-base font-semibold text-primary backdrop-blur-md">
+                酥
+              </div>
+              <div className="absolute inset-x-5 bottom-5 rounded-[1.25rem] border border-soft-gold/20 bg-cloud-white/72 p-4 backdrop-blur-md">
+                <div className="grid grid-cols-[1fr_auto] items-end gap-5">
+                  <p className="text-sm leading-6 text-muted-foreground">
+                    云雾般轻盈的口感，配以克制的东方甜香。
                   </p>
-                  <p className="mt-2 text-2xl font-semibold text-foreground">云酥小集</p>
+                  <span className="text-xs uppercase tracking-[0.24em] text-primary">VAN</span>
                 </div>
-                <div className="flex size-14 items-center justify-center rounded-full border border-primary/25 text-base font-semibold text-primary">
+              </div>
+            </div>
+
+            <div className="pointer-events-none absolute -bottom-3 -left-3 hidden rounded-full border border-soft-gold/30 bg-cloud-white/70 p-5 backdrop-blur md:block">
+              <div className="flex size-12 items-center justify-center rounded-full border border-primary/25 text-sm font-semibold text-primary">
                   酥
-                </div>
-              </div>
-
-              <div className="relative mx-auto flex size-56 items-center justify-center rounded-full bg-[radial-gradient(circle,#fffaf2_0%,#f1dfca_48%,#d8d2c8_100%)] shadow-[0_34px_70px_rgb(36_32_29_/_12%)]">
-                <div className="absolute size-40 rounded-full border border-soft-gold/55" />
-                <div className="absolute size-28 rounded-full bg-[radial-gradient(circle,#f8f3ea_0%,#e8cfc7_72%)]" />
-                <div className="absolute left-1/2 top-1/2 h-24 w-2 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full bg-primary/18" />
-                <div className="absolute left-1/2 top-1/2 h-24 w-2 -translate-x-1/2 -translate-y-1/2 -rotate-45 rounded-full bg-soft-gold/28" />
-              </div>
-
-              <div className="grid grid-cols-[1fr_auto] items-end gap-5 border-t border-border/70 pt-5">
-                <p className="text-sm leading-6 text-muted-foreground">
-                  云雾般轻盈的口感，配以克制的东方甜香。
-                </p>
-                <span className="text-xs uppercase tracking-[0.24em] text-primary">VAN</span>
               </div>
             </div>
           </div>

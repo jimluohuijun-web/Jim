@@ -4,6 +4,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Handshake } from "lucide-react";
 
+import { BrandImage } from "@/components/ui/brand-image";
+import { pageMoodImages } from "@/data/images";
+
 export function ContactCollaboration() {
   return (
     <section className="ysj-section-tight">
@@ -17,7 +20,7 @@ export function ContactCollaboration() {
         >
           <div className="absolute -right-20 top-4 size-72 rounded-full border border-soft-gold/25" />
           <div className="absolute -bottom-28 left-10 size-72 rounded-full bg-primary/10 blur-3xl" />
-          <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+          <div className="relative grid gap-8 lg:grid-cols-[1fr_0.42fr_auto] lg:items-center">
             <div className="flex max-w-3xl flex-col gap-5">
               <span className="h-px w-16 bg-primary" />
               <div className="flex flex-col gap-4">
@@ -28,6 +31,14 @@ export function ContactCollaboration() {
                 如果你正在筹备小型聚会、品牌活动、下午茶分享、节日礼盒或轻量快闪合作，可以先通过预约意向页留下备注。请在备注里写明活动时间、人数、区域和大致需求。
               </p>
             </div>
+            <BrandImage
+              src={pageMoodImages.giftboxConcept.src}
+              alt={pageMoodImages.giftboxConcept.alt}
+              ratio="4:5"
+              variant="soft"
+              sizes="(min-width: 1024px) 22vw, 82vw"
+              className="rounded-[1.35rem]"
+            />
             <div className="flex flex-col items-start gap-4">
               <span className="flex size-16 items-center justify-center rounded-full border border-soft-gold/35 bg-cloud-white/55 text-primary">
                 <Handshake data-icon="inline-start" />
