@@ -10,6 +10,7 @@ type BrandImageProps = {
   alt: string;
   className?: string;
   imageClassName?: string;
+  loading?: "lazy" | "eager";
   priority?: boolean;
   sizes?: string;
   ratio?: ImageRatio;
@@ -35,6 +36,7 @@ export function BrandImage({
   alt,
   className,
   imageClassName,
+  loading = "lazy",
   priority = false,
   sizes = "(min-width: 1024px) 42vw, 92vw",
   ratio = "4:5",
@@ -59,6 +61,7 @@ export function BrandImage({
         src={src}
         alt={alt}
         fill
+        loading={priority ? undefined : loading}
         priority={priority}
         sizes={sizes}
         className={cn("object-cover", imageClassName)}

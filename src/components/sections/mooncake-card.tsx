@@ -4,30 +4,39 @@ import { fallbackImage, productImageMap } from "@/lib/site-images";
 
 type MooncakeCardProps = {
   mooncake: MooncakeProduct;
+  tone?: "light" | "dark";
 };
 
-export function MooncakeCard({ mooncake }: MooncakeCardProps) {
+export function MooncakeCard({ mooncake, tone = "light" }: MooncakeCardProps) {
   const image = productImageMap[mooncake.id] ?? fallbackImage;
+  const isDark = tone === "dark";
 
   return (
-    <article id={mooncake.id} className="ysj-card h-full overflow-hidden p-4">
+    <article
+      id={mooncake.id}
+      className={
+        isDark
+          ? "h-full overflow-hidden rounded-[1.25rem] border border-[#fffaf4]/16 bg-[#fffaf4]/10 p-3 backdrop-blur"
+          : "h-full overflow-hidden rounded-[1.5rem] border border-soft-gold/24 bg-cloud-white/58 p-4 shadow-[0_18px_54px_rgb(36_32_29_/_6%)]"
+      }
+    >
       <BrandImage
         src={image.src}
         alt={image.alt}
         ratio="1:1"
-        variant="soft"
+        variant={isDark ? "plain" : "soft"}
         sizes="(min-width: 1024px) 20vw, (min-width: 640px) 42vw, 88vw"
-        className="rounded-[1.25rem]"
+        className={isDark ? "rounded-[1rem]" : "rounded-[1.15rem]"}
       />
       <div className="flex flex-col gap-3 p-2 pt-5">
         <div className="flex flex-col gap-1">
-          <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
+          <p className={isDark ? "text-xs uppercase tracking-[0.2em] text-[#fffaf4]/54" : "text-xs uppercase tracking-[0.24em] text-muted-foreground"}>
             {mooncake.englishName}
           </p>
-          <h3 className="text-2xl font-semibold leading-tight text-foreground">{mooncake.name}</h3>
+          <h3 className={isDark ? "text-xl font-semibold leading-tight text-[#fffaf4]" : "text-2xl font-semibold leading-tight text-foreground"}>{mooncake.name}</h3>
         </div>
-        <p className="text-sm leading-7 text-muted-foreground">{mooncake.tagline}</p>
-        <span className="mt-auto w-fit rounded-full border border-soft-gold/35 bg-cloud-white/60 px-3 py-1 text-xs text-primary">
+        <p className={isDark ? "text-sm leading-6 text-[#fffaf4]/70" : "text-sm leading-7 text-muted-foreground"}>{mooncake.tagline}</p>
+        <span className={isDark ? "mt-auto w-fit rounded-full border border-soft-gold/35 bg-[#fffaf4]/10 px-3 py-1 text-xs text-[#fffaf4]/86" : "mt-auto w-fit rounded-full border border-soft-gold/35 bg-cloud-white/60 px-3 py-1 text-xs text-primary"}>
           {mooncake.status}
         </span>
       </div>

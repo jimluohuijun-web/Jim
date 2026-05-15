@@ -53,7 +53,8 @@ function FieldError({ message }: { message?: string }) {
   return <p className="text-sm leading-6 text-primary/85">{message}</p>;
 }
 
-export function ReserveForm() {
+export function ReserveForm({ variant = "full" }: { variant?: "full" | "compact" }) {
+  const isCompact = variant === "compact";
   const [values, setValues] = useState<ReserveFormValues>(initialValues);
   const [errors, setErrors] = useState<ReserveFormErrors>({});
   const [submitError, setSubmitError] = useState("");
@@ -93,6 +94,10 @@ export function ReserveForm() {
 
   function updateProduct(productId: string) {
     setValues((current) => {
+      if (isCompact) {
+        return { ...current, productIds: [productId] };
+      }
+
       const exists = current.productIds.includes(productId);
       const productIds = exists
         ? current.productIds.filter((id) => id !== productId)
@@ -161,10 +166,10 @@ export function ReserveForm() {
               <div className="flex flex-col gap-3">
                 <p className="text-sm uppercase tracking-[0.28em] text-primary/80">Received</p>
                 <h2 className="text-3xl font-semibold leading-tight text-balance">
-                  已收到你的预约意向
+                  已收到你的试吃登记
                 </h2>
                 <p className="text-base leading-8 text-muted-foreground">
-                  云酥坊会在温哥华试吃和小批量预订开放时，优先通知你。
+                  云酥坊会在花酥试吃名额和月饼上新消息开放时，优先通知你。
                 </p>
               </div>
             </div>
@@ -175,7 +180,7 @@ export function ReserveForm() {
 
           <div className="grid gap-4 border-y border-border/70 py-6">
             <div className="flex flex-col gap-2">
-              <span className="text-sm text-muted-foreground">感兴趣产品</span>
+              <span className="text-sm text-muted-foreground">想了解的产品</span>
               <div className="flex flex-wrap gap-2">
                 {submittedProducts.map((product) => (
                   <span
@@ -215,30 +220,44 @@ export function ReserveForm() {
 
   return (
     <motion.form
-      initial={{ opacity: 0, y: 22 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.78, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
       onSubmit={handleSubmit}
-      className="ysj-card relative overflow-hidden p-7 md:p-9"
+      className={cn(
+        "ysj-card relative overflow-hidden",
+        isCompact
+          ? "rounded-[1.35rem] border-soft-gold/24 bg-[#fffaf4]/90 p-4 shadow-[0_24px_70px_rgb(79_95_78_/_8%)] md:p-7"
+          : "p-7 md:p-9"
+      )}
       noValidate
     >
-      <div className="absolute -right-20 top-8 size-64 rounded-full border border-soft-gold/25" />
+      <div className="absolute -right-20 top-8 size-64 rounded-full border border-soft-gold/20" />
       <div className="absolute -bottom-24 left-4 size-72 rounded-full bg-mist-gray/30 blur-3xl" />
-      <div className="relative flex flex-col gap-7">
-        <div className="flex items-start justify-between gap-5">
+      {isCompact ? (
+        <>
+          <div className="pointer-events-none absolute -right-10 top-5 size-72 rounded-full border border-soft-gold/16" />
+          <div className="pointer-events-none absolute -right-3 top-16 h-64 w-64 rounded-full border-l border-soft-gold/12" />
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-[linear-gradient(180deg,rgb(255_250_244_/_78%),transparent)]" />
+          <div className="pointer-events-none absolute inset-y-8 right-0 w-36 bg-[radial-gradient(ellipse_at_right,rgb(200_169_107_/_10%),transparent_70%)]" />
+          <div className="pointer-events-none absolute -left-12 bottom-6 h-24 w-60 rounded-full border-t border-soft-gold/10" />
+        </>
+      ) : null}
+      <div className="relative z-10 flex flex-col gap-7">
+        <div className={cn("flex items-start justify-between gap-5", isCompact && "sr-only")}>
           <div className="flex flex-col gap-3">
-            <p className="text-sm uppercase tracking-[0.28em] text-primary/80">Reserve</p>
-            <h2 className="text-3xl font-semibold leading-tight text-balance">留下预约意向</h2>
+            <p className="text-sm uppercase tracking-[0.28em] text-primary/80">Tasting Register</p>
+            <h2 className="text-3xl font-semibold leading-tight text-balance">新品试吃登记</h2>
           </div>
           <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-soft-gold/35 bg-cloud-white/55 text-primary">
             <Sparkles data-icon="inline-start" />
           </span>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className={cn("grid gap-4", isCompact ? "md:grid-cols-2" : "gap-5 md:grid-cols-2")}>
           <label className="flex flex-col gap-2">
-            <span className="text-sm text-foreground">姓名 / Name</span>
+            <span className="text-sm text-foreground">姓名</span>
             <input
               value={values.name}
               onChange={(event) => {
@@ -247,13 +266,16 @@ export function ReserveForm() {
               }}
               placeholder="请输入你的姓名"
               aria-invalid={Boolean(errors.name)}
-              className="min-h-12 rounded-2xl border border-border bg-cloud-white/60 px-4 text-base outline-none transition-colors duration-500 placeholder:text-muted-foreground/70 focus:border-primary/60 focus:ring-4 focus:ring-primary/10"
+              className={cn(
+                "rounded-xl border bg-cloud-white/72 px-4 text-sm outline-none transition-colors duration-500 placeholder:text-muted-foreground/60 focus:border-primary/60 focus:ring-4 focus:ring-primary/10",
+                isCompact ? "min-h-[46px] border-soft-gold/30 bg-[#fffaf4]/88" : "min-h-11 border-border"
+              )}
             />
             <FieldError message={errors.name} />
           </label>
 
           <label className="flex flex-col gap-2">
-            <span className="text-sm text-foreground">联系方式 / Contact</span>
+            <span className="text-sm text-foreground">联系方式</span>
             <input
               value={values.contact}
               onChange={(event) => {
@@ -262,24 +284,30 @@ export function ReserveForm() {
               }}
               placeholder="微信 / 邮箱 / 手机号"
               aria-invalid={Boolean(errors.contact)}
-              className="min-h-12 rounded-2xl border border-border bg-cloud-white/60 px-4 text-base outline-none transition-colors duration-500 placeholder:text-muted-foreground/70 focus:border-primary/60 focus:ring-4 focus:ring-primary/10"
+              className={cn(
+                "rounded-xl border bg-cloud-white/72 px-4 text-sm outline-none transition-colors duration-500 placeholder:text-muted-foreground/60 focus:border-primary/60 focus:ring-4 focus:ring-primary/10",
+                isCompact ? "min-h-[46px] border-soft-gold/30 bg-[#fffaf4]/88" : "min-h-11 border-border"
+              )}
             />
             <FieldError message={errors.contact} />
           </label>
 
-          <label className="flex flex-col gap-2">
-            <span className="text-sm text-foreground">所在城市 / City</span>
+          <label className={cn("flex flex-col gap-2", isCompact && "md:col-span-2")}>
+            <span className="text-sm text-foreground">{isCompact ? "所在城市" : "所在城市 / City"}</span>
             <input
               value={values.city}
               onChange={(event) =>
                 setValues((current) => ({ ...current, city: event.target.value }))
               }
               placeholder="例如 Vancouver / Richmond / Burnaby"
-              className="min-h-12 rounded-2xl border border-border bg-cloud-white/60 px-4 text-base outline-none transition-colors duration-500 placeholder:text-muted-foreground/70 focus:border-soft-gold/80 focus:ring-4 focus:ring-soft-gold/15"
+              className={cn(
+                "rounded-xl border bg-cloud-white/72 px-4 text-sm outline-none transition-colors duration-500 placeholder:text-muted-foreground/60 focus:border-soft-gold/80 focus:ring-4 focus:ring-soft-gold/15",
+                isCompact ? "min-h-[46px] border-soft-gold/30 bg-[#fffaf4]/88" : "min-h-11 border-border"
+              )}
             />
           </label>
 
-          <label className="flex flex-col gap-2">
+          <label className={cn("flex flex-col gap-2", isCompact && "hidden")}>
             <span className="text-sm text-foreground">期望品尝时间 / Preferred time</span>
             <select
               value={values.preferredTime}
@@ -289,7 +317,7 @@ export function ReserveForm() {
                   preferredTime: event.target.value as PreferredTime,
                 }))
               }
-              className="min-h-12 rounded-2xl border border-border bg-cloud-white/60 px-4 text-base outline-none transition-colors duration-500 focus:border-soft-gold/80 focus:ring-4 focus:ring-soft-gold/15"
+              className="min-h-11 rounded-xl border border-border bg-cloud-white/72 px-4 text-sm outline-none transition-colors duration-500 focus:border-soft-gold/80 focus:ring-4 focus:ring-soft-gold/15"
             >
               {preferredTimes.map((time) => (
                 <option key={time} value={time}>
@@ -301,8 +329,8 @@ export function ReserveForm() {
         </div>
 
         <fieldset className="flex flex-col gap-3">
-          <legend className="text-sm text-foreground">感兴趣产品 / Interested products</legend>
-          <div className="grid gap-3 sm:grid-cols-2">
+          <legend className="text-sm text-foreground">想了解的产品</legend>
+          <div className={cn("grid gap-3", isCompact ? "md:grid-cols-3" : "sm:grid-cols-2")}>
             {products.map((product) => {
               const checked = values.productIds.includes(product.id);
 
@@ -310,25 +338,29 @@ export function ReserveForm() {
                 <label
                   key={product.id}
                   className={cn(
-                    "flex cursor-pointer items-center justify-between gap-4 rounded-2xl border bg-cloud-white/48 p-4 transition-all duration-500",
+                    "flex cursor-pointer items-center gap-3 rounded-xl border bg-cloud-white/58 px-3 py-2.5 transition-all duration-500",
+                    isCompact && "min-h-[46px] border-soft-gold/30 bg-[#fffaf4]/78",
                     checked
                       ? "border-primary/45 shadow-[0_12px_30px_rgb(22_60_51_/_10%)]"
-                      : "border-border hover:border-soft-gold/60"
+                      : isCompact
+                        ? "border-soft-gold/30 hover:border-soft-gold/60"
+                        : "border-border hover:border-soft-gold/60"
                   )}
                 >
-                  <span className="flex flex-col gap-1">
-                    <span className="text-base text-foreground">{product.name}</span>
-                    <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                      {product.englishName}
-                    </span>
-                  </span>
                   <input
-                    type="checkbox"
+                    type={isCompact ? "radio" : "checkbox"}
+                    name={isCompact ? "productInterest" : undefined}
                     aria-label={product.name}
                     checked={checked}
                     onChange={() => updateProduct(product.id)}
                     className="size-4 accent-primary"
                   />
+                  <span className="flex min-w-0 flex-col gap-0.5">
+                    <span className="text-sm text-foreground">{product.name}</span>
+                    <span className={cn("text-xs uppercase tracking-[0.14em] text-muted-foreground", isCompact && "hidden")}>
+                      {product.englishName}
+                    </span>
+                  </span>
                 </label>
               );
             })}
@@ -336,7 +368,7 @@ export function ReserveForm() {
           <FieldError message={errors.productIds} />
         </fieldset>
 
-        <fieldset className="flex flex-col gap-3">
+        <fieldset className={cn("flex flex-col gap-3", isCompact && "hidden")}>
           <legend className="text-sm text-foreground">预约类型 / Reservation type</legend>
           <div className="grid gap-3 sm:grid-cols-2">
             {reservationTypes.map((type) => {
@@ -369,17 +401,20 @@ export function ReserveForm() {
         </fieldset>
 
         <label className="flex flex-col gap-2">
-          <span className="text-sm text-foreground">备注 / Notes</span>
+          <span className="text-sm text-foreground">{isCompact ? "备注" : "备注 / Notes"}</span>
           <textarea
             value={values.notes}
             onChange={(event) => setValues((current) => ({ ...current, notes: event.target.value }))}
             placeholder="例如口味偏好、低糖需求、过敏信息、取货区域等"
-            rows={4}
-            className="resize-none rounded-2xl border border-border bg-cloud-white/60 px-4 py-3 text-base leading-7 outline-none transition-colors duration-500 placeholder:text-muted-foreground/70 focus:border-soft-gold/80 focus:ring-4 focus:ring-soft-gold/15"
+            rows={isCompact ? 2 : 4}
+            className={cn(
+              "resize-none rounded-xl border bg-cloud-white/72 px-4 py-3 text-sm leading-7 outline-none transition-colors duration-500 placeholder:text-muted-foreground/60 focus:border-soft-gold/80 focus:ring-4 focus:ring-soft-gold/15",
+              isCompact ? "border-soft-gold/30 bg-[#fffaf4]/88" : "border-border"
+            )}
           />
         </label>
 
-        <label className="flex cursor-pointer items-center gap-3 rounded-2xl border border-border bg-cloud-white/42 p-4">
+        <label className={cn("flex cursor-pointer items-center gap-3 rounded-xl border border-border bg-cloud-white/42 p-4", isCompact && "hidden")}>
           <input
             type="checkbox"
             checked={values.notify}
@@ -394,9 +429,9 @@ export function ReserveForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="ysj-button-primary inline-flex min-h-12 w-full items-center justify-center px-6 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-70"
+          className="ysj-button-primary mx-auto inline-flex min-h-12 w-full max-w-sm items-center justify-center px-6 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-70"
         >
-          {isSubmitting ? "正在提交..." : "提交预约意向"}
+          {isSubmitting ? "正在提交..." : "提交试吃登记"}
         </button>
 
         <p className="text-center text-xs leading-6 text-muted-foreground">

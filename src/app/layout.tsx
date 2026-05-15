@@ -20,10 +20,13 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "云酥坊 yunsucake｜温哥华新中式手作酥点",
+    default: "云酥坊 yunsucake｜新中式手作酥点",
     template: "%s",
   },
   description: siteConfig.description,
@@ -35,7 +38,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
   },
   openGraph: {
-    title: "云酥坊 yunsucake｜温哥华新中式手作酥点",
+    title: "云酥坊 yunsucake｜新中式手作酥点",
     description: siteConfig.description,
     siteName: "云酥坊 yunsucake",
     locale: "zh_CN",
@@ -45,13 +48,13 @@ export const metadata: Metadata = {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "云酥坊 yunsucake｜温哥华手作新中式酥点",
+        alt: "云酥坊 yunsucake｜新中式手作酥点",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "云酥坊 yunsucake｜温哥华新中式手作酥点",
+    title: "云酥坊 yunsucake｜新中式手作酥点",
     description: siteConfig.description,
     images: ["/og-image.svg"],
   },

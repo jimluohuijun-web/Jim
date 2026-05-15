@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { BrandImage } from "@/components/ui/brand-image";
 import { fallbackImage, productImageMap } from "@/lib/site-images";
@@ -68,36 +68,18 @@ export function ProductCard({ product, index = 0, compact = false, anchorId }: P
       <Link
         href={product.href}
         className={cn(
-          "ysj-card relative flex h-full overflow-hidden p-6 transition-all duration-700 hover:border-soft-gold/70 hover:shadow-[0_30px_86px_rgb(36_32_29_/_11%)] md:p-7",
-          compact ? "min-h-[32rem]" : "min-h-[34rem]"
+          "relative flex h-full overflow-hidden rounded-[1.5rem] border border-soft-gold/24 bg-cloud-white/58 p-4 shadow-[0_18px_54px_rgb(36_32_29_/_6%)] transition-all duration-700 hover:border-soft-gold/60 hover:bg-cloud-white/78 hover:shadow-[0_24px_68px_rgb(36_32_29_/_9%)] md:p-5",
+          compact ? "min-h-[29rem]" : "min-h-[30rem]"
         )}
       >
-        <span className={cn("absolute -right-20 top-12 size-56 rounded-full blur-3xl", theme.aura)} />
-        <span className="absolute right-8 top-8 size-28 rounded-full border border-soft-gold/25" />
-        <span className="absolute -bottom-24 -left-16 size-72 rounded-full bg-white/35 blur-3xl" />
+        <span className={cn("absolute -right-20 top-12 size-52 rounded-full blur-3xl", theme.aura)} />
+        <span className="absolute -bottom-24 -left-16 size-64 rounded-full bg-white/35 blur-3xl" />
 
-        <div className="relative flex w-full flex-col">
-          <div className="flex items-start justify-between gap-5">
-            <div className="flex flex-col gap-2">
-              <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
-                {product.englishName}
-              </p>
-              <h3 className="text-3xl font-semibold leading-tight text-foreground">{product.name}</h3>
-            </div>
-            <span
-              className={cn(
-                "flex size-12 shrink-0 items-center justify-center rounded-full border bg-card/45 text-sm font-semibold backdrop-blur",
-                theme.stamp
-              )}
-            >
-              酥
-            </span>
-          </div>
-
+        <div className="relative flex w-full flex-col gap-5">
           <div
             className={cn(
-              "relative my-7 transition-transform duration-700 group-hover:scale-[1.012]",
-              compact ? "mx-auto w-full max-w-64" : "w-full"
+              "relative transition-transform duration-700 group-hover:scale-[1.012]",
+              compact ? "mx-auto w-full max-w-72" : "w-full"
             )}
           >
             <span className={cn("absolute -inset-5 rounded-full blur-3xl", theme.aura)} />
@@ -108,38 +90,46 @@ export function ProductCard({ product, index = 0, compact = false, anchorId }: P
               variant="soft"
               sizes={compact ? "(min-width: 1024px) 28vw, 78vw" : "(min-width: 768px) 42vw, 88vw"}
               className={cn(
-                "relative rounded-[1.5rem]",
-                compact ? "shadow-[0_22px_58px_rgb(36_32_29_/_9%)]" : undefined
+                "relative rounded-[1.2rem]",
+                compact ? "shadow-[0_18px_46px_rgb(36_32_29_/_8%)]" : undefined
               )}
             />
           </div>
 
-          <div className="flex flex-1 flex-col justify-between gap-7">
-            <div className="flex flex-col gap-5">
-              <p className="text-base leading-7 text-muted-foreground">{product.tagline}</p>
-              <div className="grid gap-3 rounded-[1.15rem] border border-soft-gold/20 bg-cloud-white/45 p-4 text-sm leading-6 text-muted-foreground">
-                <p>
-                  <span className="text-xs uppercase tracking-[0.22em] text-primary/80">Flavor</span>
-                  <span className="mt-1 block text-foreground/82">{product.flavor}</span>
-                </p>
-                <p>
-                  <span className="text-xs uppercase tracking-[0.22em] text-primary/80">Occasion</span>
-                  <span className="mt-1 block">{product.occasion}</span>
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-5 border-t border-border/70 pt-5">
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <span className={cn("h-px w-10", theme.line)} />
-                  <span className="text-sm text-foreground">{product.status}</span>
+          <div className="flex flex-1 flex-col justify-between gap-5 px-1 pb-1">
+            <div className="flex flex-col gap-4">
+              <div className="flex items-start justify-between gap-5">
+                <div className="flex flex-col gap-1.5">
+                  <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                    {product.englishName}
+                  </p>
+                  <h3 className="text-2xl font-semibold leading-tight text-foreground">
+                    {product.name}
+                  </h3>
                 </div>
-                <span className="inline-flex items-center gap-2 text-sm font-medium text-primary">
-                  {product.ctaLabel}
-                  <ArrowUpRight data-icon="inline-end" className="transition-transform duration-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <span
+                  className={cn(
+                    "flex size-10 shrink-0 items-center justify-center rounded-full border bg-card/45 text-xs font-semibold backdrop-blur",
+                    theme.stamp
+                  )}
+                >
+                  酥
                 </span>
               </div>
+
+              <p className="text-base leading-7 text-foreground/78">{product.tagline}</p>
+              <p className="rounded-2xl border border-soft-gold/20 bg-white/32 px-4 py-3 text-sm leading-6 text-muted-foreground">
+                <span className="text-primary/85">核心馅料：</span>
+                {product.flavor}
+              </p>
+            </div>
+
+            <div className="flex items-center justify-between gap-4 border-t border-border/60 pt-4">
+              <span className={cn("h-px w-10", theme.line)} />
+              <span className="inline-flex items-center gap-2 text-sm font-medium text-primary">
+                {product.ctaLabel}
+                <ArrowRight data-icon="inline-end" className="transition-transform duration-700 group-hover:translate-x-0.5" />
+              </span>
             </div>
           </div>
         </div>

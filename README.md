@@ -138,7 +138,7 @@ public/                # favicon、OG 图与静态资源
 - `productImageMap`：按产品 id 映射图片
 - `pageMoodImages`：按页面或使用场景映射氛围图
 
-后续替换真实拍摄图时，优先保持同名文件替换。例如直接替换 `public/images/products/classic-egg-yolk-pastry.png`。如果更换文件名或格式，需要同步修改 `src/lib/site-images.ts` 中的 `src`。
+后续替换真实拍摄图时，优先保持同名文件替换。例如直接替换 `public/images/products/classic-egg-yolk-pastry.webp`。如果更换文件名或格式，需要同步修改 `src/lib/site-images.ts` 中的 `src`。
 
 图片风格应保持新中式、轻奢、温暖、玉绿色与香槟金点缀、柔和自然光、高级商业静物摄影感，避免廉价电商感、过度促销感和过强饱和度。
 

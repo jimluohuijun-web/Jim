@@ -7,10 +7,10 @@ export const siteConfig = {
   market: "Vancouver",
   navItems: [
     { label: "首页", href: "/" },
-    { label: "点心系列", href: "/products" },
-    { label: "关于云酥坊", href: "/about" },
-    { label: "温哥华预订", href: "/reserve" },
-    { label: "活动 / 快闪", href: "/events" },
+    { label: "花酥系列", href: "/#flower-pastries" },
+    { label: "月饼官宣", href: "/#mooncake-announcement" },
+    { label: "试吃登记", href: "/#tasting-register" },
+    { label: "品牌故事", href: "/#brand-story" },
     { label: "联系我们", href: "/contact" },
   ],
 } as const;
