@@ -44,7 +44,7 @@ export const signatureProducts: PastryProduct[] = [
     flavor: "咸蛋黄 × 红豆沙",
     occasion: "手作试吃 / 日常分享 / 节令礼盒",
     ctaLabel: "了解口味",
-    href: "/reserve",
+    href: "/products/classic-red-bean-egg-yolk-pastry",
     theme: "gold",
     category: "flower",
     status: "首批试吃登记中",

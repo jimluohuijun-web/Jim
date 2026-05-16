@@ -20,7 +20,12 @@ const brandPoints = [
 ];
 
 const mobilePastries = [
-  { id: "egg-yolk-pastry", name: "蛋黄酥", flavor: "咸蛋黄 × 红豆沙" },
+  {
+    id: "egg-yolk-pastry",
+    name: "蛋黄酥",
+    flavor: "咸蛋黄 × 红豆沙",
+    href: "/products/classic-red-bean-egg-yolk-pastry",
+  },
   { id: "pineapple-pastry", name: "凤梨酥", flavor: "凤梨 × 冬瓜" },
   { id: "matcha-pastry", name: "抹茶酥", flavor: "抹茶酥皮 × 红豆沙 × 咸蛋黄" },
   { id: "peach-blossom-pastry", name: "桃花酥", flavor: "桃花造型 × 红豆沙" },
@@ -167,7 +172,7 @@ export function MobileHomeSections() {
                       {product.flavor}
                     </p>
                     <Link
-                      href="#trial"
+                      href={product.href ?? "#trial"}
                       className="mt-auto inline-flex items-center gap-1 text-xs font-medium text-soft-gold"
                     >
                       了解口味
