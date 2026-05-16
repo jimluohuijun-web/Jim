@@ -71,6 +71,8 @@
   --container-x: clamp(1.25rem, 4vw, 3rem);
   --motion-soft: 700ms;
   --motion-slower: 1100ms;
+  --font-sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  --font-geist-mono: "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
   --background: #f7f3ec;
   --foreground: #4f5f4e;
   --card: #fffaf4;
