@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 
+import { BrandStory } from "@/components/sections/brand-story";
+import { Craftsmanship } from "@/components/sections/craftsmanship";
+import { FeaturedProducts } from "@/components/sections/featured-products";
+import { GiftSection } from "@/components/sections/gift-section";
 import { HomeHero } from "@/components/sections/home-hero";
-import { HomePreviewSections } from "@/components/sections/home-preview-sections";
 import { MobileHomeSections } from "@/components/sections/mobile-home-sections";
+import { ProductSeries } from "@/components/sections/product-series";
+import { TrialRegistration } from "@/components/sections/trial-registration";
 
 export const metadata: Metadata = {
   title: "云酥坊 yunsucake｜新中式手作酥点",
@@ -26,9 +31,14 @@ export default async function Home() {
   }
 
   return (
-    <>
+    <div className="ysf-pc-home">
       <HomeHero />
-      <HomePreviewSections />
-    </>
+      <FeaturedProducts />
+      <ProductSeries />
+      <BrandStory />
+      <Craftsmanship />
+      <GiftSection />
+      <TrialRegistration />
+    </div>
   );
 }
