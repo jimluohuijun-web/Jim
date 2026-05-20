@@ -38,8 +38,18 @@ const mobilePastries = [
     flavor: "抹茶酥皮 × 红豆沙 × 咸蛋黄",
     href: "/products/matcha-pastry",
   },
-  { id: "peach-blossom-pastry", name: "桃花酥", flavor: "桃花造型 × 红豆沙" },
-  { id: "lotus-pastry", name: "荷花酥", flavor: "荷花造型 × 枣泥馅" },
+  {
+    id: "peach-blossom-pastry",
+    name: "桃花酥",
+    flavor: "桃花造型 × 红豆沙",
+    href: "/reserve",
+  },
+  {
+    id: "lotus-pastry",
+    name: "荷花酥",
+    flavor: "荷花造型 × 莲蓉馅",
+    href: "/reserve",
+  },
   { id: "peony-pastry", name: "牡丹花酥", flavor: "牡丹花型 × 豆沙馅" },
 ];
 

@@ -20,6 +20,7 @@ type BrandImageProps = {
 const ratioStyles: Record<ImageRatio, string> = {
   "1:1": "aspect-square",
   "3:2": "aspect-[3/2]",
+  "4:3": "aspect-[4/3]",
   "4:5": "aspect-[4/5]",
   "16:9": "aspect-video",
 };
