@@ -45,17 +45,26 @@ const initialValues: ReserveFormValues = {
   notify: true,
 };
 
-function FieldError({ message }: { message?: string }) {
+function FieldError({ message, className }: { message?: string; className?: string }) {
   if (!message) {
     return null;
   }
 
-  return <p className="text-sm leading-6 text-primary/85">{message}</p>;
+  return <p className={cn("text-sm leading-6 text-primary/85", className)}>{message}</p>;
 }
 
-export function ReserveForm({ variant = "full" }: { variant?: "full" | "compact" }) {
+export function ReserveForm({
+  variant = "full",
+  tone = "default",
+}: {
+  variant?: "full" | "compact";
+  tone?: "default" | "trial";
+}) {
   const isCompact = variant === "compact";
-  const [values, setValues] = useState<ReserveFormValues>(initialValues);
+  const isTrialTone = isCompact && tone === "trial";
+  const [values, setValues] = useState<ReserveFormValues>(() =>
+    isTrialTone ? { ...initialValues, city: "", productIds: [] } : initialValues
+  );
   const [errors, setErrors] = useState<ReserveFormErrors>({});
   const [submitError, setSubmitError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -149,6 +158,50 @@ export function ReserveForm({ variant = "full" }: { variant?: "full" | "compact"
     }
   }
 
+  if (submittedValues && isTrialTone) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.985, y: 12 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
+        className="relative mx-auto max-w-6xl overflow-hidden rounded-[1.75rem] border border-[rgba(217,180,106,0.35)] bg-[#120C07]/82 p-6 shadow-[0_24px_80px_rgb(0_0_0_/_32%)] backdrop-blur-sm md:p-9"
+      >
+        <div className="pointer-events-none absolute -right-20 top-6 size-64 rounded-full border border-[rgba(217,180,106,0.16)]" />
+        <div className="pointer-events-none absolute -bottom-24 -left-16 size-72 rounded-full bg-[rgb(217_180_106_/_8%)] blur-3xl" />
+        <div className="relative flex flex-col items-center gap-5 text-center">
+          <span className="flex size-14 items-center justify-center rounded-full border border-[rgba(240,201,120,0.42)] bg-[#050302]/50 text-[#F0C978]">
+            <Check data-icon="inline-start" />
+          </span>
+          <div className="flex max-w-xl flex-col gap-3">
+            <p className="text-sm uppercase tracking-[0.28em] text-[#D9B46A]">Received</p>
+            <h2 className="text-3xl font-semibold leading-tight text-[#F5E7C8]">
+              已收到您的试吃登记
+            </h2>
+            <p className="text-base leading-8 text-[#BCA77F]">
+              我们会尽快与您联系，并优先通知新品试吃名额与上市提醒。
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/"
+              className="ysj-button-primary inline-flex min-h-12 items-center justify-center px-6 text-sm font-medium"
+            >
+              返回首页
+            </Link>
+            <Link
+              href="/products"
+              className="ysj-button-secondary inline-flex min-h-12 items-center justify-center gap-2 px-6 text-sm font-medium"
+            >
+              查看点心系列
+              <ArrowRight data-icon="inline-end" />
+            </Link>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+
   if (submittedValues) {
     return (
       <motion.div
@@ -215,6 +268,126 @@ export function ReserveForm({ variant = "full" }: { variant?: "full" | "compact"
           </div>
         </div>
       </motion.div>
+    );
+  }
+
+  if (isTrialTone) {
+    return (
+      <motion.form
+        initial={false}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.78, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+        onSubmit={handleSubmit}
+        className="relative mx-auto max-w-6xl overflow-hidden rounded-[1.75rem] border border-[rgba(217,180,106,0.35)] bg-[linear-gradient(145deg,rgb(18_12_7_/_88%),rgb(8_6_4_/_82%))] p-5 shadow-[0_24px_80px_rgb(0_0_0_/_32%)] backdrop-blur-sm md:p-8"
+        noValidate
+      >
+        <div className="pointer-events-none absolute -left-20 bottom-0 size-72 rounded-full border border-[rgba(217,180,106,0.08)]" />
+        <div className="pointer-events-none absolute -left-12 bottom-10 h-28 w-64 rounded-full border-t border-[rgba(217,180,106,0.12)]" />
+        <div className="pointer-events-none absolute -right-20 top-6 size-72 rounded-full bg-[radial-gradient(circle,rgb(240_201_120_/_10%),transparent_70%)]" />
+        <div className="relative z-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <label className="flex flex-col gap-2">
+            <span className="text-sm font-medium text-[#D9B46A]">姓名</span>
+            <input
+              value={values.name}
+              onChange={(event) => {
+                setValues((current) => ({ ...current, name: event.target.value }));
+                setErrors((current) => ({ ...current, name: undefined }));
+              }}
+              placeholder="请输入您的姓名"
+              aria-invalid={Boolean(errors.name)}
+              className="min-h-12 rounded-xl border border-[rgba(217,180,106,0.28)] bg-[#050302]/62 px-4 text-sm text-[#F5E7C8] outline-none transition-all duration-300 placeholder:text-[#BCA77F]/58 hover:border-[rgba(217,180,106,0.45)] focus:border-[rgba(240,201,120,0.72)] focus:ring-4 focus:ring-[rgba(240,201,120,0.12)]"
+            />
+            <FieldError message={errors.name} className="text-[#F0C978]" />
+          </label>
+
+          <label className="flex flex-col gap-2">
+            <span className="text-sm font-medium text-[#D9B46A]">联系电话</span>
+            <input
+              value={values.contact}
+              onChange={(event) => {
+                setValues((current) => ({ ...current, contact: event.target.value }));
+                setErrors((current) => ({ ...current, contact: undefined }));
+              }}
+              placeholder="请输入手机号"
+              aria-invalid={Boolean(errors.contact)}
+              className="min-h-12 rounded-xl border border-[rgba(217,180,106,0.28)] bg-[#050302]/62 px-4 text-sm text-[#F5E7C8] outline-none transition-all duration-300 placeholder:text-[#BCA77F]/58 hover:border-[rgba(217,180,106,0.45)] focus:border-[rgba(240,201,120,0.72)] focus:ring-4 focus:ring-[rgba(240,201,120,0.12)]"
+            />
+            <FieldError message={errors.contact} className="text-[#F0C978]" />
+          </label>
+
+          <label className="flex flex-col gap-2">
+            <span className="text-sm font-medium text-[#D9B46A]">所在城市</span>
+            <input
+              value={values.city}
+              onChange={(event) =>
+                setValues((current) => ({ ...current, city: event.target.value }))
+              }
+              placeholder="请选择所在城市"
+              className="min-h-12 rounded-xl border border-[rgba(217,180,106,0.28)] bg-[#050302]/62 px-4 text-sm text-[#F5E7C8] outline-none transition-all duration-300 placeholder:text-[#BCA77F]/58 hover:border-[rgba(217,180,106,0.45)] focus:border-[rgba(240,201,120,0.72)] focus:ring-4 focus:ring-[rgba(240,201,120,0.12)]"
+            />
+          </label>
+
+          <label className="flex flex-col gap-2">
+            <span className="text-sm font-medium text-[#D9B46A]">感兴趣产品</span>
+            <select
+              value={values.productIds[0] ?? ""}
+              onChange={(event) => {
+                const productId = event.target.value;
+
+                if (!productId) {
+                  setValues((current) => ({ ...current, productIds: [] }));
+                  return;
+                }
+
+                updateProduct(productId);
+              }}
+              aria-invalid={Boolean(errors.productIds)}
+              className="min-h-12 rounded-xl border border-[rgba(217,180,106,0.28)] bg-[#050302]/62 px-4 text-sm text-[#F5E7C8] outline-none transition-all duration-300 hover:border-[rgba(217,180,106,0.45)] focus:border-[rgba(240,201,120,0.72)] focus:ring-4 focus:ring-[rgba(240,201,120,0.12)]"
+            >
+              <option value="">请选择感兴趣的产品</option>
+              {products.map((product) => (
+                <option key={product.id} value={product.id}>
+                  {product.name}
+                </option>
+              ))}
+            </select>
+            <FieldError message={errors.productIds} className="text-[#F0C978]" />
+          </label>
+
+          <label className="flex flex-col gap-2 md:col-span-2 lg:col-span-3">
+            <span className="text-sm font-medium text-[#D9B46A]">备注</span>
+            <textarea
+              value={values.notes}
+              onChange={(event) =>
+                setValues((current) => ({ ...current, notes: event.target.value }))
+              }
+              placeholder="如有特殊口味偏好或其他建议，可在此留言"
+              rows={2}
+              className="min-h-14 resize-none rounded-xl border border-[rgba(217,180,106,0.28)] bg-[#050302]/62 px-4 py-3 text-sm leading-7 text-[#F5E7C8] outline-none transition-all duration-300 placeholder:text-[#BCA77F]/58 hover:border-[rgba(217,180,106,0.45)] focus:border-[rgba(240,201,120,0.72)] focus:ring-4 focus:ring-[rgba(240,201,120,0.12)]"
+            />
+          </label>
+
+          <div className="flex flex-col justify-end gap-2">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="ysj-button-primary inline-flex min-h-14 w-full items-center justify-center px-6 text-sm font-semibold transition-transform duration-300 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70"
+            >
+              {isSubmitting ? "正在提交..." : "立即登记试吃"}
+            </button>
+            <p className="text-center text-xs leading-6 text-[#7D6844]">
+              提交后我们会尽快与您联系
+            </p>
+          </div>
+
+          {submitError ? (
+            <p className="rounded-2xl border border-[rgba(240,201,120,0.26)] bg-[rgba(240,201,120,0.08)] px-4 py-3 text-center text-sm leading-6 text-[#F0C978] lg:col-span-4">
+              {submitError}
+            </p>
+          ) : null}
+        </div>
+      </motion.form>
     );
   }
 

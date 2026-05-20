@@ -103,19 +103,19 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-[70] border-b border-soft-gold/16 bg-[#f7f3ec]/92 shadow-[0_10px_30px_rgb(79_95_78_/_4%)] backdrop-blur-xl">
-      <div className="ysj-container hidden min-h-[6.25rem] items-center justify-between gap-5 md:flex">
+    <header className="sticky top-0 z-[70] border-b border-[rgb(216_154_66_/_28%)] bg-[#1A0F0A]/95 shadow-[0_14px_42px_rgb(0_0_0_/_26%)] backdrop-blur-xl">
+      <div className="ysj-container hidden min-h-[5.75rem] items-center justify-between gap-5 md:flex">
         <Link
           href="/"
-          className="relative flex h-[5.25rem] w-[13.5rem] shrink-0 items-center sm:w-[15.5rem] md:h-[5.75rem] md:w-[17.5rem]"
+          className="relative flex size-[5.25rem] shrink-0 items-center rounded-full bg-[radial-gradient(circle,rgb(248_230_191_/_12%),transparent_70%)] md:ml-12 xl:ml-16"
           aria-label="云酥坊首页"
         >
           <Image
-            src="/images/logo/yunsufang-logo-cropped.webp"
+            src="/images/logo/yunsufang-logo-current.webp"
             alt="云酥坊品牌 Logo"
             fill
-            sizes="(min-width: 768px) 280px, 216px"
-            className="object-contain object-left"
+            sizes="84px"
+            className="object-contain drop-shadow-[0_0_18px_rgb(242_195_107_/_24%)]"
             priority
           />
         </Link>
@@ -131,15 +131,15 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "group relative px-1 py-3 text-sm font-medium transition-colors duration-500 hover:text-primary",
-                  isActive ? "text-primary" : "text-foreground/80"
+                  "group relative px-1 py-3 text-sm font-medium transition-colors duration-500 hover:text-[#F2C36B]",
+                  isActive ? "text-[#F2C36B]" : "text-[#E8CFA4]/82"
                 )}
                 aria-current={isActive ? "page" : undefined}
               >
                 {item.label}
                 <span
                   className={cn(
-                    "absolute inset-x-1 -bottom-0.5 h-px origin-center bg-primary transition-transform duration-500 group-hover:scale-x-100",
+                    "absolute inset-x-1 -bottom-0.5 h-px origin-center bg-[#D89A42] transition-transform duration-500 group-hover:scale-x-100",
                     isActive ? "scale-x-100" : "scale-x-0"
                   )}
                 />
@@ -149,7 +149,7 @@ export function SiteHeader() {
         </nav>
         <Link
           href="/#tasting-register"
-          className="ysj-button-primary hidden min-h-11 items-center gap-2 px-5 text-sm font-medium md:inline-flex"
+          className="hidden min-h-11 items-center gap-2 rounded-full border border-[#F2C36B]/45 bg-[linear-gradient(135deg,#F2C36B,#D89A42_52%,#A96828)] px-5 text-sm font-medium text-[#1A0F0A] shadow-[0_14px_36px_rgb(216_154_66_/_22%)] transition-all duration-500 hover:-translate-y-0.5 hover:brightness-105 md:inline-flex"
         >
           <Flower2 className="size-4" />
           预约试吃
@@ -162,7 +162,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="shrink-0 rounded-full px-2.5 py-2 text-xs text-muted-foreground"
+              className="shrink-0 rounded-full px-2.5 py-2 text-xs text-[#E8CFA4]/72 transition-colors hover:text-[#F2C36B]"
             >
               {item.label}
             </Link>
@@ -174,15 +174,15 @@ export function SiteHeader() {
         <Link
           href="/#home"
           onClick={(event) => handleMobileNavClick(event, "/#home")}
-          className="relative h-14 w-44 shrink-0"
+          className="relative size-14 shrink-0 rounded-full bg-[radial-gradient(circle,rgb(248_230_191_/_12%),transparent_70%)]"
           aria-label="云酥坊首页"
         >
           <Image
-            src="/images/logo/yunsufang-logo-cropped.webp"
+            src="/images/logo/yunsufang-logo-current.webp"
             alt="云酥坊品牌 Logo"
             fill
-            sizes="160px"
-            className="object-contain object-left"
+            sizes="56px"
+            className="object-contain drop-shadow-[0_0_14px_rgb(242_195_107_/_24%)]"
             priority
           />
         </Link>
@@ -192,7 +192,7 @@ export function SiteHeader() {
           aria-expanded={isOpen}
           aria-controls="mobile-drawer-menu"
           onClick={() => setIsOpen((current) => !current)}
-          className="grid size-11 place-items-center rounded-full border border-soft-gold/25 bg-[#fffaf4]/70 text-primary shadow-[0_10px_24px_rgb(79_95_78_/_6%)] transition-colors hover:bg-[#fffaf4]"
+          className="grid size-11 place-items-center rounded-full border border-[#D89A42]/35 bg-[#2A1710]/88 text-[#F2C36B] shadow-[0_10px_24px_rgb(0_0_0_/_22%)] transition-colors hover:bg-[#3A2116]"
         >
           {isOpen ? <X className="size-5" /> : <Menu className="size-6" />}
         </button>
@@ -204,11 +204,11 @@ export function SiteHeader() {
             type="button"
             aria-label="关闭菜单遮罩"
             onClick={() => setIsOpen(false)}
-            className="absolute inset-0 bg-[#163c33]/20 backdrop-blur-[2px]"
+            className="absolute inset-0 bg-[#1A0F0A]/56 backdrop-blur-[2px]"
           />
           <div
             id="mobile-drawer-menu"
-            className="relative ml-auto mr-4 mt-3 w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-[1.5rem] border border-soft-gold/20 bg-[#fffaf4]/96 p-4 shadow-[0_22px_60px_rgb(22_60_51_/_18%)] backdrop-blur-xl"
+            className="relative ml-auto mr-4 mt-3 w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-[1.5rem] border border-[#D89A42]/28 bg-[#1A0F0A]/96 p-4 shadow-[0_22px_60px_rgb(0_0_0_/_32%)] backdrop-blur-xl"
           >
             <nav className="grid gap-1" aria-label="移动端抽屉菜单">
               {mobileNavItems.map((item) => (
@@ -216,7 +216,7 @@ export function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   onClick={(event) => handleMobileNavClick(event, item.href)}
-                  className="rounded-2xl px-4 py-3 text-[0.95rem] font-medium text-foreground transition-colors hover:bg-[#f7f3ec]"
+                  className="rounded-2xl px-4 py-3 text-[0.95rem] font-medium text-[#E8CFA4] transition-colors hover:bg-[#D89A42]/12 hover:text-[#F2C36B]"
                 >
                   {item.label}
                 </Link>
@@ -225,7 +225,7 @@ export function SiteHeader() {
             <Link
               href="/#trial"
               onClick={(event) => handleMobileNavClick(event, "/#trial")}
-              className="ysj-button-primary mt-4 flex min-h-11 w-full items-center justify-center gap-2 text-sm font-medium"
+              className="mt-4 flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-[#F2C36B]/45 bg-[linear-gradient(135deg,#F2C36B,#D89A42_52%,#A96828)] px-5 text-sm font-medium text-[#1A0F0A] shadow-[0_14px_36px_rgb(216_154_66_/_18%)]"
             >
               <Flower2 className="size-4" />
               预约试吃

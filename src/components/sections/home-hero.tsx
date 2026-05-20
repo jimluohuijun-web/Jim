@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Flower2, HandHeart, Leaf, Sprout } from "lucide-react";
 
-import { BrandImage } from "@/components/ui/brand-image";
 import { homeHeroContent } from "@/data/home-sections";
 import { heroHome } from "@/lib/site-images";
 
@@ -27,25 +26,23 @@ const [heroTitleFirstLine, heroTitleSecondLine] = homeHeroContent.title.split("�
 
 export function HomeHero() {
   return (
-    <section className="ysf-hero relative isolate overflow-hidden border-b border-soft-gold/10">
-      <div className="ysf-hero-base absolute inset-0 -z-10" />
+    <section className="ysf-hero relative isolate min-h-[680px] overflow-hidden border-b border-soft-gold/10 bg-[#080604] md:min-h-[720px] xl:min-h-[760px]">
       <Image
-        src="/images/backgrounds/home-bg-top.webp"
-        alt=""
+        src={heroHome.src}
+        alt={heroHome.alt}
         fill
         priority
         sizes="100vw"
-        className="ysf-hero-texture absolute inset-0 -z-10 scale-105 object-cover object-[78%_18%] opacity-[0.16] blur-[1.5px] md:opacity-[0.14]"
+        className="absolute inset-0 -z-20 object-cover object-[66%_center] md:object-center"
       />
-      <div className="ysf-hero-vignette absolute inset-0 -z-10" />
-      <div className="ysf-warm-spotlight absolute left-0 top-20 -z-10 h-[34rem] w-[32rem]" />
-      <div className="absolute bottom-0 left-0 -z-10 h-52 w-[38rem] opacity-45 ysj-mountain-wash" />
-      <div className="absolute left-8 top-28 -z-10 hidden h-28 w-36 rounded-[50%] border-l border-t border-soft-gold/35 md:block" />
-      <div className="absolute right-[2vw] top-8 -z-10 hidden h-48 w-[24rem] rotate-[-8deg] border-t border-soft-gold/12 opacity-60 md:block" />
-      <div className="ysf-hero-image-glow absolute right-0 top-28 -z-10 hidden h-[28rem] w-[30rem] rounded-l-full md:block" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#080604_0%,rgb(8_6_4_/_94%)_24%,rgb(8_6_4_/_58%)_39%,rgb(8_6_4_/_5%)_52%,transparent_66%)]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(8_6_4_/_16%)_0%,transparent_70%,rgb(8_6_4_/_34%)_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(8_6_4_/_82%)_0%,rgb(8_6_4_/_62%)_46%,rgb(8_6_4_/_92%)_100%)] md:hidden" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_52%,rgb(242_195_107_/_18%),transparent_42rem)]" />
+      <div className="absolute left-8 top-28 -z-10 hidden h-28 w-36 rounded-[50%] border-l border-t border-soft-gold/25 md:block" />
 
-      <div className="ysj-container relative grid min-h-[590px] items-center gap-10 pb-14 pt-8 md:min-h-[640px] md:grid-cols-[0.82fr_1.18fr] md:gap-10 md:pb-16 md:pt-10 lg:gap-12 xl:gap-20 2xl:gap-24">
-        <div className="flex flex-col gap-7 pl-0 md:pl-12">
+      <div className="ysj-container relative z-10 flex min-h-[680px] items-center pb-16 pt-14 md:min-h-[720px] md:pb-20 md:pt-16 xl:min-h-[760px]">
+        <div className="flex w-full max-w-[620px] flex-col gap-7 md:pl-12 lg:w-[48%]">
           <motion.div
             initial={false}
             animate="visible"
@@ -55,12 +52,12 @@ export function HomeHero() {
           >
             <div className="flex items-center gap-3">
               <h1 className="ysj-title-display max-w-4xl">
-                <span className="block whitespace-nowrap">
+                <span className="block sm:whitespace-nowrap">
                   {heroTitleFirstLine}
                   {heroTitleSecondLine ? "，" : ""}
                 </span>
                 {heroTitleSecondLine ? (
-                  <span className="block whitespace-nowrap">{heroTitleSecondLine}</span>
+                  <span className="block sm:whitespace-nowrap">{heroTitleSecondLine}</span>
                 ) : null}
               </h1>
               <span className="ysf-seal hidden rounded-sm border px-1.5 py-2 text-xs leading-none sm:inline-flex [writing-mode:vertical-rl]">
@@ -71,7 +68,7 @@ export function HomeHero() {
               <p className="text-2xl font-medium tracking-[0.18em] text-foreground md:text-[2rem]">
                 云酥坊 YUN SU FANG
               </p>
-              <p className="text-lg tracking-[0.16em] text-soft-gold md:text-xl">
+              <p className="max-w-xl text-base leading-8 tracking-[0.08em] text-soft-gold md:text-xl md:tracking-[0.16em]">
                 {homeHeroContent.subtitle}
               </p>
             </div>
@@ -131,35 +128,6 @@ export function HomeHero() {
             })}
           </motion.div>
         </div>
-
-        <motion.div
-          initial={false}
-          animate={{ opacity: 1, y: [0, -10, 0], scale: 1 }}
-          transition={{
-            opacity: { duration: 0.9, delay: 0.25, ease },
-            scale: { duration: 0.9, delay: 0.25, ease },
-            y: { duration: 7.5, repeat: Infinity, ease: "easeInOut" },
-          }}
-          className="ysf-hero-media relative z-20 mx-auto w-full max-w-[48rem] rounded-[1.65rem] p-2 backdrop-blur-[2px] md:mr-0 md:p-3 xl:max-w-[52rem]"
-        >
-          <div className="ysf-hero-media-glow absolute -right-8 -top-12 z-10 hidden h-32 w-72 rotate-[-6deg] rounded-full blur-md md:block" />
-          <div className="absolute left-8 top-8 z-30 flex gap-5">
-            <span className="size-3 rounded-full bg-[#efb9b0]/75" />
-            <span className="mt-9 size-2.5 rounded-full bg-soft-gold/55" />
-            <span className="mt-3 size-2 rounded-full bg-[#efb9b0]/70" />
-          </div>
-          <BrandImage
-            src={heroHome.src}
-            alt={heroHome.alt}
-            ratio="16:9"
-            variant="plain"
-            priority
-            sizes="(min-width: 1440px) 52rem, (min-width: 1024px) 56vw, 92vw"
-            className="relative z-20 mx-auto rounded-[1.35rem]"
-            imageClassName="object-cover object-center drop-shadow-[0_30px_55px_rgb(0_0_0_/_38%)]"
-          />
-          <div className="ysf-hero-corner-light absolute bottom-4 right-4 hidden size-28 rounded-full md:block" />
-        </motion.div>
       </div>
     </section>
   );

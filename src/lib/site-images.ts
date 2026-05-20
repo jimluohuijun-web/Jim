@@ -1,4 +1,4 @@
-export type ImageRatio = "1:1" | "3:2" | "4:5" | "16:9";
+export type ImageRatio = "1:1" | "3:2" | "4:3" | "4:5" | "16:9";
 
 export type SiteImage = {
   id: string;
@@ -17,11 +17,11 @@ export const fallbackImage: SiteImage = {
 };
 
 export const heroHome: SiteImage = {
-  id: "hero-home-yunsucake",
-  src: "/images/hero/hero-home-yunsucake.webp",
-  alt: "云酥坊首页蛋黄酥牡丹花酥与中秋月饼主视觉",
+  id: "home-hero-main",
+  src: "/images/home/hero-main-reference-small.jpg",
+  alt: "云酥坊首页黑金东方酥点木托盘茶席主视觉",
   usage: "首页 Hero 主视觉",
-  ratio: "4:5",
+  ratio: "16:9",
 };
 
 export const signatureProducts: SiteImage[] = [

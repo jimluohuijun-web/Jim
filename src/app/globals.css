@@ -658,7 +658,7 @@
     }
 
     body:has(.ysf-pc-home) > header a[aria-label="云酥坊首页"] {
-      width: 11rem;
+      width: 4.75rem;
       height: 4.75rem;
     }
 
