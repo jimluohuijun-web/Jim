@@ -279,7 +279,7 @@ export function ReserveForm({
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.78, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
         onSubmit={handleSubmit}
-        className="relative mx-auto max-w-6xl overflow-hidden rounded-[1.75rem] border border-[rgba(217,180,106,0.35)] bg-[linear-gradient(145deg,rgb(18_12_7_/_88%),rgb(8_6_4_/_82%))] p-5 shadow-[0_24px_80px_rgb(0_0_0_/_32%)] backdrop-blur-sm md:p-8"
+        className="relative mx-auto max-w-6xl overflow-hidden rounded-[1.5rem] border border-[rgba(217,180,106,0.32)] bg-[linear-gradient(145deg,rgb(18_12_7_/_88%),rgb(8_6_4_/_82%))] p-4 shadow-[0_22px_70px_rgb(0_0_0_/_30%)] backdrop-blur-sm md:p-6 lg:rounded-[1.75rem] lg:p-8"
         noValidate
       >
         <div className="pointer-events-none absolute -left-20 bottom-0 size-72 rounded-full border border-[rgba(217,180,106,0.08)]" />
