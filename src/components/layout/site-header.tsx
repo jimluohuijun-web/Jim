@@ -104,10 +104,10 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-[70] border-b border-[rgb(216_154_66_/_28%)] bg-[#1A0F0A]/95 shadow-[0_14px_42px_rgb(0_0_0_/_26%)] backdrop-blur-xl">
-      <div className="ysj-container hidden min-h-[5.75rem] items-center justify-between gap-5 md:flex">
+      <div className="ysj-container hidden min-h-[5.75rem] items-center justify-between gap-5 lg:flex">
         <Link
           href="/"
-          className="relative flex size-[5.25rem] shrink-0 items-center rounded-full bg-[radial-gradient(circle,rgb(248_230_191_/_12%),transparent_70%)] md:ml-12 xl:ml-16"
+          className="relative flex size-[5.25rem] shrink-0 items-center rounded-full bg-[radial-gradient(circle,rgb(248_230_191_/_12%),transparent_70%)] lg:ml-12 xl:ml-16"
           aria-label="云酥坊首页"
         >
           <Image
@@ -149,7 +149,7 @@ export function SiteHeader() {
         </nav>
         <Link
           href="/#tasting-register"
-          className="hidden min-h-11 items-center gap-2 rounded-full border border-[#F2C36B]/45 bg-[linear-gradient(135deg,#F2C36B,#D89A42_52%,#A96828)] px-5 text-sm font-medium text-[#1A0F0A] shadow-[0_14px_36px_rgb(216_154_66_/_22%)] transition-all duration-500 hover:-translate-y-0.5 hover:brightness-105 md:inline-flex"
+          className="hidden min-h-11 items-center gap-2 rounded-full border border-[#F2C36B]/45 bg-[linear-gradient(135deg,#F2C36B,#D89A42_52%,#A96828)] px-5 text-sm font-medium text-[#1A0F0A] shadow-[0_14px_36px_rgb(216_154_66_/_22%)] transition-all duration-500 hover:-translate-y-0.5 hover:brightness-105 lg:inline-flex"
         >
           <Flower2 className="size-4" />
           预约试吃
@@ -170,7 +170,7 @@ export function SiteHeader() {
         </nav>
       </div>
 
-      <div className="ysj-container flex min-h-16 items-center justify-between gap-4 md:hidden">
+      <div className="ysj-container flex min-h-16 items-center justify-between gap-4 lg:hidden">
         <Link
           href="/#home"
           onClick={(event) => handleMobileNavClick(event, "/#home")}
@@ -199,7 +199,7 @@ export function SiteHeader() {
       </div>
 
       {isOpen ? (
-        <div className="fixed inset-x-0 top-16 z-[80] min-h-[calc(100dvh-4rem)] md:hidden">
+        <div className="fixed inset-x-0 top-16 z-[80] min-h-[calc(100dvh-4rem)] lg:hidden">
           <button
             type="button"
             aria-label="关闭菜单遮罩"
