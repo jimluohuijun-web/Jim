@@ -9,7 +9,6 @@ import {
   featuredMidAutumnGift,
   giftBoxes,
   mooncakePreview,
-  seasonalProducts,
   signatureProducts,
 } from "@/data/products";
 
@@ -20,6 +19,10 @@ export const metadata: Metadata = {
 };
 
 export default function ProductsPage() {
+  const pastryProducts = signatureProducts.slice(0, 3);
+  const flowerPastryProducts = signatureProducts.slice(3);
+  const featuredMooncake = mooncakePreview.find((product) => product.id === "egg-yolk-lotus-mooncake");
+
   return (
     <>
       <section className="ysj-container ysj-section flex flex-col gap-6">
@@ -34,45 +37,73 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section id="signature-pastries" className="ysj-section-tight border-t border-border/60 bg-background/50">
+      <section id="featured-recommendations" className="ysj-section-tight border-t border-border/60 bg-background/50">
         <div className="ysj-container flex flex-col gap-10">
           <div className="flex max-w-3xl flex-col gap-4">
             <span className="h-px w-16 bg-soft-gold" />
             <p className="text-sm uppercase tracking-[0.28em] text-primary/80">
-              Signature Pastries｜招牌酥点
+              Featured Picks｜爆款推荐
             </p>
-            <h2 className="ysj-title-lg text-balance">日常分享，也适合作为礼盒主力</h2>
+            <h2 className="ysj-title-lg text-balance">先从最适合尝鲜与送礼的几款开始</h2>
           </div>
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {signatureProducts.map((product, index) => (
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {pastryProducts.map((product, index) => (
               <ProductCard key={product.id} product={product} index={index} />
             ))}
+            {featuredMooncake ? (
+              <MooncakeCard mooncake={featuredMooncake} />
+            ) : null}
           </div>
         </div>
       </section>
 
-      <section id="seasonal-flavours" className="ysj-section-tight bg-[linear-gradient(180deg,rgb(255_250_242_/_54%),rgb(248_243_234_/_78%))]">
+      <section id="signature-pastries" className="ysj-section-tight bg-[linear-gradient(180deg,rgb(255_250_242_/_54%),rgb(248_243_234_/_78%))]">
         <div className="ysj-container flex flex-col gap-10">
           <div className="grid gap-6 md:grid-cols-[1fr_0.9fr] md:items-end">
             <div className="flex flex-col gap-4">
               <span className="h-px w-16 bg-primary" />
               <p className="text-sm uppercase tracking-[0.28em] text-primary/80">
-                Seasonal Flavours｜季节风味
+                Pastry Series｜酥点系列
               </p>
-              <h2 className="ysj-title-lg text-balance">用加拿大当季风味，重新打开中式点心。</h2>
+              <h2 className="ysj-title-lg text-balance">经典酥点，适合日常分享与伴手礼</h2>
             </div>
             <p className="text-base leading-8 text-muted-foreground md:text-lg">
-              蓝莓、草莓、蔓越莓与枫糖核桃，会先以小批量测试与预约提醒的方式出现，逐步确认最适合温哥华的季节风味。
+              蛋黄酥、凤梨酥与抹茶酥是云酥坊的基础主力，覆盖咸甜经典、果香伴手礼与茶点偏好。
             </p>
           </div>
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {seasonalProducts.map((product, index) => (
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {pastryProducts.map((product, index) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                index={index}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="flower-pastries" className="ysj-section-tight border-y border-border/60 bg-background/55">
+        <div className="ysj-container flex flex-col gap-10">
+          <div className="grid gap-6 md:grid-cols-[1fr_0.9fr] md:items-end">
+            <div className="flex flex-col gap-4">
+              <span className="h-px w-16 bg-soft-gold" />
+              <p className="text-sm uppercase tracking-[0.28em] text-primary/80">
+                Flower Pastries｜花酥系列
+              </p>
+              <h2 className="ysj-title-lg text-balance">花型开酥，适合礼盒与茶席</h2>
+            </div>
+            <p className="text-base leading-8 text-muted-foreground md:text-lg">
+              桃花酥、荷花酥与牡丹酥保留东方花型意象，作为礼盒中的视觉记忆点。
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {flowerPastryProducts.map((product, index) => (
               <ProductCard
                 key={product.id}
                 product={product}
                 index={index}
                 compact
-                anchorId={`${product.id}-seasonal`}
               />
             ))}
           </div>
@@ -87,10 +118,10 @@ export default function ProductsPage() {
               <p className="text-sm uppercase tracking-[0.28em] text-primary/80">
                 Mid-Autumn Preview｜中秋礼盒预告
               </p>
-              <h2 className="ysj-title-lg text-balance">月满云酥｜2026 中秋礼盒预告</h2>
+              <h2 className="ysj-title-lg text-balance">中秋月饼 · 五款风味预告</h2>
             </div>
             <p className="text-base leading-8 text-muted-foreground md:text-lg">
-              从经典莲蓉到低糖芋泥，把东方中秋做成一盒值得期待的温柔礼物。这里是预展示与兴趣收集，不是正式销售页面。
+              从蛋黄莲蓉、豆沙、五仁、冬翅到苏式鲜肉，把东方中秋做成一组值得期待的温柔礼物。
             </p>
           </div>
 
@@ -99,7 +130,23 @@ export default function ProductsPage() {
               <MooncakeCard key={mooncake.id} mooncake={mooncake} />
             ))}
           </div>
+        </div>
+      </section>
 
+      <section id="gift-corporate" className="ysj-section-tight border-b border-border/60 bg-[linear-gradient(180deg,rgb(255_250_242_/_48%),rgb(248_243_234_/_78%))]">
+        <div className="ysj-container flex flex-col gap-10">
+          <div className="grid gap-6 md:grid-cols-[1fr_0.92fr] md:items-end">
+            <div className="flex flex-col gap-4">
+              <span className="h-px w-16 bg-primary" />
+              <p className="text-sm uppercase tracking-[0.28em] text-primary/80">
+                Gift & Corporate｜礼盒 / 企业团购
+              </p>
+              <h2 className="ysj-title-lg text-balance">节庆礼盒与企业心意入口</h2>
+            </div>
+            <p className="text-base leading-8 text-muted-foreground md:text-lg">
+              礼盒目前为预展示与意向收集，个人预订进入预约页，企业礼盒咨询进入联系页。
+            </p>
+          </div>
           <div className="grid gap-5 lg:grid-cols-3">
             {giftBoxes.map((giftBox) => (
               <GiftBoxCard key={giftBox.id} giftBox={giftBox} />
