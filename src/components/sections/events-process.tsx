@@ -3,20 +3,22 @@
 import { motion } from "framer-motion";
 
 const processSteps = [
-  "留下预约意向",
-  "我们整理人数、区域与产品偏好",
-  "开放小批量试吃或活动名额",
-  "根据反馈优化第一批产品与礼盒方向",
+  "提交预约",
+  "确认名额",
+  "到场试吃",
+  "礼盒预订 / 合作咨询",
 ];
 
 export function EventsProcess() {
   return (
-    <section className="ysj-section-tight border-y border-border/60 bg-background/50">
+    <section className="ysj-section-tight border-y border-[#D89A42]/16 bg-[#120905]">
       <div className="ysj-container flex flex-col gap-10">
         <div className="flex max-w-3xl flex-col gap-4">
-          <span className="h-px w-16 bg-soft-gold" />
-          <p className="text-sm uppercase tracking-[0.28em] text-primary/80">Process</p>
-          <h2 className="ysj-title-lg text-balance">从预约到见面</h2>
+          <span className="h-px w-16 bg-[#D89A42]" />
+          <p className="text-sm uppercase tracking-[0.28em] text-[#D89A42]">Process</p>
+          <h2 className="text-balance text-4xl font-semibold leading-tight text-[#F8E6BF] md:text-5xl">
+            从预约到见面
+          </h2>
         </div>
 
         <div className="grid gap-5 lg:grid-cols-4">
@@ -33,12 +35,12 @@ export function EventsProcess() {
               }}
               className="ysj-card relative overflow-hidden p-6"
             >
-              <div className="absolute -right-10 top-4 size-32 rounded-full border border-soft-gold/25" />
+              <div className="absolute -right-10 top-4 size-32 rounded-full border border-[#D89A42]/18" />
               <div className="relative flex min-h-48 flex-col justify-between gap-8">
-                <span className="text-sm uppercase tracking-[0.24em] text-primary/80">
+                <span className="text-sm uppercase tracking-[0.24em] text-[#D89A42]">
                   Step {index + 1}
                 </span>
-                <h3 className="text-2xl font-semibold leading-tight">{step}</h3>
+                <h3 className="text-2xl font-semibold leading-tight text-[#F8E6BF]">{step}</h3>
               </div>
             </motion.article>
           ))}
