@@ -14,6 +14,7 @@ type ProductCardProps = {
   index?: number;
   compact?: boolean;
   anchorId?: string;
+  tone?: "light" | "dark";
 };
 
 const themeStyles: Record<
@@ -51,9 +52,16 @@ const themeStyles: Record<
   },
 };
 
-export function ProductCard({ product, index = 0, compact = false, anchorId }: ProductCardProps) {
+export function ProductCard({
+  product,
+  index = 0,
+  compact = false,
+  anchorId,
+  tone = "light",
+}: ProductCardProps) {
   const theme = themeStyles[product.theme];
   const image = productImageMap[product.id] ?? fallbackImage;
+  const isDark = tone === "dark";
 
   return (
     <motion.article
@@ -68,12 +76,20 @@ export function ProductCard({ product, index = 0, compact = false, anchorId }: P
       <Link
         href={product.href}
         className={cn(
-          "relative flex h-full overflow-hidden rounded-[1.5rem] border border-soft-gold/24 bg-cloud-white/58 p-4 shadow-[0_18px_54px_rgb(36_32_29_/_6%)] transition-all duration-700 hover:border-soft-gold/60 hover:bg-cloud-white/78 hover:shadow-[0_24px_68px_rgb(36_32_29_/_9%)] md:p-5",
+          "relative flex h-full overflow-hidden rounded-[1.5rem] border p-4 transition-all duration-700 md:p-5",
+          isDark
+            ? "border-[#D89A42]/24 bg-[#2A1710]/60 shadow-[0_22px_60px_rgb(0_0_0_/_24%)] hover:border-[#F2C36B]/48 hover:bg-[#3A2116]/66 hover:shadow-[0_28px_76px_rgb(0_0_0_/_32%)]"
+            : "border-soft-gold/24 bg-cloud-white/58 shadow-[0_18px_54px_rgb(36_32_29_/_6%)] hover:border-soft-gold/60 hover:bg-cloud-white/78 hover:shadow-[0_24px_68px_rgb(36_32_29_/_9%)]",
           compact ? "min-h-[29rem]" : "min-h-[30rem]"
         )}
       >
         <span className={cn("absolute -right-20 top-12 size-52 rounded-full blur-3xl", theme.aura)} />
-        <span className="absolute -bottom-24 -left-16 size-64 rounded-full bg-white/35 blur-3xl" />
+        <span
+          className={cn(
+            "absolute -bottom-24 -left-16 size-64 rounded-full blur-3xl",
+            isDark ? "bg-[#D89A42]/8" : "bg-white/35"
+          )}
+        />
 
         <div className="relative flex w-full flex-col gap-5">
           <div
@@ -87,10 +103,11 @@ export function ProductCard({ product, index = 0, compact = false, anchorId }: P
               src={image.src}
               alt={image.alt}
               ratio="1:1"
-              variant="soft"
+              variant={isDark ? "plain" : "soft"}
               sizes={compact ? "(min-width: 1024px) 28vw, 78vw" : "(min-width: 768px) 42vw, 88vw"}
               className={cn(
                 "relative rounded-[1.2rem]",
+                isDark ? "border border-[#D89A42]/24 shadow-[0_20px_58px_rgb(0_0_0_/_28%)]" : undefined,
                 compact ? "shadow-[0_18px_46px_rgb(36_32_29_/_8%)]" : undefined
               )}
             />
@@ -100,34 +117,63 @@ export function ProductCard({ product, index = 0, compact = false, anchorId }: P
             <div className="flex flex-col gap-4">
               <div className="flex items-start justify-between gap-5">
                 <div className="flex flex-col gap-1.5">
-                  <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                  <p
+                    className={cn(
+                      "text-xs uppercase tracking-[0.22em]",
+                      isDark ? "text-[#E8CFA4]/54" : "text-muted-foreground"
+                    )}
+                  >
                     {product.englishName}
                   </p>
-                  <h3 className="text-2xl font-semibold leading-tight text-foreground">
+                  <h3
+                    className={cn(
+                      "text-2xl font-semibold leading-tight",
+                      isDark ? "text-[#F8E6BF]" : "text-foreground"
+                    )}
+                  >
                     {product.name}
                   </h3>
                 </div>
                 <span
                   className={cn(
                     "flex size-10 shrink-0 items-center justify-center rounded-full border bg-card/45 text-xs font-semibold backdrop-blur",
-                    theme.stamp
+                    isDark ? "border-[#F2C36B]/30 bg-[#1A0F0A]/60 text-[#F2C36B]" : theme.stamp
                   )}
                 >
                   酥
                 </span>
               </div>
 
-              <p className="text-base leading-7 text-foreground/78">{product.tagline}</p>
-              <p className="rounded-2xl border border-soft-gold/20 bg-white/32 px-4 py-3 text-sm leading-6 text-muted-foreground">
-                <span className="text-primary/85">核心馅料：</span>
+              <p className={cn("text-base leading-7", isDark ? "text-[#E8CFA4]/78" : "text-foreground/78")}>
+                {product.tagline}
+              </p>
+              <p
+                className={cn(
+                  "rounded-2xl border px-4 py-3 text-sm leading-6",
+                  isDark
+                    ? "border-[#D89A42]/20 bg-[#1A0F0A]/42 text-[#E8CFA4]/70"
+                    : "border-soft-gold/20 bg-white/32 text-muted-foreground"
+                )}
+              >
+                <span className={isDark ? "text-[#F2C36B]" : "text-primary/85"}>核心馅料：</span>
                 {product.flavor}
               </p>
             </div>
 
-            <div className="flex items-center justify-between gap-4 border-t border-border/60 pt-4">
-              <span className={cn("h-px w-10", theme.line)} />
-              <span className="inline-flex items-center gap-2 text-sm font-medium text-primary">
-                {product.ctaLabel}
+            <div
+              className={cn(
+                "flex items-center justify-between gap-4 border-t pt-4",
+                isDark ? "border-[#D89A42]/18" : "border-border/60"
+              )}
+            >
+              <span className={cn("h-px w-10", isDark ? "bg-[#D89A42]" : theme.line)} />
+              <span
+                className={cn(
+                  "inline-flex items-center gap-2 text-sm font-medium",
+                  isDark ? "text-[#F2C36B]" : "text-primary"
+                )}
+              >
+                {isDark ? "查看详情" : product.ctaLabel}
                 <ArrowRight data-icon="inline-end" className="transition-transform duration-700 group-hover:translate-x-0.5" />
               </span>
             </div>
