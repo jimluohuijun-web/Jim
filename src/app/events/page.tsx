@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 
 export default function EventsPage() {
   return (
-    <>
+    <main className="ysf-pc-home overflow-hidden bg-[#1A0F0A] text-[#E8CFA4]">
       <EventsHero />
       <EventsPreview />
       <EventsCollaboration />
       <EventsProcess />
       <EventsCta />
-    </>
+    </main>
   );
 }

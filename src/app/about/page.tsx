@@ -4,7 +4,6 @@ import { AboutCta } from "@/components/sections/about-cta";
 import { AboutFounder } from "@/components/sections/about-founder";
 import { AboutHero } from "@/components/sections/about-hero";
 import { AboutStory } from "@/components/sections/about-story";
-import { AboutTimeline } from "@/components/sections/about-timeline";
 import { AboutValues } from "@/components/sections/about-values";
 
 export const metadata: Metadata = {
@@ -15,13 +14,12 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <>
+    <main className="ysf-pc-home overflow-hidden bg-[#1A0F0A] text-[#E8CFA4]">
       <AboutHero />
       <AboutStory />
       <AboutValues />
       <AboutFounder />
-      <AboutTimeline />
       <AboutCta />
-    </>
+    </main>
   );
 }
