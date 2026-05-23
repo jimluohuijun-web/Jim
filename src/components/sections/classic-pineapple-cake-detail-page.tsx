@@ -6,11 +6,9 @@ import {
   ArrowRight,
   CalendarDays,
   CupSoda,
-  Egg,
   Flame,
   Gift,
   Layers3,
-  Leaf,
   PackageCheck,
   ShieldCheck,
   Sparkles,
@@ -19,14 +17,14 @@ import {
   Truck,
 } from "lucide-react";
 
-import { matchaProductData as pageData } from "@/data/matcha-detail";
+import { classicPineappleCakeDetailData as pageData } from "@/data/classic-pineapple-cake-detail";
 
 type IconComponent = typeof Sparkles;
 
-const problemIcons: IconComponent[] = [Leaf, Egg, ShieldCheck];
-const highlightIcons: IconComponent[] = [Leaf, Egg, Sprout, Layers3];
-const craftIcons: IconComponent[] = [Leaf, Egg, Sprout, Flame];
-const tasteIcons: IconComponent[] = [Layers3, Sprout, Egg];
+const problemIcons: IconComponent[] = [Sprout, Layers3, Flame];
+const highlightIcons: IconComponent[] = [Sprout, Gift, Layers3, Truck];
+const craftIcons: IconComponent[] = [Sprout, Sparkles, Layers3, Flame];
+const tasteIcons: IconComponent[] = [Layers3, Sprout, Sparkles];
 const specIcons: IconComponent[] = [PackageCheck, Gift, CalendarDays, ShieldCheck, CupSoda, Truck];
 const sceneIcons: IconComponent[] = [Sparkles, Gift, Truck];
 const guaranteeIcons: IconComponent[] = [Store, Truck, PackageCheck, ShieldCheck];
@@ -43,7 +41,7 @@ function GoldButton({
   const className =
     variant === "primary"
       ? "border-[#F2C36B]/40 bg-[linear-gradient(135deg,#F2C36B,#D89A42_52%,#A96828)] text-[#160E07] shadow-[0_16px_44px_rgb(216_154_66_/_24%)] hover:brightness-110"
-      : "border-[rgba(217,180,106,0.34)] bg-[#10170B]/70 text-[#F5E7C8] hover:border-[#F0C978]/70 hover:text-[#F0C978]";
+      : "border-[rgba(217,180,106,0.34)] bg-[#120C07]/70 text-[#F5E7C8] hover:border-[#F0C978]/70 hover:text-[#F0C978]";
 
   return (
     <Link
@@ -86,7 +84,7 @@ function ImagePanel({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[1.15rem] border border-[rgba(217,180,106,0.28)] bg-[#10170B] shadow-[0_30px_90px_rgb(0_0_0_/_38%)] md:rounded-[1.45rem] ${className}`}
+      className={`relative overflow-hidden rounded-[1.15rem] border border-[rgba(217,180,106,0.28)] bg-[#120C07] shadow-[0_30px_90px_rgb(0_0_0_/_38%)] md:rounded-[1.45rem] ${className}`}
     >
       <Image src={src} alt={alt} fill priority={priority} sizes={sizes} className="object-cover" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,transparent_0%,transparent_52%,rgb(8_6_4_/_70%)_100%)]" />
@@ -117,12 +115,12 @@ function SectionTitle({
   );
 }
 
-export function MatchaHero() {
+export function PineappleCakeHero() {
   const { hero } = pageData;
 
   return (
     <section className="relative isolate overflow-hidden border-b border-[rgba(217,180,106,0.18)] bg-[#070604]">
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_72%_38%,rgb(63_107_62_/_26%),transparent_30rem),radial-gradient(circle_at_34%_20%,rgb(240_201_120_/_8%),transparent_22rem),linear-gradient(135deg,#050302_0%,#10170B_46%,#071008_100%)]" />
+      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_72%_38%,rgb(216_154_66_/_22%),transparent_30rem),radial-gradient(circle_at_30%_18%,rgb(240_201_120_/_8%),transparent_22rem),linear-gradient(135deg,#050302_0%,#120B06_48%,#070604_100%)]" />
       <div className="absolute inset-0 -z-10 opacity-[0.14] [background-image:linear-gradient(rgba(217,180,106,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(217,180,106,0.08)_1px,transparent_1px)] [background-size:4rem_4rem]" />
       <div className="absolute -right-24 top-20 -z-10 h-72 w-72 rounded-full border border-[#D9B46A]/15 opacity-50 md:h-[34rem] md:w-[34rem]" />
       <div className="absolute inset-0 -z-10 lg:hidden">
@@ -132,15 +130,15 @@ export function MatchaHero() {
           fill
           priority
           sizes="100vw"
-              className="object-cover object-[66%_44%] opacity-72 brightness-[0.72] saturate-[1.08]"
+          className="object-cover object-[68%_42%] opacity-70 brightness-[0.74] saturate-[1.08]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#070604_0%,rgb(7_6_4_/_86%)_45%,rgb(7_6_4_/_28%)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(7_6_4_/_34%)_0%,rgb(7_6_4_/_66%)_58%,#071008_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(7_6_4_/_34%)_0%,rgb(7_6_4_/_66%)_58%,#070604_100%)]" />
       </div>
       <div className="absolute inset-x-0 bottom-0 -z-10 h-44 bg-gradient-to-t from-[#070604] to-transparent" />
 
-      <div className="ysj-container grid gap-6 py-6 md:min-h-[640px] md:gap-8 md:py-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-12 lg:py-12">
-        <div className="relative z-10 flex max-w-[42rem] flex-col gap-4 md:gap-5 lg:gap-6">
+      <div className="ysj-container grid gap-8 py-8 md:min-h-[700px] md:gap-12 md:py-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+        <div className="relative z-10 flex max-w-[42rem] flex-col gap-5 md:gap-6">
           <nav className="flex flex-wrap items-center gap-2 text-[0.72rem] text-[#BCA77F] md:text-sm">
             {hero.breadcrumb.map((item, index) => (
               <span key={item.href} className="inline-flex items-center gap-2">
@@ -153,7 +151,7 @@ export function MatchaHero() {
           </nav>
 
           <div>
-            <p className="mb-4 inline-flex w-fit rounded-full border border-[#D9B46A]/30 bg-[#10170B]/70 px-4 py-2 text-xs font-medium tracking-[0.18em] text-[#D9B46A] shadow-[0_10px_34px_rgb(0_0_0_/_28%)] md:text-sm">
+            <p className="mb-4 inline-flex w-fit rounded-full border border-[#D9B46A]/30 bg-[#120C07]/70 px-4 py-2 text-xs font-medium tracking-[0.18em] text-[#D9B46A] shadow-[0_10px_34px_rgb(0_0_0_/_28%)] md:text-sm">
               {hero.title}
             </p>
             <h1 className="max-w-[8em] font-serif text-[clamp(3rem,13vw,4.2rem)] font-semibold leading-[1.02] tracking-[0.02em] text-[#F2C36B] drop-shadow-[0_10px_34px_rgb(0_0_0_/_55%)] md:text-[clamp(4.6rem,6vw,6.4rem)] md:leading-[0.98]">
@@ -178,21 +176,13 @@ export function MatchaHero() {
             </GoldButton>
           </div>
 
-          <ImagePanel
-            src={hero.image.src}
-            alt={hero.image.alt}
-            priority
-            className="min-h-[190px] md:min-h-[260px] lg:hidden"
-            sizes="92vw"
-          />
-
           <div className="grid grid-cols-4 gap-2 pt-1 md:gap-3">
             {hero.tags.map((tag, index) => {
               const Icon = highlightIcons[index] ?? Sparkles;
               return (
                 <div
                   key={tag}
-                  className="rounded-[0.85rem] border border-[rgba(217,180,106,0.28)] bg-[linear-gradient(145deg,rgb(7_16_8_/_78%),rgb(16_23_11_/_66%))] px-2.5 py-3 text-[#F5E7C8] shadow-[inset_0_1px_0_rgb(248_230_191_/_5%)] backdrop-blur-sm md:rounded-[0.9rem] md:px-4"
+                  className="rounded-[0.85rem] border border-[rgba(217,180,106,0.28)] bg-[#0B0704]/72 px-2.5 py-3 text-[#F5E7C8] shadow-[inset_0_1px_0_rgb(248_230_191_/_5%)] backdrop-blur-sm md:rounded-[0.9rem] md:px-4"
                 >
                   <Icon className="mb-2 size-4 text-[#F0C978] md:size-5" strokeWidth={1.45} />
                   <p className="text-[0.68rem] font-medium leading-snug md:text-sm">{tag}</p>
@@ -203,16 +193,16 @@ export function MatchaHero() {
         </div>
 
         <div className="relative hidden min-h-[270px] lg:block lg:min-h-[620px]">
-          <div className="absolute inset-x-4 bottom-2 top-8 rounded-full bg-[#3F6B3E]/24 blur-3xl md:inset-x-12 md:top-20" />
-          <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_52%_46%,rgb(240_201_120_/_13%),transparent_28rem),radial-gradient(circle_at_68%_54%,rgb(63_107_62_/_16%),transparent_22rem)]" />
-          <div className="relative h-full min-h-[270px] overflow-hidden rounded-[1.35rem] border border-[rgba(217,180,106,0.22)] bg-[#10170B]/50 shadow-[0_34px_110px_rgb(0_0_0_/_52%)] md:rounded-[2rem] lg:min-h-[620px]">
+          <div className="absolute inset-x-4 bottom-2 top-8 rounded-full bg-[#D89A42]/16 blur-3xl md:inset-x-12 md:top-20" />
+          <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_52%_46%,rgb(240_201_120_/_15%),transparent_28rem)]" />
+          <div className="relative h-full min-h-[270px] overflow-hidden rounded-[1.35rem] border border-[rgba(217,180,106,0.22)] bg-[#120C07]/50 shadow-[0_34px_110px_rgb(0_0_0_/_52%)] md:rounded-[2rem] lg:min-h-[620px]">
             <Image
               src={hero.image.src}
               alt={hero.image.alt}
               fill
               priority
               sizes="(min-width: 1280px) 50vw, (min-width: 768px) 54vw, 92vw"
-              className="object-cover object-[58%_50%] brightness-[0.84] saturate-[1.1]"
+              className="object-cover object-[54%_50%] brightness-[0.86] saturate-[1.08]"
             />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_56%_44%,transparent_0%,transparent_48%,rgb(7_6_4_/_66%)_100%)]" />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(7_6_4_/_46%)_0%,transparent_30%,transparent_76%,rgb(7_6_4_/_48%)_100%)]" />
@@ -224,11 +214,11 @@ export function MatchaHero() {
   );
 }
 
-export function MatchaProblems() {
+export function PineappleCakeProblems() {
   const { problems } = pageData;
 
   return (
-    <section className="border-y border-[rgba(217,180,106,0.16)] bg-[#071008] py-14 md:py-20">
+    <section className="border-y border-[rgba(217,180,106,0.16)] bg-[#0B0704] py-14 md:py-20">
       <div className="ysj-container">
         <SectionTitle title={problems.title} />
         <div className="mt-9 grid gap-5 md:grid-cols-3">
@@ -254,7 +244,7 @@ export function MatchaProblems() {
   );
 }
 
-export function MatchaHighlights() {
+export function PineappleCakeHighlights() {
   const { highlights } = pageData;
 
   return (
@@ -287,11 +277,11 @@ export function MatchaHighlights() {
   );
 }
 
-export function MatchaCraft() {
+export function PineappleCakeCraft() {
   const { craft } = pageData;
 
   return (
-    <section className="border-y border-[rgba(217,180,106,0.16)] bg-[#071008] py-14 md:py-20">
+    <section className="border-y border-[rgba(217,180,106,0.16)] bg-[#0B0704] py-14 md:py-20">
       <div className="ysj-container">
         <div className="relative overflow-hidden rounded-[1.25rem] border border-[rgba(217,180,106,0.3)] bg-[linear-gradient(135deg,rgb(18_12_7_/_92%),rgb(7_6_4_/_98%))] p-3 shadow-[0_28px_90px_rgb(0_0_0_/_36%)] md:rounded-[1.6rem] md:p-5">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgb(217_180_106_/_10%),transparent_22rem),radial-gradient(circle_at_86%_76%,rgb(216_154_66_/_8%),transparent_20rem)]" />
@@ -307,7 +297,7 @@ export function MatchaCraft() {
                   return (
                     <div key={item.title} className="rounded-[1rem] border border-[rgba(217,180,106,0.18)] bg-[#050302]/38 p-4 shadow-[inset_0_1px_0_rgb(248_230_191_/_5%)] md:p-5">
                       <div className="flex gap-4">
-                        <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.38)] bg-[#10170B]/70 text-[#F0C978] md:size-12">
+                        <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.38)] bg-[#120C07]/70 text-[#F0C978] md:size-12">
                           <Icon className="size-5" strokeWidth={1.45} />
                         </span>
                         <div>
@@ -327,7 +317,7 @@ export function MatchaCraft() {
   );
 }
 
-export function MatchaTaste() {
+export function PineappleCakeTaste() {
   const { taste } = pageData;
 
   return (
@@ -345,7 +335,7 @@ export function MatchaTaste() {
                   return (
                     <div key={item.title} className="rounded-[1rem] border border-[rgba(217,180,106,0.24)] bg-[#050302]/42 p-5 text-left shadow-[inset_0_1px_0_rgb(248_230_191_/_5%)]">
                       <div className="flex gap-4">
-                        <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.38)] bg-[#10170B]/70 text-[#F0C978]">
+                        <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.38)] bg-[#120C07]/70 text-[#F0C978]">
                           <Icon className="size-5" strokeWidth={1.45} />
                         </span>
                         <div>
@@ -358,7 +348,7 @@ export function MatchaTaste() {
                 })}
               </div>
               {"summary" in taste ? (
-                <p className="mt-5 rounded-full border border-[rgba(217,180,106,0.16)] bg-[#10170B]/54 px-5 py-3 text-center text-sm leading-7 text-[#F0C978] md:text-base">
+                <p className="mt-5 rounded-full border border-[rgba(217,180,106,0.16)] bg-[#120C07]/54 px-5 py-3 text-center text-sm leading-7 text-[#F0C978] md:text-base">
                   {taste.summary}
                 </p>
               ) : null}
@@ -370,11 +360,11 @@ export function MatchaTaste() {
   );
 }
 
-export function MatchaInfoGift() {
+export function PineappleCakeInfoGift() {
   const { infoGift } = pageData;
 
   return (
-    <section id="gift-specs" className="border-y border-[rgba(217,180,106,0.16)] bg-[#071008] py-14 scroll-mt-28 md:py-20">
+    <section id="gift-specs" className="border-y border-[rgba(217,180,106,0.16)] bg-[#0B0704] py-14 scroll-mt-28 md:py-20">
       <div className="ysj-container">
         <DetailCard className="p-4 md:p-7">
           <SectionTitle title={infoGift.title} />
@@ -419,7 +409,7 @@ export function MatchaInfoGift() {
             </div>
           </div>
           <div className="relative min-h-[300px] lg:min-h-[470px]">
-            <div className="absolute inset-x-8 bottom-4 top-12 rounded-full bg-[#3F6B3E]/16 blur-3xl" />
+            <div className="absolute inset-x-8 bottom-4 top-12 rounded-full bg-[#D89A42]/14 blur-3xl" />
             <ImagePanel
               src={infoGift.image.src}
               alt={infoGift.image.alt}
@@ -433,12 +423,12 @@ export function MatchaInfoGift() {
   );
 }
 
-export function MatchaCTA() {
+export function PineappleCakeCTA() {
   const { bottomCta } = pageData;
 
   return (
     <section className="relative isolate overflow-hidden border-y border-[rgba(217,180,106,0.18)] bg-[#070604] py-14 md:py-22">
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_0%,rgb(240_201_120_/_13%),transparent_30rem),radial-gradient(circle_at_72%_78%,rgb(216_154_66_/_9%),transparent_24rem),linear-gradient(180deg,#0F0B07_0%,#071008_100%)]" />
+      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_0%,rgb(240_201_120_/_13%),transparent_30rem),radial-gradient(circle_at_72%_78%,rgb(216_154_66_/_9%),transparent_24rem),linear-gradient(180deg,#0F0B07_0%,#070604_100%)]" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-44 opacity-35 [background-image:radial-gradient(ellipse_at_center,transparent_35%,rgba(217,180,106,0.16)_36%,transparent_37%),linear-gradient(120deg,transparent_45%,rgba(217,180,106,0.12)_46%,transparent_48%)] [background-size:14rem_7rem,9rem_5rem]" />
       <div className="absolute -right-20 bottom-8 -z-10 size-56 rounded-full border border-[#D9B46A]/12" />
       <div className="ysj-container text-center">
@@ -460,7 +450,7 @@ export function MatchaCTA() {
           {bottomCta.guarantees.map((item, index) => {
             const Icon = guaranteeIcons[index] ?? ShieldCheck;
             return (
-              <div key={item} className="rounded-full border border-[rgba(217,180,106,0.2)] bg-[#10170B]/58 px-4 py-3 text-sm text-[#F5E7C8]">
+              <div key={item} className="rounded-full border border-[rgba(217,180,106,0.2)] bg-[#120C07]/58 px-4 py-3 text-sm text-[#F5E7C8]">
                 <span className="inline-flex items-center gap-2">
                   <Icon className="size-4 text-[#F0C978]" strokeWidth={1.45} />
                   {item}

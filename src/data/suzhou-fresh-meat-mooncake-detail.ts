@@ -22,8 +22,8 @@ export const suzhouFreshMeatMooncakeData = {
     primaryCta: { href: "/reserve", label: "立即预订" } satisfies DetailLink,
     secondaryCta: { href: "#gift-specs", label: "查看礼盒规格" } satisfies DetailLink,
     image: {
-      src: "/images/products/meat-mooncake-card.webp",
-      alt: "云酥坊苏式鲜肉月饼黑金茶席产品图",
+      src: "/images/products/fresh-meat-mooncake/fresh-meat-mooncake-hero.webp",
+      alt: "云酥坊苏式鲜肉月饼茶席主图",
       ratio: "4:3",
     } satisfies DetailImage,
     highlights: [
@@ -47,8 +47,8 @@ export const suzhouFreshMeatMooncakeData = {
         title: "黑毛猪后腿肉",
         text: "肉质紧实，鲜香弹嫩，油脂分布均匀",
         image: {
-          src: "/images/home/craft-ingredients.jpg",
-          alt: "云酥坊黑毛猪后腿肉与原料氛围图",
+          src: "/images/products/fresh-meat-mooncake/fresh-meat-mooncake-ingredient-pork.webp",
+          alt: "黑毛猪后腿肉原料展示",
           ratio: "4:3",
         } satisfies DetailImage,
       },
@@ -56,8 +56,8 @@ export const suzhouFreshMeatMooncakeData = {
         title: "12层苏式酥皮",
         text: "手工起酥，层层分明，入口即化",
         image: {
-          src: "/images/home/craft-layering.jpg",
-          alt: "云酥坊苏式酥皮手工起酥图",
+          src: "/images/products/fresh-meat-mooncake/fresh-meat-mooncake-layered-dough.webp",
+          alt: "12层苏式酥皮制作细节",
           ratio: "4:3",
         } satisfies DetailImage,
       },
@@ -65,8 +65,8 @@ export const suzhouFreshMeatMooncakeData = {
         title: "咸口解腻亮点",
         text: "秘制配方，咸香回甘，清爽不腻",
         image: {
-          src: "/images/products/five-nut-mooncake.jpg",
-          alt: "云酥坊咸香东方茶席风味图",
+          src: "/images/products/fresh-meat-mooncake/fresh-meat-mooncake-closeup.webp",
+          alt: "苏式鲜肉月饼切面特写",
           ratio: "4:3",
         } satisfies DetailImage,
       },
@@ -74,8 +74,8 @@ export const suzhouFreshMeatMooncakeData = {
         title: "现烤现发",
         text: "每日现烤，锁鲜发货，新鲜送达",
         image: {
-          src: "/images/home/craft-fresh.jpg",
-          alt: "云酥坊每日现烤现发工艺图",
+          src: "/images/products/fresh-meat-mooncake/fresh-meat-mooncake-baking-tray.webp",
+          alt: "鲜肉月饼现烤出炉展示",
           ratio: "4:3",
         } satisfies DetailImage,
       },
@@ -84,14 +84,14 @@ export const suzhouFreshMeatMooncakeData = {
   craft: {
     title: "好鲜肉月饼，只用一块好肉、一张好酥皮",
     image: {
-      src: "/images/home/craft-ingredients.jpg",
-      alt: "云酥坊苏式鲜肉月饼切肉调馅手作氛围图",
+      src: "/images/products/fresh-meat-mooncake/fresh-meat-mooncake-craft-process.webp",
+      alt: "苏式鲜肉月饼手工切鲜肉制作过程",
       ratio: "4:3",
     } satisfies DetailImage,
     points: [
       {
         title: "精选黑毛猪后腿肉",
-        text: "肥瘦黄金比例，手工现调，口感紧实多汁",
+        text: "肥瘦黄金比例，手工现切，口感紧实多汁",
       },
       {
         title: "传承手工起酥工艺",
@@ -99,25 +99,25 @@ export const suzhouFreshMeatMooncakeData = {
       },
       {
         title: "秘制咸香配方",
-        text: "轻盐轻料，突出肉香本味",
+        text: "多味提香，咸香适中，回味悠长",
       },
       {
         title: "严格控温烘烤",
-        text: "外皮金黄，内馅熟透，肉汁锁住",
+        text: "高温定型，锁住肉汁，外酥内嫩",
       },
     ],
   },
   taste: {
-    title: "外酥 · 内嫩 · 汁浓 · 香爆",
+    title: "外酥・内嫩・汁浓・香爆",
     image: {
-      src: "/images/products/meat-mooncake-card.webp",
+      src: "/images/products/fresh-meat-mooncake/fresh-meat-mooncake-closeup.webp",
       alt: "云酥坊苏式鲜肉月饼切面近景",
       ratio: "4:3",
     } satisfies DetailImage,
     items: [
-      { title: "酥到掉渣", text: "12层酥皮，一碰就碎" },
-      { title: "肉馅多汁", text: "鲜肉紧实，汁水饱满" },
-      { title: "咸香解腻", text: "咸香回甘，越吃越香" },
+      { title: "酥到掉渣", text: "12层酥皮\n一碰就碎" },
+      { title: "肉馅多汁", text: "鲜肉紧实\n汁水饱满" },
+      { title: "咸香解腻", text: "咸香回甘\n越吃越香" },
     ],
   },
   info: {
@@ -138,8 +138,8 @@ export const suzhouFreshMeatMooncakeData = {
   gift: {
     title: "不是甜月饼，是中秋桌上更受欢迎的那一盘",
     image: {
-      src: "/images/home/gift-box-banner.jpg",
-      alt: "云酥坊黑金东方礼盒包装图",
+      src: "/images/products/fresh-meat-mooncake/fresh-meat-mooncake-gift-box.webp",
+      alt: "云酥坊苏式鲜肉月饼礼盒展示",
       ratio: "16:9",
     } satisfies DetailImage,
     scenes: [

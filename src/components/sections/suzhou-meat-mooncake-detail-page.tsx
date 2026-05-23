@@ -275,28 +275,36 @@ export function FreshMeatCraft() {
 
   return (
     <section className="border-y border-[rgba(217,180,106,0.16)] bg-[#0B0704] py-11 md:py-18">
-      <div className="ysj-container grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-        <ImagePanel src={craft.image.src} alt={craft.image.alt} className="min-h-[280px] lg:min-h-[560px]" />
-        <div>
-          <SectionTitle title={craft.title} align="left" />
-          <div className="mt-7 grid gap-3 md:gap-4">
-            {craft.points.map((item, index) => {
-              const Icon = craftIcons[index] ?? Sparkles;
+      <div className="ysj-container">
+        <div className="relative overflow-hidden rounded-[1.25rem] border border-[rgba(217,180,106,0.26)] bg-[linear-gradient(135deg,rgb(18_12_7_/_92%),rgb(7_6_4_/_98%))] p-3 shadow-[0_28px_90px_rgb(0_0_0_/_36%)] md:rounded-[1.6rem] md:p-5">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgb(217_180_106_/_10%),transparent_22rem),radial-gradient(circle_at_86%_76%,rgb(216_154_66_/_8%),transparent_20rem)]" />
+          <div className="relative grid gap-6 lg:grid-cols-[1.18fr_0.82fr] lg:items-center">
+            <ImagePanel src={craft.image.src} alt={craft.image.alt} className="min-h-[280px] lg:min-h-[500px]" />
+            <div className="p-1 md:p-4 lg:pr-6">
+              <SectionTitle title={craft.title} align="left" />
+              <div className="mt-7 grid gap-3 md:gap-4">
+                {craft.points.map((item, index) => {
+                  const Icon = craftIcons[index] ?? Sparkles;
 
-              return (
-                <DetailCard key={item.title} className="p-4 md:p-5">
-                  <div className="flex gap-4">
-                    <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.34)] text-[#F0C978]">
-                      <Icon className="size-5" strokeWidth={1.45} />
-                    </span>
-                    <div>
-                      <h3 className="font-serif text-xl font-semibold text-[#F5E7C8]">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-7 text-[#BCA77F]">{item.text}</p>
+                  return (
+                    <div
+                      key={item.title}
+                      className="rounded-[1rem] border border-[rgba(217,180,106,0.18)] bg-[#050302]/38 p-4 shadow-[inset_0_1px_0_rgb(248_230_191_/_5%)] md:p-5"
+                    >
+                      <div className="flex gap-4">
+                        <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.38)] bg-[#120C07]/70 text-[#F0C978]">
+                          <Icon className="size-5" strokeWidth={1.45} />
+                        </span>
+                        <div>
+                          <h3 className="font-serif text-xl font-semibold text-[#F5E7C8]">{item.title}</h3>
+                          <p className="mt-2 text-sm leading-7 text-[#CDB98D]">{item.text}</p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </DetailCard>
-              );
-            })}
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -309,24 +317,34 @@ export function FreshMeatTaste() {
 
   return (
     <section className="bg-[#070604] py-11 md:py-18">
-      <div className="ysj-container grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <ImagePanel src={taste.image.src} alt={taste.image.alt} className="min-h-[300px] lg:min-h-[520px]" />
-        <div>
-          <SectionTitle title={taste.title} align="left" />
-          <div className="mt-7 grid gap-3 md:grid-cols-3 lg:grid-cols-1">
-            {taste.items.map((item, index) => {
-              const Icon = tasteIcons[index] ?? Sparkles;
+      <div className="ysj-container">
+        <div className="relative overflow-hidden rounded-[1.25rem] border border-[rgba(217,180,106,0.26)] bg-[linear-gradient(135deg,rgb(7_6_4_/_98%),rgb(22_16_10_/_92%))] p-3 shadow-[0_28px_90px_rgb(0_0_0_/_36%)] md:rounded-[1.6rem] md:p-5">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_64%,rgb(240_201_120_/_9%),transparent_24rem),linear-gradient(90deg,transparent,rgb(216_154_66_/_5%))]" />
+          <div className="relative grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <ImagePanel src={taste.image.src} alt={taste.image.alt} className="min-h-[300px] lg:min-h-[500px]" />
+            <div className="p-1 md:p-4 lg:pl-6">
+              <SectionTitle title={taste.title} align="left" />
+              <div className="mt-7 grid gap-3 md:grid-cols-3 lg:grid-cols-3">
+                {taste.items.map((item, index) => {
+                  const Icon = tasteIcons[index] ?? Sparkles;
 
-              return (
-                <DetailCard key={item.title} className="p-5 md:p-6">
-                  <span className="mb-4 flex size-12 items-center justify-center rounded-full border border-[rgba(217,180,106,0.34)] text-[#F0C978] md:size-14">
-                    <Icon className="size-6 md:size-7" strokeWidth={1.45} />
-                  </span>
-                  <h3 className="font-serif text-2xl font-semibold text-[#F5E7C8]">{item.title}</h3>
-                  <p className="mt-3 text-base leading-7 text-[#BCA77F]">{item.text}</p>
-                </DetailCard>
-              );
-            })}
+                  return (
+                    <div
+                      key={item.title}
+                      className="flex min-h-[170px] flex-col justify-between rounded-[1rem] border border-[rgba(217,180,106,0.22)] bg-[#050302]/42 p-5 text-left shadow-[inset_0_1px_0_rgb(248_230_191_/_5%)]"
+                    >
+                      <span className="flex size-12 items-center justify-center rounded-full border border-[rgba(217,180,106,0.38)] bg-[#120C07]/70 text-[#F0C978]">
+                        <Icon className="size-6" strokeWidth={1.45} />
+                      </span>
+                      <div>
+                        <h3 className="font-serif text-xl font-semibold text-[#F5E7C8]">{item.title}</h3>
+                        <p className="mt-3 whitespace-pre-line text-base leading-7 text-[#CDB98D]">{item.text}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>

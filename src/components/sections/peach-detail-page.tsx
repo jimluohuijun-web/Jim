@@ -6,11 +6,10 @@ import {
   ArrowRight,
   CalendarDays,
   CupSoda,
-  Egg,
   Flame,
+  Flower2,
   Gift,
   Layers3,
-  Leaf,
   PackageCheck,
   ShieldCheck,
   Sparkles,
@@ -19,16 +18,16 @@ import {
   Truck,
 } from "lucide-react";
 
-import { matchaProductData as pageData } from "@/data/matcha-detail";
+import { peachProductData as pageData } from "@/data/peach-detail";
 
 type IconComponent = typeof Sparkles;
 
-const problemIcons: IconComponent[] = [Leaf, Egg, ShieldCheck];
-const highlightIcons: IconComponent[] = [Leaf, Egg, Sprout, Layers3];
-const craftIcons: IconComponent[] = [Leaf, Egg, Sprout, Flame];
-const tasteIcons: IconComponent[] = [Layers3, Sprout, Egg];
+const problemIcons: IconComponent[] = [Flower2, ShieldCheck, Layers3];
+const highlightIcons: IconComponent[] = [Flower2, Sprout, Layers3, Flame];
+const craftIcons: IconComponent[] = [Sprout, Flower2, Layers3, Flame];
+const tasteIcons: IconComponent[] = [Layers3, Sprout, Flower2];
 const specIcons: IconComponent[] = [PackageCheck, Gift, CalendarDays, ShieldCheck, CupSoda, Truck];
-const sceneIcons: IconComponent[] = [Sparkles, Gift, Truck];
+const sceneIcons: IconComponent[] = [CupSoda, Gift, Truck];
 const guaranteeIcons: IconComponent[] = [Store, Truck, PackageCheck, ShieldCheck];
 
 function GoldButton({
@@ -43,7 +42,7 @@ function GoldButton({
   const className =
     variant === "primary"
       ? "border-[#F2C36B]/40 bg-[linear-gradient(135deg,#F2C36B,#D89A42_52%,#A96828)] text-[#160E07] shadow-[0_16px_44px_rgb(216_154_66_/_24%)] hover:brightness-110"
-      : "border-[rgba(217,180,106,0.34)] bg-[#10170B]/70 text-[#F5E7C8] hover:border-[#F0C978]/70 hover:text-[#F0C978]";
+      : "border-[rgba(217,180,106,0.34)] bg-[#120907]/70 text-[#F5E7C8] hover:border-[#F0C978]/70 hover:text-[#F0C978]";
 
   return (
     <Link
@@ -86,7 +85,7 @@ function ImagePanel({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[1.15rem] border border-[rgba(217,180,106,0.28)] bg-[#10170B] shadow-[0_30px_90px_rgb(0_0_0_/_38%)] md:rounded-[1.45rem] ${className}`}
+      className={`relative overflow-hidden rounded-[1.15rem] border border-[rgba(217,180,106,0.28)] bg-[#120907] shadow-[0_30px_90px_rgb(0_0_0_/_38%)] md:rounded-[1.45rem] ${className}`}
     >
       <Image src={src} alt={alt} fill priority={priority} sizes={sizes} className="object-cover" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,transparent_0%,transparent_52%,rgb(8_6_4_/_70%)_100%)]" />
@@ -106,10 +105,8 @@ function SectionTitle({
 }) {
   return (
     <div className={align === "center" ? "mx-auto max-w-4xl text-center" : "max-w-3xl"}>
-      <span
-        className={`mb-5 block h-px w-16 bg-[#D9B46A] ${align === "center" ? "mx-auto" : ""}`}
-      />
-      <h2 className="font-serif text-[1.75rem] font-semibold leading-tight tracking-[0.04em] text-[#F8E6BF] text-balance md:text-5xl">
+      <span className={`mb-5 block h-px w-16 bg-[#D9B46A] ${align === "center" ? "mx-auto" : ""}`} />
+      <h2 className="font-serif text-[1.35rem] font-semibold leading-snug tracking-[0.02em] text-[#F8E6BF] break-all md:text-5xl md:leading-tight md:tracking-[0.04em]">
         {title}
       </h2>
       {subtitle ? <p className="mt-4 text-base leading-8 text-[#BCA77F] md:text-lg">{subtitle}</p> : null}
@@ -117,12 +114,12 @@ function SectionTitle({
   );
 }
 
-export function MatchaHero() {
+export function PeachHero() {
   const { hero } = pageData;
 
   return (
     <section className="relative isolate overflow-hidden border-b border-[rgba(217,180,106,0.18)] bg-[#070604]">
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_72%_38%,rgb(63_107_62_/_26%),transparent_30rem),radial-gradient(circle_at_34%_20%,rgb(240_201_120_/_8%),transparent_22rem),linear-gradient(135deg,#050302_0%,#10170B_46%,#071008_100%)]" />
+      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_72%_38%,rgb(224_132_142_/_20%),transparent_30rem),radial-gradient(circle_at_32%_22%,rgb(240_201_120_/_9%),transparent_22rem),linear-gradient(135deg,#050302_0%,#160C08_46%,#090504_100%)]" />
       <div className="absolute inset-0 -z-10 opacity-[0.14] [background-image:linear-gradient(rgba(217,180,106,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(217,180,106,0.08)_1px,transparent_1px)] [background-size:4rem_4rem]" />
       <div className="absolute -right-24 top-20 -z-10 h-72 w-72 rounded-full border border-[#D9B46A]/15 opacity-50 md:h-[34rem] md:w-[34rem]" />
       <div className="absolute inset-0 -z-10 lg:hidden">
@@ -132,10 +129,10 @@ export function MatchaHero() {
           fill
           priority
           sizes="100vw"
-              className="object-cover object-[66%_44%] opacity-72 brightness-[0.72] saturate-[1.08]"
+          className="object-cover object-[62%_44%] opacity-70 brightness-[0.7] saturate-[1.05]"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,#070604_0%,rgb(7_6_4_/_86%)_45%,rgb(7_6_4_/_28%)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(7_6_4_/_34%)_0%,rgb(7_6_4_/_66%)_58%,#071008_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,#070604_0%,rgb(7_6_4_/_88%)_45%,rgb(7_6_4_/_34%)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(7_6_4_/_34%)_0%,rgb(7_6_4_/_66%)_58%,#090504_100%)]" />
       </div>
       <div className="absolute inset-x-0 bottom-0 -z-10 h-44 bg-gradient-to-t from-[#070604] to-transparent" />
 
@@ -153,10 +150,11 @@ export function MatchaHero() {
           </nav>
 
           <div>
-            <p className="mb-4 inline-flex w-fit rounded-full border border-[#D9B46A]/30 bg-[#10170B]/70 px-4 py-2 text-xs font-medium tracking-[0.18em] text-[#D9B46A] shadow-[0_10px_34px_rgb(0_0_0_/_28%)] md:text-sm">
+            <p className="mb-4 inline-flex w-fit rounded-full border border-[#D9B46A]/30 bg-[#120907]/70 px-4 py-2 text-xs font-medium tracking-[0.18em] text-[#F0C978] shadow-[0_10px_34px_rgb(0_0_0_/_28%)] md:text-sm">
+              <Flower2 className="mr-2 size-4 text-[#E8A2A0]" />
               {hero.title}
             </p>
-            <h1 className="max-w-[8em] font-serif text-[clamp(3rem,13vw,4.2rem)] font-semibold leading-[1.02] tracking-[0.02em] text-[#F2C36B] drop-shadow-[0_10px_34px_rgb(0_0_0_/_55%)] md:text-[clamp(4.6rem,6vw,6.4rem)] md:leading-[0.98]">
+            <h1 className="max-w-[6.5em] font-serif text-[clamp(2.45rem,11vw,3.35rem)] font-semibold leading-[1.04] tracking-[0.01em] text-[#F2C36B] [overflow-wrap:anywhere] drop-shadow-[0_10px_34px_rgb(0_0_0_/_55%)] md:text-[clamp(4.4rem,5.8vw,6.1rem)] md:leading-[0.98] md:tracking-[0.02em]">
               {hero.headline}
             </h1>
             <p className="mt-4 max-w-2xl text-lg font-medium leading-8 text-[#F8E6BF] md:text-[1.65rem] md:leading-10">
@@ -178,23 +176,17 @@ export function MatchaHero() {
             </GoldButton>
           </div>
 
-          <ImagePanel
-            src={hero.image.src}
-            alt={hero.image.alt}
-            priority
-            className="min-h-[190px] md:min-h-[260px] lg:hidden"
-            sizes="92vw"
-          />
+          <ImagePanel src={hero.image.src} alt={hero.image.alt} priority className="min-h-[190px] md:min-h-[260px] lg:hidden" sizes="92vw" />
 
-          <div className="grid grid-cols-4 gap-2 pt-1 md:gap-3">
+          <div className="grid grid-cols-2 gap-2 pt-1 sm:grid-cols-4 md:gap-3">
             {hero.tags.map((tag, index) => {
               const Icon = highlightIcons[index] ?? Sparkles;
               return (
                 <div
                   key={tag}
-                  className="rounded-[0.85rem] border border-[rgba(217,180,106,0.28)] bg-[linear-gradient(145deg,rgb(7_16_8_/_78%),rgb(16_23_11_/_66%))] px-2.5 py-3 text-[#F5E7C8] shadow-[inset_0_1px_0_rgb(248_230_191_/_5%)] backdrop-blur-sm md:rounded-[0.9rem] md:px-4"
+                  className="rounded-[0.85rem] border border-[rgba(217,180,106,0.28)] bg-[linear-gradient(145deg,rgb(28_12_10_/_78%),rgb(18_12_7_/_66%))] px-2.5 py-3 text-[#F5E7C8] shadow-[inset_0_1px_0_rgb(248_230_191_/_5%)] backdrop-blur-sm md:rounded-[0.9rem] md:px-4"
                 >
-                  <Icon className="mb-2 size-4 text-[#F0C978] md:size-5" strokeWidth={1.45} />
+                  <Icon className="mb-2 size-4 text-[#E8A2A0] md:size-5" strokeWidth={1.45} />
                   <p className="text-[0.68rem] font-medium leading-snug md:text-sm">{tag}</p>
                 </div>
               );
@@ -203,19 +195,19 @@ export function MatchaHero() {
         </div>
 
         <div className="relative hidden min-h-[270px] lg:block lg:min-h-[620px]">
-          <div className="absolute inset-x-4 bottom-2 top-8 rounded-full bg-[#3F6B3E]/24 blur-3xl md:inset-x-12 md:top-20" />
-          <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_52%_46%,rgb(240_201_120_/_13%),transparent_28rem),radial-gradient(circle_at_68%_54%,rgb(63_107_62_/_16%),transparent_22rem)]" />
-          <div className="relative h-full min-h-[270px] overflow-hidden rounded-[1.35rem] border border-[rgba(217,180,106,0.22)] bg-[#10170B]/50 shadow-[0_34px_110px_rgb(0_0_0_/_52%)] md:rounded-[2rem] lg:min-h-[620px]">
+          <div className="absolute inset-x-4 bottom-2 top-8 rounded-full bg-[#E8A2A0]/16 blur-3xl md:inset-x-12 md:top-20" />
+          <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_52%_46%,rgb(240_201_120_/_13%),transparent_28rem),radial-gradient(circle_at_68%_54%,rgb(224_132_142_/_12%),transparent_22rem)]" />
+          <div className="relative h-full min-h-[270px] overflow-hidden rounded-[1.35rem] border border-[rgba(217,180,106,0.22)] bg-[#120907]/50 shadow-[0_34px_110px_rgb(0_0_0_/_52%)] md:rounded-[2rem] lg:min-h-[620px]">
             <Image
               src={hero.image.src}
               alt={hero.image.alt}
               fill
               priority
               sizes="(min-width: 1280px) 50vw, (min-width: 768px) 54vw, 92vw"
-              className="object-cover object-[58%_50%] brightness-[0.84] saturate-[1.1]"
+              className="object-cover object-[54%_50%] brightness-[0.84] saturate-[1.06]"
             />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_56%_44%,transparent_0%,transparent_48%,rgb(7_6_4_/_66%)_100%)]" />
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(7_6_4_/_46%)_0%,transparent_30%,transparent_76%,rgb(7_6_4_/_48%)_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(7_6_4_/_42%)_0%,transparent_30%,transparent_76%,rgb(7_6_4_/_48%)_100%)]" />
             <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#070604]/84 to-transparent" />
           </div>
         </div>
@@ -224,11 +216,11 @@ export function MatchaHero() {
   );
 }
 
-export function MatchaProblems() {
+export function PeachProblems() {
   const { problems } = pageData;
 
   return (
-    <section className="border-y border-[rgba(217,180,106,0.16)] bg-[#071008] py-14 md:py-20">
+    <section className="border-y border-[rgba(217,180,106,0.16)] bg-[#090504] py-14 md:py-20">
       <div className="ysj-container">
         <SectionTitle title={problems.title} />
         <div className="mt-9 grid gap-5 md:grid-cols-3">
@@ -237,7 +229,7 @@ export function MatchaProblems() {
             return (
               <DetailCard key={item.title} className="p-5 md:p-6">
                 <div className="flex gap-4">
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.34)] text-[#F0C978]">
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.34)] text-[#E8A2A0]">
                     <Icon className="size-5" strokeWidth={1.45} />
                   </span>
                   <div>
@@ -254,7 +246,7 @@ export function MatchaProblems() {
   );
 }
 
-export function MatchaHighlights() {
+export function PeachHighlights() {
   const { highlights } = pageData;
 
   return (
@@ -275,7 +267,7 @@ export function MatchaHighlights() {
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_20%,rgb(8_6_4_/_72%)_100%)]" />
               </div>
               <div className="p-5 md:p-6">
-                <span className="mb-4 block h-px w-12 bg-[#D9B46A]/70" />
+                <span className="mb-4 block h-px w-12 bg-[#E8A2A0]/70" />
                 <h3 className="font-serif text-2xl font-semibold text-[#F5E7C8]">{item.title}</h3>
                 <p className="mt-3 text-base leading-7 text-[#CDB98D]">{item.text}</p>
               </div>
@@ -287,16 +279,15 @@ export function MatchaHighlights() {
   );
 }
 
-export function MatchaCraft() {
+export function PeachCraft() {
   const { craft } = pageData;
 
   return (
-    <section className="border-y border-[rgba(217,180,106,0.16)] bg-[#071008] py-14 md:py-20">
+    <section className="border-y border-[rgba(217,180,106,0.16)] bg-[#090504] py-14 md:py-20">
       <div className="ysj-container">
         <div className="relative overflow-hidden rounded-[1.25rem] border border-[rgba(217,180,106,0.3)] bg-[linear-gradient(135deg,rgb(18_12_7_/_92%),rgb(7_6_4_/_98%))] p-3 shadow-[0_28px_90px_rgb(0_0_0_/_36%)] md:rounded-[1.6rem] md:p-5">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgb(217_180_106_/_10%),transparent_22rem),radial-gradient(circle_at_86%_76%,rgb(216_154_66_/_8%),transparent_20rem)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgb(232_162_160_/_10%),transparent_22rem),radial-gradient(circle_at_86%_76%,rgb(216_154_66_/_8%),transparent_20rem)]" />
           <div className="absolute -right-16 -top-16 size-52 rounded-full border border-[#D9B46A]/10 opacity-60" />
-          <div className="absolute -bottom-20 left-8 h-40 w-72 rounded-[999px] border border-[#D9B46A]/10 opacity-40" />
           <div className="relative grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
             <ImagePanel src={craft.image.src} alt={craft.image.alt} className="min-h-[320px] lg:min-h-[520px]" />
             <div className="p-1 md:p-4 lg:pr-6">
@@ -307,7 +298,7 @@ export function MatchaCraft() {
                   return (
                     <div key={item.title} className="rounded-[1rem] border border-[rgba(217,180,106,0.18)] bg-[#050302]/38 p-4 shadow-[inset_0_1px_0_rgb(248_230_191_/_5%)] md:p-5">
                       <div className="flex gap-4">
-                        <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.38)] bg-[#10170B]/70 text-[#F0C978] md:size-12">
+                        <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.38)] bg-[#120907]/70 text-[#E8A2A0] md:size-12">
                           <Icon className="size-5" strokeWidth={1.45} />
                         </span>
                         <div>
@@ -327,14 +318,14 @@ export function MatchaCraft() {
   );
 }
 
-export function MatchaTaste() {
+export function PeachTaste() {
   const { taste } = pageData;
 
   return (
     <section className="bg-[#070604] py-14 md:py-20">
       <div className="ysj-container">
         <div className="relative overflow-hidden rounded-[1.25rem] border border-[rgba(217,180,106,0.26)] bg-[linear-gradient(135deg,rgb(7_6_4_/_98%),rgb(22_16_10_/_92%))] p-3 shadow-[0_28px_90px_rgb(0_0_0_/_36%)] md:rounded-[1.6rem] md:p-5">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_64%,rgb(240_201_120_/_9%),transparent_24rem),linear-gradient(90deg,transparent,rgb(216_154_66_/_5%))]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_64%,rgb(232_162_160_/_9%),transparent_24rem),linear-gradient(90deg,transparent,rgb(216_154_66_/_5%))]" />
           <div className="relative grid gap-6 lg:grid-cols-[1.16fr_0.84fr] lg:items-center">
             <ImagePanel src={taste.image.src} alt={taste.image.alt} className="min-h-[320px] lg:min-h-[500px]" />
             <div className="p-1 md:p-4 lg:pl-6">
@@ -345,7 +336,7 @@ export function MatchaTaste() {
                   return (
                     <div key={item.title} className="rounded-[1rem] border border-[rgba(217,180,106,0.24)] bg-[#050302]/42 p-5 text-left shadow-[inset_0_1px_0_rgb(248_230_191_/_5%)]">
                       <div className="flex gap-4">
-                        <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.38)] bg-[#10170B]/70 text-[#F0C978]">
+                        <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.38)] bg-[#120907]/70 text-[#E8A2A0]">
                           <Icon className="size-5" strokeWidth={1.45} />
                         </span>
                         <div>
@@ -357,11 +348,9 @@ export function MatchaTaste() {
                   );
                 })}
               </div>
-              {"summary" in taste ? (
-                <p className="mt-5 rounded-full border border-[rgba(217,180,106,0.16)] bg-[#10170B]/54 px-5 py-3 text-center text-sm leading-7 text-[#F0C978] md:text-base">
-                  {taste.summary}
-                </p>
-              ) : null}
+              <p className="mt-5 rounded-full border border-[rgba(217,180,106,0.16)] bg-[#120907]/54 px-5 py-3 text-center text-sm leading-7 text-[#F0C978] md:text-base">
+                {taste.summary}
+              </p>
             </div>
           </div>
         </div>
@@ -370,11 +359,11 @@ export function MatchaTaste() {
   );
 }
 
-export function MatchaInfoGift() {
+export function PeachInfoGift() {
   const { infoGift } = pageData;
 
   return (
-    <section id="gift-specs" className="border-y border-[rgba(217,180,106,0.16)] bg-[#071008] py-14 scroll-mt-28 md:py-20">
+    <section id="gift-specs" className="border-y border-[rgba(217,180,106,0.16)] bg-[#090504] py-14 scroll-mt-28 md:py-20">
       <div className="ysj-container">
         <DetailCard className="p-4 md:p-7">
           <SectionTitle title={infoGift.title} />
@@ -386,9 +375,7 @@ export function MatchaInfoGift() {
                   <Icon className="size-6 shrink-0 text-[#F0C978]" strokeWidth={1.45} />
                   <div>
                     <p className="text-xs text-[#D9B46A] md:text-sm">{item.label}</p>
-                    <p className="mt-1 font-serif text-base font-semibold text-[#F5E7C8] md:text-lg">
-                      {item.value}
-                    </p>
+                    <p className="mt-1 font-serif text-base font-semibold text-[#F5E7C8] md:text-lg">{item.value}</p>
                   </div>
                 </div>
               );
@@ -405,7 +392,7 @@ export function MatchaInfoGift() {
                 return (
                   <div key={item.title} className="rounded-[1rem] border border-[rgba(217,180,106,0.2)] bg-[linear-gradient(135deg,rgb(18_12_7_/_78%),rgb(5_3_2_/_72%))] p-5">
                     <div className="flex gap-4">
-                      <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.34)] text-[#F0C978]">
+                      <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.34)] text-[#E8A2A0]">
                         <Icon className="size-5" strokeWidth={1.45} />
                       </span>
                       <div>
@@ -419,13 +406,8 @@ export function MatchaInfoGift() {
             </div>
           </div>
           <div className="relative min-h-[300px] lg:min-h-[470px]">
-            <div className="absolute inset-x-8 bottom-4 top-12 rounded-full bg-[#3F6B3E]/16 blur-3xl" />
-            <ImagePanel
-              src={infoGift.image.src}
-              alt={infoGift.image.alt}
-              className="relative min-h-[300px] lg:min-h-[470px]"
-              sizes="(min-width: 1024px) 58vw, 92vw"
-            />
+            <div className="absolute inset-x-8 bottom-4 top-12 rounded-full bg-[#E8A2A0]/12 blur-3xl" />
+            <ImagePanel src={infoGift.image.src} alt={infoGift.image.alt} className="relative min-h-[300px] lg:min-h-[470px]" sizes="(min-width: 1024px) 58vw, 92vw" />
           </div>
         </div>
       </div>
@@ -433,14 +415,13 @@ export function MatchaInfoGift() {
   );
 }
 
-export function MatchaCTA() {
+export function PeachCTA() {
   const { bottomCta } = pageData;
 
   return (
     <section className="relative isolate overflow-hidden border-y border-[rgba(217,180,106,0.18)] bg-[#070604] py-14 md:py-22">
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_0%,rgb(240_201_120_/_13%),transparent_30rem),radial-gradient(circle_at_72%_78%,rgb(216_154_66_/_9%),transparent_24rem),linear-gradient(180deg,#0F0B07_0%,#071008_100%)]" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-44 opacity-35 [background-image:radial-gradient(ellipse_at_center,transparent_35%,rgba(217,180,106,0.16)_36%,transparent_37%),linear-gradient(120deg,transparent_45%,rgba(217,180,106,0.12)_46%,transparent_48%)] [background-size:14rem_7rem,9rem_5rem]" />
-      <div className="absolute -right-20 bottom-8 -z-10 size-56 rounded-full border border-[#D9B46A]/12" />
+      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_0%,rgb(240_201_120_/_13%),transparent_30rem),radial-gradient(circle_at_72%_78%,rgb(232_162_160_/_10%),transparent_24rem),linear-gradient(180deg,#0F0B07_0%,#090504_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-44 opacity-35 [background-image:radial-gradient(ellipse_at_center,transparent_35%,rgba(217,180,106,0.16)_36%,transparent_37%),linear-gradient(120deg,transparent_45%,rgba(232,162,160,0.12)_46%,transparent_48%)] [background-size:14rem_7rem,9rem_5rem]" />
       <div className="ysj-container text-center">
         <h2 className="font-serif text-[2rem] font-semibold leading-tight text-[#F8E6BF] text-balance md:text-6xl">
           {bottomCta.title}
@@ -460,7 +441,7 @@ export function MatchaCTA() {
           {bottomCta.guarantees.map((item, index) => {
             const Icon = guaranteeIcons[index] ?? ShieldCheck;
             return (
-              <div key={item} className="rounded-full border border-[rgba(217,180,106,0.2)] bg-[#10170B]/58 px-4 py-3 text-sm text-[#F5E7C8]">
+              <div key={item} className="rounded-full border border-[rgba(217,180,106,0.2)] bg-[#120907]/58 px-4 py-3 text-sm text-[#F5E7C8]">
                 <span className="inline-flex items-center gap-2">
                   <Icon className="size-4 text-[#F0C978]" strokeWidth={1.45} />
                   {item}
