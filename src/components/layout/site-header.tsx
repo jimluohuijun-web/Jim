@@ -9,14 +9,7 @@ import { siteConfig } from "@/data/site";
 import { type MouseEvent, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-const mobileNavItems = [
-  { label: "首页", href: "/#home" },
-  { label: "花酥系列", href: "/#pastries" },
-  { label: "月饼官宣", href: "/#mooncakes" },
-  { label: "试吃登记", href: "/#trial" },
-  { label: "品牌故事", href: "/#brand" },
-  { label: "联系我们", href: "/#contact" },
-];
+const mobileNavItems = siteConfig.navItems;
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -172,8 +165,8 @@ export function SiteHeader() {
 
       <div className="ysj-container flex min-h-16 items-center justify-between gap-4 lg:hidden">
         <Link
-          href="/#home"
-          onClick={(event) => handleMobileNavClick(event, "/#home")}
+          href="/"
+          onClick={(event) => handleMobileNavClick(event, "/")}
           className="relative size-14 shrink-0 rounded-full bg-[radial-gradient(circle,rgb(248_230_191_/_12%),transparent_70%)]"
           aria-label="云酥坊首页"
         >
@@ -223,8 +216,8 @@ export function SiteHeader() {
               ))}
             </nav>
             <Link
-              href="/#trial"
-              onClick={(event) => handleMobileNavClick(event, "/#trial")}
+              href="/reserve"
+              onClick={(event) => handleMobileNavClick(event, "/reserve")}
               className="mt-4 flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-[#F2C36B]/45 bg-[linear-gradient(135deg,#F2C36B,#D89A42_52%,#A96828)] px-5 text-sm font-medium text-[#1A0F0A] shadow-[0_14px_36px_rgb(216_154_66_/_18%)]"
             >
               <Flower2 className="size-4" />
