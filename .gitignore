@@ -24,6 +24,14 @@
 .DS_Store
 *.pem
 
+# local image backups
+public/images/_backup-*/
+
+# local screenshots / temporary artifacts
+screenshots/
+tmp/
+*.tmp
+
 # debug
 npm-debug.log*
 yarn-debug.log*
