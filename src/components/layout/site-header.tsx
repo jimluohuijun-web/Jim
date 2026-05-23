@@ -124,7 +124,7 @@ export function SiteHeader() {
             const isActive =
               pathname === "/"
                 ? activeHref === item.href
-                : item.href === pathname || (item.href !== "/" && item.href.startsWith(pathname));
+                : item.href === pathname || (item.href !== "/" && pathname.startsWith(item.href));
 
             return (
               <Link
@@ -148,7 +148,7 @@ export function SiteHeader() {
           })}
         </nav>
         <Link
-          href="/#tasting-register"
+          href="/reserve"
           className="hidden min-h-11 items-center gap-2 rounded-full border border-[#F2C36B]/45 bg-[linear-gradient(135deg,#F2C36B,#D89A42_52%,#A96828)] px-5 text-sm font-medium text-[#1A0F0A] shadow-[0_14px_36px_rgb(216_154_66_/_22%)] transition-all duration-500 hover:-translate-y-0.5 hover:brightness-105 lg:inline-flex"
         >
           <Flower2 className="size-4" />
