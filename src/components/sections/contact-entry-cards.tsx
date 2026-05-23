@@ -2,47 +2,49 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, CalendarDays, Gift, Sparkles } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, CalendarDays, Gift, Handshake } from "lucide-react";
 
 const entries = [
   {
-    title: "预约试吃",
-    description: "想第一时间参与温哥华小批量试吃，可以先留下预约意向。",
-    button: "前往预约",
+    title: "企业团购",
+    description: "适合员工福利、客户答谢、节日礼赠。",
+    button: "提交团购需求",
     href: "/reserve",
-    icon: CalendarDays,
+    icon: BriefcaseBusiness,
   },
   {
-    title: "点心咨询",
-    description: "想了解蛋黄酥、牡丹花酥、凤梨酥与中秋礼盒预告，可以先查看点心系列。",
-    button: "查看点心",
+    title: "节日礼盒定制",
+    description: "支持多规格组合、节令产品搭配与礼盒方案咨询。",
+    button: "查看产品系列",
     href: "/products",
     icon: Gift,
   },
   {
-    title: "活动 / 快闪合作",
-    description: "适合小型活动、下午茶分享、礼盒咨询或轻量快闪合作意向。",
-    button: "查看活动计划",
-    href: "/events",
-    icon: Sparkles,
+    title: "新品试吃",
+    description: "欢迎预约试吃名额，提前体验云酥坊新品。",
+    button: "预约试吃",
+    href: "/reserve",
+    icon: CalendarDays,
   },
   {
-    title: "品牌故事",
-    description: "想了解云酥坊的发起、理念和温哥华计划，可以先阅读品牌故事。",
-    button: "关于云酥坊",
-    href: "/about",
-    icon: BookOpen,
+    title: "品牌合作",
+    description: "适合活动快闪、联名合作、茶席体验与渠道洽谈。",
+    button: "沟通合作",
+    href: "/reserve",
+    icon: Handshake,
   },
 ];
 
 export function ContactEntryCards() {
   return (
-    <section className="ysj-section-tight border-t border-border/60 bg-background/48">
+    <section className="ysj-section-tight border-y border-[#D89A42]/16 bg-[#120905]">
       <div className="ysj-container flex flex-col gap-10">
         <div className="flex max-w-3xl flex-col gap-4">
-          <span className="h-px w-16 bg-soft-gold" />
-          <p className="text-sm uppercase tracking-[0.28em] text-primary/80">Entry</p>
-          <h2 className="ysj-title-lg text-balance">你可以这样找到云酥坊</h2>
+          <span className="h-px w-16 bg-[#D89A42]" />
+          <p className="text-sm uppercase tracking-[0.28em] text-[#D89A42]">Contact Entry</p>
+          <h2 className="text-balance text-4xl font-semibold leading-tight text-[#F8E6BF] md:text-5xl">
+            选择适合的联系入口
+          </h2>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2">
@@ -60,17 +62,21 @@ export function ContactEntryCards() {
                   delay: index * 0.07,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="ysj-card relative overflow-hidden p-7"
+                className="group relative overflow-hidden rounded-[1.5rem] border border-[#D89A42]/24 bg-[#2A1710]/60 p-7 shadow-[0_22px_60px_rgb(0_0_0_/_22%)] transition-transform duration-500 hover:-translate-y-1"
               >
-                <div className="absolute -right-16 top-8 size-56 rounded-full border border-soft-gold/25" />
+                <div className="absolute -right-16 top-8 size-56 rounded-full border border-[#D89A42]/12" />
                 <div className="relative flex min-h-64 flex-col justify-between gap-8">
                   <div className="grid gap-5 sm:grid-cols-[3rem_1fr]">
-                    <span className="flex size-12 items-center justify-center rounded-full border border-soft-gold/35 bg-cloud-white/55 text-primary">
+                    <span className="flex size-12 items-center justify-center rounded-full border border-[#F2C36B]/32 bg-[#1A0F0A]/72 text-[#F2C36B]">
                       <Icon data-icon="inline-start" />
                     </span>
                     <div className="flex flex-col gap-3">
-                      <h3 className="text-3xl font-semibold leading-tight">{entry.title}</h3>
-                      <p className="text-base leading-7 text-muted-foreground">{entry.description}</p>
+                      <h3 className="text-3xl font-semibold leading-tight text-[#F8E6BF]">
+                        {entry.title}
+                      </h3>
+                      <p className="text-base leading-7 text-[#E8CFA4]/76">
+                        {entry.description}
+                      </p>
                     </div>
                   </div>
                   <Link

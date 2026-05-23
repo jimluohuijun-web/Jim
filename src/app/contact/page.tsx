@@ -15,13 +15,13 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <>
+    <main className="ysf-pc-home overflow-hidden bg-[#1A0F0A] text-[#E8CFA4]">
       <ContactHero />
       <ContactEntryCards />
       <ContactCollaboration />
       <ContactSocial />
       <ContactRegion />
       <ContactCta />
-    </>
+    </main>
   );
 }
