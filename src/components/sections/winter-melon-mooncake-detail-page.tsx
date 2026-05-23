@@ -48,7 +48,7 @@ function GoldButton({
   return (
     <Link
       href={href}
-      className={`inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border px-7 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 sm:w-auto ${className}`}
+      className={`inline-flex min-h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-full border px-7 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 sm:w-auto ${className}`}
     >
       {children}
     </Link>
@@ -76,19 +76,21 @@ function ImagePanel({
   alt,
   priority = false,
   className = "",
+  imageClassName = "object-cover",
   sizes = "(min-width: 1280px) 46vw, (min-width: 768px) 60vw, 92vw",
 }: {
   src: string;
   alt: string;
   priority?: boolean;
   className?: string;
+  imageClassName?: string;
   sizes?: string;
 }) {
   return (
     <div
       className={`relative overflow-hidden rounded-[1.15rem] border border-[rgba(217,180,106,0.28)] bg-[#120907] shadow-[0_30px_90px_rgb(0_0_0_/_38%)] md:rounded-[1.45rem] ${className}`}
     >
-      <Image src={src} alt={alt} fill priority={priority} sizes={sizes} className="object-cover" />
+      <Image src={src} alt={alt} fill priority={priority} sizes={sizes} className={imageClassName} />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,transparent_0%,transparent_52%,rgb(8_6_4_/_70%)_100%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgb(8_6_4_/_32%)_100%)]" />
     </div>
@@ -117,6 +119,7 @@ function SectionTitle({
 
 export function WinterMelonMooncakeHero() {
   const { hero } = pageData;
+  const headlineLines = hero.headlineLines ?? [hero.headline];
 
   return (
     <section className="relative isolate overflow-hidden border-b border-[rgba(217,180,106,0.18)] bg-[#070604]">
@@ -129,7 +132,7 @@ export function WinterMelonMooncakeHero() {
           alt=""
           fill
           priority
-          sizes="100vw"
+          sizes="(min-width: 1024px) 1px, 100vw"
           className="object-cover object-[62%_44%] opacity-70 brightness-[0.7] saturate-[1.05]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#070604_0%,rgb(7_6_4_/_88%)_45%,rgb(7_6_4_/_34%)_100%)]" />
@@ -137,8 +140,8 @@ export function WinterMelonMooncakeHero() {
       </div>
       <div className="absolute inset-x-0 bottom-0 -z-10 h-44 bg-gradient-to-t from-[#070604] to-transparent" />
 
-      <div className="ysj-container grid gap-6 py-6 md:min-h-[640px] md:gap-8 md:py-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-12 lg:py-12">
-        <div className="relative z-10 flex max-w-[42rem] flex-col gap-4 md:gap-5 lg:gap-6">
+      <div className="ysj-container grid gap-6 py-6 md:min-h-[620px] md:gap-8 md:py-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-12 lg:py-12">
+        <div className="relative z-10 flex max-w-[40rem] flex-col gap-4 md:gap-5 lg:gap-6">
           <nav className="flex flex-wrap items-center gap-2 text-[0.72rem] text-[#BCA77F] md:text-sm">
             {hero.breadcrumb.map((item, index) => (
               <span key={item.href} className="inline-flex items-center gap-2">
@@ -155,13 +158,20 @@ export function WinterMelonMooncakeHero() {
               <Flower2 className="mr-2 size-4 text-[#F0C978]" />
               {hero.title}
             </p>
-            <h1 className="max-w-[8.5em] font-serif text-[clamp(2.35rem,10vw,3.15rem)] font-semibold leading-[1.04] tracking-[0.01em] text-[#F2C36B] [overflow-wrap:anywhere] drop-shadow-[0_10px_34px_rgb(0_0_0_/_55%)] md:text-[clamp(4rem,5.1vw,5.4rem)] md:leading-[0.98] md:tracking-[0.02em]">
-              {hero.headline}
+            <h1
+              aria-label={hero.headline}
+              className="max-w-[620px] font-serif text-[42px] font-semibold leading-[1.04] tracking-[-0.03em] text-[#F2C36B] drop-shadow-[0_10px_34px_rgb(0_0_0_/_55%)] sm:text-[50px] md:text-[64px] md:leading-[1] lg:text-[70px] xl:text-[74px] 2xl:text-[76px]"
+            >
+              {headlineLines.map((line) => (
+                <span key={line} className="block whitespace-nowrap">
+                  {line}
+                </span>
+              ))}
             </h1>
-            <p className="mt-4 max-w-2xl text-lg font-medium leading-8 text-[#F8E6BF] md:text-[1.65rem] md:leading-10">
+            <p className="mt-5 max-w-2xl text-lg font-semibold leading-8 text-[#FFF2C4] md:mt-6 md:text-[1.65rem] md:leading-10">
               {hero.subtitle}
             </p>
-            <p className="mt-4 max-w-[37rem] text-sm leading-7 text-[#BCA77F] md:text-base md:leading-8">
+            <p className="mt-4 max-w-[560px] text-sm leading-[1.9] text-[#BCA77F] md:text-[17px]">
               {hero.description}
             </p>
           </div>
@@ -177,7 +187,14 @@ export function WinterMelonMooncakeHero() {
             </GoldButton>
           </div>
 
-          <ImagePanel src={hero.image.src} alt={hero.image.alt} priority className="min-h-[190px] md:min-h-[260px] lg:hidden" sizes="92vw" />
+          <ImagePanel
+            src={hero.image.src}
+            alt={hero.image.alt}
+            priority
+            className="aspect-[4/3] min-h-[190px] md:min-h-[260px] lg:hidden"
+            imageClassName="object-cover object-[58%_50%]"
+            sizes="92vw"
+          />
 
           <div className="grid grid-cols-2 gap-2 pt-1 sm:grid-cols-4 md:gap-3">
             {hero.tags.map((tag, index) => {
@@ -195,17 +212,17 @@ export function WinterMelonMooncakeHero() {
           </div>
         </div>
 
-        <div className="relative hidden min-h-[270px] lg:block lg:min-h-[620px]">
+        <div className="relative hidden min-h-[270px] lg:block lg:min-h-[560px] xl:min-h-[590px]">
           <div className="absolute inset-x-4 bottom-2 top-8 rounded-full bg-[#F0C978]/16 blur-3xl md:inset-x-12 md:top-20" />
           <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_52%_46%,rgb(240_201_120_/_13%),transparent_28rem),radial-gradient(circle_at_68%_54%,rgb(232_216_168_/_12%),transparent_22rem)]" />
-          <div className="relative h-full min-h-[270px] overflow-hidden rounded-[1.35rem] border border-[rgba(217,180,106,0.22)] bg-[#120907]/50 shadow-[0_34px_110px_rgb(0_0_0_/_52%)] md:rounded-[2rem] lg:min-h-[620px]">
+          <div className="relative h-full min-h-[270px] overflow-hidden rounded-[1.35rem] border border-[rgba(217,180,106,0.22)] bg-[#120907]/50 shadow-[0_34px_110px_rgb(0_0_0_/_52%)] md:rounded-[2rem] lg:min-h-[560px] xl:min-h-[590px]">
             <Image
               src={hero.image.src}
               alt={hero.image.alt}
               fill
               priority
               sizes="(min-width: 1280px) 50vw, (min-width: 768px) 54vw, 92vw"
-              className="object-cover object-[54%_50%] brightness-[0.84] saturate-[1.06]"
+              className="object-cover object-[58%_50%] brightness-[0.86] saturate-[1.06]"
             />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_56%_44%,transparent_0%,transparent_48%,rgb(7_6_4_/_66%)_100%)]" />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(7_6_4_/_42%)_0%,transparent_30%,transparent_76%,rgb(7_6_4_/_48%)_100%)]" />
@@ -249,30 +266,47 @@ export function WinterMelonMooncakeProblems() {
 
 export function WinterMelonMooncakeHighlights() {
   const { highlights } = pageData;
+  const highlightTitleLines = ["甄选冬瓜真材实料，", "一口解锁新式清爽味"];
 
   return (
-    <section className="bg-[#070604] py-14 md:py-20">
+    <section id="winter-melon-highlights" className="scroll-mt-24 bg-[#070604] py-16 md:py-24">
       <div className="ysj-container">
-        <SectionTitle title={highlights.title} />
-        <div className="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mx-auto max-w-[980px] text-center">
+          <span className="mx-auto mb-6 block h-px w-16 bg-[#D9B46A]" />
+          <h2
+            aria-label={highlights.title}
+            className="font-serif text-[32px] font-semibold leading-[1.18] tracking-[-0.02em] text-[#F8E6BF] md:text-[48px] xl:text-[52px]"
+          >
+            {highlightTitleLines.map((line) => (
+              <span key={line} className="block md:inline md:whitespace-nowrap">
+                {line}
+              </span>
+            ))}
+          </h2>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:mt-14 xl:grid-cols-4 xl:gap-7">
           {highlights.items.map((item) => (
-            <DetailCard key={item.title} className="group">
-              <div className="relative aspect-[4/3] overflow-hidden border-b border-[rgba(217,180,106,0.18)]">
+            <article
+              key={item.title}
+              className="group flex h-full flex-col overflow-hidden rounded-[24px] border border-[rgba(217,180,106,0.24)] bg-[linear-gradient(145deg,rgb(37_22_15_/_78%),rgb(8_6_4_/_96%))] shadow-[0_18px_54px_rgb(0_0_0_/_26%)] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(240,201,120,0.48)]"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden border-b border-[rgba(217,180,106,0.18)] bg-[#120907]">
                 <Image
                   src={item.image.src}
                   alt={item.image.alt}
                   fill
                   sizes="(min-width: 1280px) 23vw, (min-width: 768px) 45vw, 92vw"
-                  className="object-cover brightness-[0.78] transition-transform duration-700 group-hover:scale-[1.04]"
+                  className="object-cover brightness-[0.82] saturate-[1.04] transition-transform duration-700 group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_20%,rgb(8_6_4_/_72%)_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_24%,rgb(8_6_4_/_62%)_100%)]" />
               </div>
-              <div className="p-5 md:p-6">
-                <span className="mb-4 block h-px w-12 bg-[#F0C978]/70" />
-                <h3 className="font-serif text-2xl font-semibold text-[#F5E7C8]">{item.title}</h3>
-                <p className="mt-3 text-base leading-7 text-[#CDB98D]">{item.text}</p>
+              <div className="flex flex-1 flex-col p-6">
+                <span className="mb-5 block h-px w-12 bg-[#F0C978]/70 transition-all duration-300 group-hover:w-16 group-hover:bg-[#F2C36B]" />
+                <h3 className="font-serif text-[22px] font-semibold leading-snug text-[#F5E7C8]">{item.title}</h3>
+                <p className="mt-3 text-[15px] leading-7 text-[#CDB98D] md:text-base">{item.text}</p>
               </div>
-            </DetailCard>
+            </article>
           ))}
         </div>
       </div>
@@ -374,35 +408,48 @@ export function WinterMelonMooncakeTaste() {
 
 export function WinterMelonMooncakeProcess() {
   const { process } = pageData;
+  const processHeadingLines = process.headingLines ?? [process.title];
 
   return (
     <section className="border-y border-[rgba(217,180,106,0.16)] bg-[#090504] py-14 md:py-20">
       <div className="ysj-container">
-        <SectionTitle title={process.title} />
-        <div className="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mx-auto max-w-[960px] text-center">
+          <span className="mx-auto mb-6 block h-px w-16 bg-[#D9B46A]" />
+          <h2
+            aria-label={process.title}
+            className="mx-auto max-w-[92vw] font-serif text-[clamp(1.75rem,7.45vw,2.25rem)] font-semibold leading-[1.2] tracking-[-0.04em] text-[#F8E6BF] md:text-[46px] md:leading-[1.18] xl:text-[52px]"
+          >
+            {processHeadingLines.map((line) => (
+              <span key={line} className="block whitespace-nowrap">
+                {line}
+              </span>
+            ))}
+          </h2>
+        </div>
+        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:mt-14 xl:grid-cols-4">
           {process.steps.map((item, index) => {
             const Icon = processIcons[index] ?? Sparkles;
             return (
-              <DetailCard key={item.title} className="group">
-                <div className="relative aspect-[16/10] overflow-hidden border-b border-[rgba(217,180,106,0.16)]">
+              <DetailCard key={item.title} className="group flex h-full flex-col">
+                <div className="relative aspect-[4/3] overflow-hidden border-b border-[rgba(217,180,106,0.16)]">
                   <Image
                     src={item.image.src}
                     alt={item.image.alt}
                     fill
                     sizes="(min-width: 1280px) 22vw, (min-width: 768px) 45vw, 92vw"
-                    className="object-cover brightness-[0.74] transition-transform duration-700 group-hover:scale-[1.04]"
+                    className="object-cover object-center brightness-[0.76] saturate-[1.04] transition-transform duration-700 group-hover:scale-[1.04]"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_12%,rgb(8_6_4_/_76%)_100%)]" />
                   <span className="absolute left-4 top-4 rounded-full border border-[#F0C978]/32 bg-[#080604]/72 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-[#F0C978] backdrop-blur-sm">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <div className="p-5">
+                <div className="flex flex-1 p-5">
                   <div className="flex items-start gap-3">
                     <span className="mt-1 flex size-9 shrink-0 items-center justify-center rounded-full border border-[rgba(217,180,106,0.32)] text-[#F0C978]">
                       <Icon className="size-4" strokeWidth={1.45} />
                     </span>
-                    <div>
+                    <div className="min-w-0">
                       <h3 className="font-serif text-xl font-semibold text-[#F5E7C8]">{item.title}</h3>
                       <p className="mt-2 text-sm leading-7 text-[#CDB98D]">{item.text}</p>
                     </div>
@@ -412,7 +459,7 @@ export function WinterMelonMooncakeProcess() {
             );
           })}
         </div>
-        <p className="mx-auto mt-7 max-w-3xl rounded-full border border-[rgba(217,180,106,0.18)] bg-[#120907]/54 px-5 py-3 text-center text-sm leading-7 text-[#F0C978] md:text-base">
+        <p className="mx-auto mt-7 max-w-[860px] rounded-full border border-[rgba(217,180,106,0.18)] bg-[#120907]/54 px-5 py-3 text-center text-sm leading-7 text-[#F0C978] md:text-base">
           {process.summary}
         </p>
       </div>
@@ -485,19 +532,19 @@ export function WinterMelonMooncakeRecommendations() {
         <SectionTitle title={recommendations.title} />
         <div className="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {recommendations.items.map((item) => (
-            <DetailCard key={item.title} className="group">
-              <Link href={item.href} className="block h-full">
+            <DetailCard key={item.title} className="group flex h-full flex-col">
+              <Link href={item.href} className="flex h-full flex-col">
                 <div className="relative aspect-[4/3] overflow-hidden border-b border-[rgba(217,180,106,0.16)]">
                   <Image
                     src={item.image.src}
                     alt={item.image.alt}
                     fill
                     sizes="(min-width: 1280px) 22vw, (min-width: 768px) 45vw, 92vw"
-                    className="object-cover brightness-[0.76] transition-transform duration-700 group-hover:scale-[1.04]"
+                    className="object-cover object-center brightness-[0.82] saturate-[1.04] transition-transform duration-700 group-hover:scale-[1.04]"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_18%,rgb(8_6_4_/_74%)_100%)]" />
                 </div>
-                <div className="p-5">
+                <div className="flex flex-1 flex-col p-5">
                   <h3 className="font-serif text-xl font-semibold text-[#F5E7C8] md:text-2xl">{item.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-[#CDB98D] md:text-base">{item.text}</p>
                 </div>

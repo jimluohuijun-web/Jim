@@ -9,8 +9,8 @@ type DetailImage = Pick<SiteImage, "src" | "alt" | "ratio">;
 
 export const winterMelonMooncakeImages = {
   hero: {
-    src: "/images/products/winter-melon-mooncake/hero.jpg",
-    alt: "云酥坊特色古法冬翅月饼黑金中秋首屏主图",
+    src: "/images/products/winter-melon-mooncake/winter-melon-mooncake-hero.jpg",
+    alt: "云酥坊特色古法冬翅月饼与冬瓜蓉丝状切面黑金首屏主图",
     ratio: "16:9",
   } satisfies DetailImage,
   cutOpen: {
@@ -63,6 +63,86 @@ export const winterMelonMooncakeImages = {
     alt: "特色冬翅月饼搭配中式茶席场景",
     ratio: "16:9",
   } satisfies DetailImage,
+  featureWinterMelonStrands: {
+    src: "/images/products/winter-melon-feature-1.jpg",
+    alt: "古法冬翅月饼切面展示浅金色冬瓜蓉丝状馅料",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  featureLightSweetTea: {
+    src: "/images/products/winter-melon-feature-2.jpg",
+    alt: "低糖轻甜冬翅月饼搭配清茶与桂花",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  featureCantoneseSoftCrust: {
+    src: "/images/products/winter-melon-feature-3.jpg",
+    alt: "师傅手作包制广式月饼软皮坯",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  featureFreshBaked: {
+    src: "/images/products/winter-melon-feature-4.jpg",
+    alt: "新鲜出炉冬翅月饼置于木托盘上",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  ingredientFreshWinterMelon: {
+    src: "/images/products/winter-melon-ingredient-1.jpg",
+    alt: "切开的新鲜冬瓜原料与处理好的冬瓜丝",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  ingredientSlowCookedFilling: {
+    src: "/images/products/winter-melon-ingredient-2.jpg",
+    alt: "铜锅中文火慢熬的浅金色冬翅馅",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  ingredientCantoneseCrust: {
+    src: "/images/products/winter-melon-ingredient-3.jpg",
+    alt: "广式月饼软皮面团与优质小麦粉",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  ingredientLightSugarOil: {
+    src: "/images/products/winter-melon-ingredient-4.jpg",
+    alt: "冬翅月饼切面搭配清茶糖粉与植物油器皿",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  processWinterMelonStrips: {
+    src: "/images/products/winter-melon-process-1.jpg",
+    alt: "新鲜冬瓜切丝与清水漂洗去涩工艺",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  processSlowCookedFilling: {
+    src: "/images/products/winter-melon-process-2.jpg",
+    alt: "铜锅中文火慢熬收汁的冬翅馅",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  processWeighAndWrap: {
+    src: "/images/products/winter-melon-process-3.jpg",
+    alt: "冬翅月饼皮馅称重与手工包馅",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  processFreshBaked: {
+    src: "/images/products/winter-melon-process-4.jpg",
+    alt: "分段恒温烘烤后的广式冬翅月饼",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  comboEggYolkLotus: {
+    src: "/images/products/mooncake-combo-1-egg-yolk-lotus.jpg",
+    alt: "蛋黄莲蓉月饼完整蛋黄与莲蓉切面系列图",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  comboFiveKernel: {
+    src: "/images/products/mooncake-combo-2-five-kernel.jpg",
+    alt: "经典五仁月饼丰富果仁颗粒切面系列图",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  comboPureLotus: {
+    src: "/images/products/mooncake-combo-3-pure-lotus.jpg",
+    alt: "纯莲蓉月饼浅金色细腻莲蓉切面系列图",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  comboRedBean: {
+    src: "/images/products/mooncake-combo-4-red-bean.jpg",
+    alt: "经典豆沙月饼深红褐色豆沙切面系列图",
+    ratio: "4:3",
+  } satisfies DetailImage,
 };
 
 export const winterMelonMooncakeImagePrompts = {
@@ -99,6 +179,7 @@ export const winterMelonMooncakeProductData = {
     ],
     title: "云酥坊 · 特色古法冬翅月饼",
     headline: "古法冬瓜熬冬翅",
+    headlineLines: ["古法冬瓜", "熬冬翅"],
     subtitle: "清甜解腻，解锁中秋新式正统味",
     description:
       "甄选新鲜冬瓜古法慢熬冬翅馅，搭配正统广式软皮。丝丝绵柔、清甜温润、清爽不腻，自食轻甜本味，送礼新意体面。",
@@ -119,24 +200,24 @@ export const winterMelonMooncakeProductData = {
     title: "甄选冬瓜真材实料，一口解锁新式清爽味",
     items: [
       {
-        title: "古法冬瓜冬翅",
-        text: "丝丝分明，真料看得见。",
-        image: winterMelonMooncakeImages.winterMelonFilling,
+        title: "古法冬翅",
+        text: "丝丝分明，真材看得见。",
+        image: winterMelonMooncakeImages.featureWinterMelonStrands,
       },
       {
         title: "低糖轻甜配方",
-        text: "清爽解腻，不油不齁。",
-        image: winterMelonMooncakeImages.process,
+        text: "清爽解腻，不油不腻。",
+        image: winterMelonMooncakeImages.featureLightSweetTea,
       },
       {
         title: "正统广式软皮",
         text: "皮薄馅足，柔润顺滑。",
-        image: winterMelonMooncakeImages.mooncakeCrust,
+        image: winterMelonMooncakeImages.featureCantoneseSoftCrust,
       },
       {
         title: "中秋现做现发",
         text: "短保锁鲜，风味更新鲜。",
-        image: winterMelonMooncakeImages.baking,
+        image: winterMelonMooncakeImages.featureFreshBaked,
       },
     ],
   },
@@ -147,22 +228,22 @@ export const winterMelonMooncakeProductData = {
       {
         title: "新鲜冬瓜",
         text: "真材取馅，天然清润。",
-        image: winterMelonMooncakeImages.winterMelon,
+        image: winterMelonMooncakeImages.ingredientFreshWinterMelon,
       },
       {
-        title: "古法冬翅馅",
+        title: "古法熬馅",
         text: "文火慢熬，丝丝绵柔。",
-        image: winterMelonMooncakeImages.winterMelonFilling,
+        image: winterMelonMooncakeImages.ingredientSlowCookedFilling,
       },
       {
         title: "优质小麦粉",
         text: "饼皮柔软，广式质感。",
-        image: winterMelonMooncakeImages.flour,
+        image: winterMelonMooncakeImages.ingredientCantoneseCrust,
       },
       {
         title: "精控糖粉与植物油",
         text: "甜度克制，清爽不腻。",
-        image: winterMelonMooncakeImages.oil,
+        image: winterMelonMooncakeImages.ingredientLightSugarOil,
       },
     ],
     badges: ["新鲜冬瓜制馅", "无人工香精", "无工业糖浆", "低糖清润", "当季现做"],
@@ -178,27 +259,28 @@ export const winterMelonMooncakeProductData = {
     summary: "告别传统月饼厚重甜腻，冬翅月饼更轻盈、更耐吃。",
   },
   process: {
-    title: "守古法、弃重糖，以慢工艺做清爽中秋味",
+    title: "守古法，弃重糖，以慢工艺做清爽中秋味",
+    headingLines: ["守古法，弃重糖", "以慢工艺做清爽中秋味"],
     steps: [
       {
         title: "新鲜冬瓜切丝去涩",
         text: "甄选厚肉冬瓜，精切漂洗，口感更清润。",
-        image: winterMelonMooncakeImages.process,
+        image: winterMelonMooncakeImages.processWinterMelonStrips,
       },
       {
         title: "文火慢熬收汁成翅",
         text: "慢熬挂霜，形成丝绒冬翅质感。",
-        image: winterMelonMooncakeImages.winterMelonFilling,
+        image: winterMelonMooncakeImages.processSlowCookedFilling,
       },
       {
         title: "精准称重包馅",
         text: "皮馅比例均衡，手工成型更饱满。",
-        image: winterMelonMooncakeImages.mooncakeCrust,
+        image: winterMelonMooncakeImages.processWeighAndWrap,
       },
       {
         title: "分段恒温烘烤",
         text: "广式软皮自然回油，口感更柔润。",
-        image: winterMelonMooncakeImages.baking,
+        image: winterMelonMooncakeImages.processFreshBaked,
       },
     ],
     summary: "古法慢熬冬翅，现做现发，保留中秋更清爽的一面。",
@@ -228,41 +310,25 @@ export const winterMelonMooncakeProductData = {
         title: "蛋黄莲蓉月饼",
         text: "整颗蛋黄，咸甜平衡。",
         href: "/products/egg-yolk-lotus-mooncake",
-        image: {
-          src: "/images/products/egg-yolk-lotus-mooncake/cut-open.jpg",
-          alt: "蛋黄莲蓉月饼切面推荐图",
-          ratio: "4:3",
-        } satisfies DetailImage,
+        image: winterMelonMooncakeImages.comboEggYolkLotus,
       },
       {
         title: "经典五仁月饼",
         text: "真材五仁，越嚼越香。",
         href: "/products/five-nuts-mooncake",
-        image: {
-          src: "/images/products/five-nuts-mooncake/cut-open.jpg",
-          alt: "传统五仁月饼切面推荐图",
-          ratio: "4:3",
-        } satisfies DetailImage,
+        image: winterMelonMooncakeImages.comboFiveKernel,
       },
       {
         title: "纯莲蓉月饼",
         text: "清甜温润，细腻顺滑。",
         href: "/products/egg-yolk-lotus-mooncake",
-        image: {
-          src: "/images/products/egg-yolk-lotus-mooncake/lotus-paste.jpg",
-          alt: "纯莲蓉月饼口味推荐图",
-          ratio: "4:3",
-        } satisfies DetailImage,
+        image: winterMelonMooncakeImages.comboPureLotus,
       },
       {
         title: "经典豆沙月饼",
         text: "红豆醇香，老少都爱。",
         href: "/products/red-bean-mooncake",
-        image: {
-          src: "/images/products/red-bean-mooncake/cut-open.jpg",
-          alt: "经典豆沙月饼切面推荐图",
-          ratio: "4:3",
-        } satisfies DetailImage,
+        image: winterMelonMooncakeImages.comboRedBean,
       },
     ],
   },
