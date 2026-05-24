@@ -29,8 +29,8 @@ export const matchaPastryImages = {
     ratio: "4:3",
   } satisfies DetailImage,
   redBeanPaste: {
-    src: "/images/products/matcha-pastry/red-bean-paste.jpg",
-    alt: "低糖红豆沙质感特写",
+    src: "/images/products/matcha-pastry-feature-matcha.jpg",
+    alt: "抹茶酥切面展示低糖红豆沙与自然抹茶酥皮",
     ratio: "4:3",
   } satisfies DetailImage,
   pastryLayers: {

@@ -9,18 +9,18 @@ type DetailImage = Pick<SiteImage, "src" | "alt" | "ratio">;
 
 export const eggYolkLotusMooncakeImages = {
   hero: {
-    src: "/images/products/egg-yolk-lotus-mooncake/hero.jpg",
-    alt: "云酥坊经典蛋黄莲蓉月饼黑金中秋首屏主图",
+    src: "/images/products/mooncake-combo-1-egg-yolk-lotus.jpg",
+    alt: "云酥坊经典蛋黄莲蓉月饼完整蛋黄与莲蓉切面黑金首屏主图",
     ratio: "16:9",
   } satisfies DetailImage,
   cutOpen: {
-    src: "/images/products/egg-yolk-lotus-mooncake/cut-open.jpg",
-    alt: "蛋黄莲蓉月饼切面展示流心蛋黄与低糖莲蓉",
+    src: "/images/products/mooncake-combo-1-egg-yolk-lotus.jpg",
+    alt: "蛋黄莲蓉月饼切面展示完整咸蛋黄与低糖莲蓉",
     ratio: "16:9",
   } satisfies DetailImage,
   saltedYolk: {
-    src: "/images/products/egg-yolk-lotus-mooncake/salted-yolk.jpg",
-    alt: "经典蛋黄莲蓉月饼整颗咸蛋黄原料展示",
+    src: "/images/products/mooncake-combo-1-egg-yolk-lotus.jpg",
+    alt: "经典蛋黄莲蓉月饼整颗咸蛋黄切面展示",
     ratio: "4:3",
   } satisfies DetailImage,
   lotusPaste: {

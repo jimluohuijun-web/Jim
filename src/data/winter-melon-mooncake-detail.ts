@@ -14,7 +14,7 @@ export const winterMelonMooncakeImages = {
     ratio: "16:9",
   } satisfies DetailImage,
   cutOpen: {
-    src: "/images/products/winter-melon-mooncake/cut-open.jpg",
+    src: "/images/products/winter-melon-feature-1.jpg",
     alt: "特色古法冬翅月饼切面展示冬翅馅丝丝纹理",
     ratio: "16:9",
   } satisfies DetailImage,

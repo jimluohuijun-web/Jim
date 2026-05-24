@@ -14,8 +14,8 @@ export const classicPineappleCakeImages = {
     ratio: "16:9",
   } satisfies DetailImage,
   cutOpen: {
-    src: "/images/products/pineapple-cake/cut-open.jpg",
-    alt: "经典凤梨酥切面果肉特写",
+    src: "/images/products/pineapple-cake-feature-fruit.jpg",
+    alt: "经典凤梨酥切面展示金黄凤梨果肉纤维",
     ratio: "16:9",
   } satisfies DetailImage,
   pineapple: {

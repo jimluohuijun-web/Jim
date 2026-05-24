@@ -4,7 +4,7 @@ export const pineappleProductData = {
     name: "云酥坊・经典凤梨酥",
     slogan: "一口爆汁锁鲜！馅多皮薄，酸甜不齁腻",
     subtitle: "告别工业凤梨酥｜不是冬瓜馅+香精｜传统工艺升级，每口纯纯凤梨香。",
-    image: "/images/products/pineapple-detail/hero.png",
+    image: "/images/products/pineapple-cake-hero.jpg",
     imageAlt: "云酥坊经典凤梨酥礼盒与切面产品图",
     painPoints: [
       {
@@ -27,7 +27,7 @@ export const pineappleProductData = {
     ],
   },
   coreFeatures: {
-    moduleImage: "/images/products/pineapple-detail/core-features.png",
+    moduleImage: "/images/products/pineapple-cake-feature-overview.jpg",
     moduleImageAlt: "云酥坊经典凤梨酥四大核心卖点视觉图",
     eyebrow: "差异化竞品碾压",
     title: "拒绝“冬瓜伪装馅”，100%纯凤梨果肉",
@@ -60,39 +60,39 @@ export const pineappleProductData = {
     ],
   },
   ingredients: {
-    moduleImage: "/images/products/pineapple-detail/ingredients.png",
+    moduleImage: "/images/products/pineapple-cake-feature-fruit.jpg",
     moduleImageAlt: "云酥坊凤梨酥精选原料展示图",
     title: "严选好料无添加，还原凤梨本味",
     slogan: "所有原料经过三重筛选，无变质、无添加，吃得安心。",
     items: [
       {
         name: "金钻凤梨果肉",
-        image: "/images/products/pineapple-detail/ingredients.png",
+        image: "/images/products/pineapple-cake-feature-fruit.jpg",
         text: "台湾金钻，当季采摘，手工切丁，保留果肉纤维和汁水。",
       },
       {
         name: "高筋小麦粉",
-        image: "/images/products/pineapple-detail/ingredients.png",
+        image: "/images/products/pineapple-cake-feature-crust.jpg",
         text: "优质高筋粉，无添加增白剂，让酥皮松软不发柴。",
       },
       {
         name: "优质黄油",
-        image: "/images/products/pineapple-detail/ingredients.png",
+        image: "/images/products/pineapple-cake-feature-thin-crust.jpg",
         text: "进口动物黄油，无反式脂肪酸，奶香浓郁，层次更丰富。",
       },
       {
         name: "少量糖粉",
-        image: "/images/products/pineapple-detail/ingredients.png",
+        image: "/images/products/pineapple-cake-feature-low-sugar.jpg",
         text: "低糖配比，保留凤梨天然酸甜，不靠工业甜味撑口感。",
       },
     ],
     trust: ["源头严选", "三重筛选", "拒绝添加", "安心配方"],
   },
   layeredTaste: {
-    moduleImage: "/images/products/pineapple-detail/layered-taste.png",
+    moduleImage: "/images/products/pineapple-cake-feature-overview.jpg",
     moduleImageAlt: "云酥坊凤梨酥层次口感解析图",
     title: "36层酥皮+整块果肉，四重口感更满足",
-    image: "/images/products/pineapple-detail/layered-taste.png",
+    image: "/images/products/pineapple-cake-feature-overview.jpg",
     imageAlt: "凤梨酥切面展示酥皮和凤梨馅",
     layers: [
       {
@@ -114,35 +114,35 @@ export const pineappleProductData = {
     summary: "酥而不碎、香而不浓、酸而不涩、甜而不齁，老少皆宜。",
   },
   crafting: {
-    moduleImage: "/images/products/pineapple-detail/crafting.png",
+    moduleImage: "/images/products/pineapple-cake-feature-fresh-baked.jpg",
     moduleImageAlt: "云酥坊凤梨酥匠心制作工艺流程图",
     title: "手工慢烤锁鲜，每一口都是新鲜果香",
     difference: "拒绝机器批量生产，大小均匀，口感一致。",
     steps: [
       {
         title: "精选凤梨果肉",
-        image: "/images/products/pineapple-detail/crafting.png",
+        image: "/images/products/pineapple-cake-feature-fruit.jpg",
         text: "当季采摘，手工切丁，保留完整纤维。",
       },
       {
         title: "手工熬制果馅",
-        image: "/images/products/pineapple-detail/crafting.png",
+        image: "/images/products/pineapple-cake-feature-overview.jpg",
         text: "低糖慢熬120分钟，锁住果肉汁水和果香。",
       },
       {
         title: "多层薄酥开皮",
-        image: "/images/products/pineapple-detail/crafting.png",
+        image: "/images/products/pineapple-cake-feature-crust.jpg",
         text: "手工折叠，形成36层酥皮。",
       },
       {
         title: "恒温烘烤",
-        image: "/images/products/pineapple-detail/crafting.png",
+        image: "/images/products/pineapple-cake-feature-fresh-baked.jpg",
         text: "160℃恒温慢烤，外酥内馅锁香。",
       },
     ],
   },
   productSpecs: {
-    moduleImage: "/images/products/pineapple-detail/product-specs.png",
+    moduleImage: "/images/products/pineapple-cake-gift-box-scene.jpg",
     moduleImageAlt: "云酥坊经典凤梨酥产品参数与信任背书图",
     title: "果香馅多，皮薄酥脆，吃得安心",
     rows: [
@@ -160,37 +160,37 @@ export const pineappleProductData = {
     badges: ["月销8000+盒", "复购率37%", "用户好评截图", "检测报告缩略图"],
   },
   giftBox: {
-    moduleImage: "/images/products/pineapple-detail/gift-box.png",
+    moduleImage: "/images/products/pineapple-cake-gift-box-scene.jpg",
     moduleImageAlt: "云酥坊凤梨酥礼盒与独立包装场景图",
     title: "自用解腻，送礼有面，一盒适配全场景",
     scenes: [
       {
         title: "自用场景",
-        image: "/images/products/pineapple-detail/gift-box.png",
+        image: "/images/products/pineapple-cake-feature-overview.jpg",
         text: "独立锁鲜小包装，办公室、居家、出行都能随手解馋。",
       },
       {
         title: "送礼场景",
-        image: "/images/products/pineapple-detail/gift-box.png",
+        image: "/images/products/pineapple-cake-gift-box-scene.jpg",
         text: "国风礼盒，简约大气，可定制企业 LOGO，多规格可选。",
       },
     ],
     points: ["独立锁鲜包装", "国风精致礼盒", "多规格可选", "礼盒密封锁鲜"],
   },
   crossSell: {
-    moduleImage: "/images/products/pineapple-detail/cross-sell.png",
+    moduleImage: "/images/products/pineapple-cake-feature-overview.jpg",
     moduleImageAlt: "云酥坊凤梨酥同系列搭配产品图",
     title: "中式酥点全家福，口味互补不腻",
     note: "自用轮换口味，每天不重样；送礼组合丰盛；凑单满减10元。",
     products: [
       {
         name: "蛋黄酥",
-        image: "/images/products/classic-egg-yolk-pastry.webp",
+        image: "/images/products/egg-yolk-pastry/hero.jpg",
         flavor: "咸甜压补，解腻不单调",
       },
       {
         name: "抹茶酥",
-        image: "/images/products/matcha-pastry.webp",
+        image: "/images/products/matcha-pastry/hero.jpg",
         flavor: "清香微苦，自带茶香",
       },
       {
@@ -201,7 +201,7 @@ export const pineappleProductData = {
     ],
   },
   bottomCTA: {
-    moduleImage: "/images/products/pineapple-detail/bottom-cta.png",
+    moduleImage: "/images/products/pineapple-cake-gift-box-scene.jpg",
     moduleImageAlt: "云酥坊凤梨酥底部转化购买规格图",
     productName: "云酥坊经典凤梨酥",
     specs: [
@@ -211,7 +211,7 @@ export const pineappleProductData = {
     ],
     price: "¥39.9",
     urgency: "现做现发｜每日限量200盒｜出炉24小时内发货｜手慢无",
-    image: "/images/products/pineapple-detail/bottom-cta.png",
+    image: "/images/products/pineapple-cake-gift-box-scene.jpg",
     buttons: [
       { label: "立即下单｜现做现发", href: "/reserve", variant: "primary" },
       { label: "去凑单｜立减10元", href: "/reserve", variant: "secondary" },

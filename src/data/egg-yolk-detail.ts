@@ -4,7 +4,7 @@ export const eggYolkProductData = {
     name: "云酥坊・经典红豆蛋黄酥",
     slogan: "一口爆沙！真整颗咸蛋黄，甜咸不齁嘴",
     subtitle: "复刻中式老味道，年年回购的经典糕点。",
-    image: "/images/products/classic-egg-yolk-pastry.webp",
+    image: "/images/products/egg-yolk-pastry/hero.jpg",
     imageAlt: "云酥坊经典红豆蛋黄酥切面产品图",
     tags: ["整颗蛋黄", "低糖红豆沙", "层层起酥超松软"],
     buttons: [
@@ -43,22 +43,22 @@ export const eggYolkProductData = {
     items: [
       {
         name: "海鸭咸蛋黄",
-        image: "/images/products/classic-egg-yolk-pastry.webp",
+        image: "/images/products/egg-yolk-pastry/salted-yolk.jpg",
         text: "红心优质蛋黄，人工筛选去杂去腥，色泽红润油亮，口感沙糯不腥。",
       },
       {
         name: "低糖红豆沙",
-        image: "/images/mooncakes/red-bean-mooncake.webp",
+        image: "/images/products/egg-yolk-pastry/red-bean-paste.jpg",
         text: "手工慢熬红豆，精细过筛去除粗渣，清甜绵密，降低甜度，久吃不腻。",
       },
       {
         name: "高筋小麦粉",
-        image: "/images/backgrounds/brand-texture-01.webp",
+        image: "/images/products/egg-yolk-pastry/pastry-layers.jpg",
         text: "甄选烘焙专用面粉，粉质细腻纯净，烤出酥皮松软不硬，自带自然麦香。",
       },
       {
         name: "动物黄油",
-        image: "/images/products/classic-pineapple-cake.webp",
+        image: "/images/products/egg-yolk-pastry/baking.jpg",
         text: "替换廉价起酥油，纯正奶香浓郁，层次更蓬松，入口酥化无工业油腻感。",
       },
     ],
@@ -66,7 +66,7 @@ export const eggYolkProductData = {
   },
   layeredTaste: {
     title: "三层黄金结构，一口解锁三重口感",
-    image: "/images/products/classic-egg-yolk-pastry.webp",
+    image: "/images/products/egg-yolk-pastry/cut-open.jpg",
     imageAlt: "蛋黄酥酥皮红豆沙与咸蛋黄三层切面",
     layers: [
       {
@@ -92,22 +92,22 @@ export const eggYolkProductData = {
     steps: [
       {
         title: "揉面开酥",
-        image: "/images/backgrounds/brand-texture-01.webp",
+        image: "/images/products/egg-yolk-pastry/pastry-layers.jpg",
         text: "多次折叠、醒面、擀皮，人工把控厚度，保证层层酥脆。",
       },
       {
         title: "手工包馅",
-        image: "/images/products/classic-egg-yolk-pastry.webp",
+        image: "/images/products/egg-yolk-pastry/cut-open.jpg",
         text: "人工称重配比皮馅比例，每一枚大小均匀，馅料饱满不偷料。",
       },
       {
         title: "芝麻点缀",
-        image: "/images/products/classic-egg-yolk-pastry.webp",
+        image: "/images/products/egg-yolk-pastry/salted-yolk.jpg",
         text: "表层点缀熟芝麻，高温烘烤激发坚果香气，丰富整体风味层次。",
       },
       {
         title: "恒温烘烤",
-        image: "/images/products/classic-egg-yolk-pastry.webp",
+        image: "/images/products/egg-yolk-pastry/baking.jpg",
         text: "分段控温烘烤，外皮金黄酥脆，内馅熟透锁香，不焦不干硬。",
       },
     ],
@@ -130,7 +130,7 @@ export const eggYolkProductData = {
     scenes: [
       {
         title: "自用场景",
-        image: "/images/products/classic-egg-yolk-pastry.webp",
+        image: "/images/products/egg-yolk-pastry/tea-scene.jpg",
         text: "独立单颗锁鲜包装，干净卫生，防潮保鲜，单次一颗，不浪费，随时解馋。",
       },
       {
@@ -147,12 +147,12 @@ export const eggYolkProductData = {
     products: [
       {
         name: "凤梨酥",
-        image: "/images/products/classic-pineapple-cake.webp",
+        image: "/images/products/pineapple-cake-feature-overview.jpg",
         flavor: "酸甜清新，果香浓郁",
       },
       {
         name: "抹茶酥",
-        image: "/images/products/matcha-pastry.webp",
+        image: "/images/products/matcha-pastry/hero.jpg",
         flavor: "清香微苦，回甘悠长",
       },
       {
@@ -166,7 +166,7 @@ export const eggYolkProductData = {
     productName: "云酥坊蛋黄酥 6枚装礼盒",
     price: "¥39.9",
     urgency: "现做现发｜新鲜出炉｜每日限量",
-    image: "/images/products/classic-egg-yolk-pastry.webp",
+    image: "/images/products/egg-yolk-pastry/gift-box.jpg",
     button: { label: "立即下单", href: "/reserve" },
     guarantees: ["正品保障", "当天新鲜", "极速发货", "破损包赔"],
   },
