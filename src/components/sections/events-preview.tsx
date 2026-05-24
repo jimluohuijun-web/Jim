@@ -16,7 +16,7 @@ const eventPlans = [
     href: "/reserve",
     cta: "预约试吃",
     icon: CalendarDays,
-    image: pageMoodImages.eventsMood,
+    image: pageMoodImages.eventsTasting,
   },
   {
     title: "中秋礼盒预订会",
@@ -26,7 +26,7 @@ const eventPlans = [
     href: "/products#mid-autumn-preview",
     cta: "查看中秋月饼",
     icon: Gift,
-    image: pageMoodImages.giftboxConcept,
+    image: pageMoodImages.eventsGiftPreorder,
   },
   {
     title: "企业下午茶",
@@ -36,7 +36,7 @@ const eventPlans = [
     href: "/contact",
     cta: "联系合作",
     icon: Coffee,
-    image: pageMoodImages.afternoonTea,
+    image: pageMoodImages.eventsCorporateTea,
   },
   {
     title: "快闪市集",
@@ -46,7 +46,7 @@ const eventPlans = [
     href: "/contact",
     cta: "沟通快闪",
     icon: Store,
-    image: pageMoodImages.eventsMood,
+    image: pageMoodImages.eventsPopUpMarket,
   },
 ] satisfies Array<{
   title: string;
