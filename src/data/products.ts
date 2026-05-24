@@ -371,8 +371,8 @@ export const productCatalog: ProductCatalogItem[] = [
     category: "mooncake",
     description: "真材五仁、低糖不腻，保留传统广式月饼的果仁香。",
     href: "/products/five-nuts-mooncake",
-    image: "/images/products/five-nuts-mooncake/hero.jpg",
-    alt: "云酥坊五仁月饼产品图",
+    image: "/images/products/mooncake-combo-2-five-kernel.jpg",
+    alt: "云酥坊五仁月饼五仁颗粒切面产品图",
     sortOrder: 80,
   },
   {
@@ -382,8 +382,8 @@ export const productCatalog: ProductCatalogItem[] = [
     category: "mooncake",
     description: "真红豆慢熬成馅，经典柔和，适合家庭分享。",
     href: "/products/red-bean-mooncake",
-    image: "/images/products/red-bean-mooncake/hero.jpg",
-    alt: "云酥坊豆沙月饼产品图",
+    image: "/images/products/mooncake-combo-4-red-bean.jpg",
+    alt: "云酥坊豆沙月饼深红豆沙切面产品图",
     sortOrder: 90,
   },
   {
@@ -407,8 +407,8 @@ export const productCatalog: ProductCatalogItem[] = [
     category: "mooncake",
     description: "古法冬瓜熬冬翅，清甜解腻，丰富中秋礼盒层次。",
     href: "/products/winter-melon-mooncake",
-    image: "/images/products/winter-melon-mooncake/hero.jpg",
-    alt: "云酥坊冬翅月饼产品图",
+    image: "/images/products/winter-melon-feature-1.jpg",
+    alt: "云酥坊冬翅月饼冬瓜蓉丝感切面产品图",
     sortOrder: 100,
   },
   {

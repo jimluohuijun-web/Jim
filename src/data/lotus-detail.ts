@@ -24,8 +24,8 @@ export const lotusPastryImages = {
     ratio: "4:3",
   } satisfies DetailImage,
   lotusPaste: {
-    src: "/images/products/lotus-pastry/lotus-paste.jpg",
-    alt: "荷花酥低糖莲蓉馅原料展示",
+    src: "/images/products/lotus-pastry/cut-open.jpg",
+    alt: "荷花酥切面展示低糖莲蓉馅",
     ratio: "4:3",
   } satisfies DetailImage,
   lotusSeed: {

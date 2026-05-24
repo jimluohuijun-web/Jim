@@ -540,9 +540,9 @@ export function WinterMelonMooncakeRecommendations() {
                     alt={item.image.alt}
                     fill
                     sizes="(min-width: 1280px) 22vw, (min-width: 768px) 45vw, 92vw"
-                    className="object-cover object-center brightness-[0.82] saturate-[1.04] transition-transform duration-700 group-hover:scale-[1.04]"
+                    className="object-cover object-center brightness-[0.92] saturate-[1.06] transition-transform duration-700 group-hover:scale-[1.04]"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_18%,rgb(8_6_4_/_74%)_100%)]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_34%,rgb(8_6_4_/_48%)_100%)]" />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="font-serif text-xl font-semibold text-[#F5E7C8] md:text-2xl">{item.title}</h3>

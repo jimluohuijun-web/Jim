@@ -24,8 +24,8 @@ export const peachPastryImages = {
     ratio: "4:3",
   } satisfies DetailImage,
   redBeanPaste: {
-    src: "/images/products/peach-blossom-pastry/red-bean-paste.jpg",
-    alt: "桃花酥低糖红豆沙原料特写",
+    src: "/images/products/peach-blossom-pastry/cut-open.jpg",
+    alt: "桃花酥切面展示低糖红豆沙馅",
     ratio: "4:3",
   } satisfies DetailImage,
   pastryLayers: {

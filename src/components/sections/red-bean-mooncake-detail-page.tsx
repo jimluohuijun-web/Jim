@@ -77,18 +77,20 @@ function ImagePanel({
   priority = false,
   className = "",
   sizes = "(min-width: 1280px) 46vw, (min-width: 768px) 60vw, 92vw",
+  imageClassName = "object-cover",
 }: {
   src: string;
   alt: string;
   priority?: boolean;
   className?: string;
   sizes?: string;
+  imageClassName?: string;
 }) {
   return (
     <div
       className={`relative overflow-hidden rounded-[1.15rem] border border-[rgba(217,180,106,0.28)] bg-[#120907] shadow-[0_30px_90px_rgb(0_0_0_/_38%)] md:rounded-[1.45rem] ${className}`}
     >
-      <Image src={src} alt={alt} fill priority={priority} sizes={sizes} className="object-cover" />
+      <Image src={src} alt={alt} fill priority={priority} sizes={sizes} className={imageClassName} />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,transparent_0%,transparent_52%,rgb(8_6_4_/_70%)_100%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgb(8_6_4_/_32%)_100%)]" />
     </div>
@@ -130,7 +132,7 @@ export function RedBeanMooncakeHero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[62%_44%] opacity-70 brightness-[0.7] saturate-[1.05]"
+          className="object-cover object-[60%_48%] opacity-75 brightness-[0.78] saturate-[1.08]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#070604_0%,rgb(7_6_4_/_88%)_45%,rgb(7_6_4_/_34%)_100%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(7_6_4_/_34%)_0%,rgb(7_6_4_/_66%)_58%,#090504_100%)]" />
@@ -177,7 +179,14 @@ export function RedBeanMooncakeHero() {
             </GoldButton>
           </div>
 
-          <ImagePanel src={hero.image.src} alt={hero.image.alt} priority className="min-h-[190px] md:min-h-[260px] lg:hidden" sizes="92vw" />
+          <ImagePanel
+            src={hero.image.src}
+            alt={hero.image.alt}
+            priority
+            className="min-h-[190px] md:min-h-[260px] lg:hidden"
+            sizes="92vw"
+            imageClassName="object-cover object-[56%_50%] brightness-[0.92] saturate-[1.08]"
+          />
 
           <div className="grid grid-cols-2 gap-2 pt-1 sm:grid-cols-4 md:gap-3">
             {hero.tags.map((tag, index) => {
@@ -205,11 +214,11 @@ export function RedBeanMooncakeHero() {
               fill
               priority
               sizes="(min-width: 1280px) 50vw, (min-width: 768px) 54vw, 92vw"
-              className="object-cover object-[54%_50%] brightness-[0.84] saturate-[1.06]"
+              className="object-cover object-[58%_50%] brightness-[0.92] saturate-[1.08]"
             />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_56%_44%,transparent_0%,transparent_48%,rgb(7_6_4_/_66%)_100%)]" />
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(7_6_4_/_42%)_0%,transparent_30%,transparent_76%,rgb(7_6_4_/_48%)_100%)]" />
-            <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#070604]/84 to-transparent" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_58%_48%,transparent_0%,transparent_54%,rgb(7_6_4_/_48%)_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(7_6_4_/_34%)_0%,transparent_32%,transparent_78%,rgb(7_6_4_/_38%)_100%)]" />
+            <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#070604]/72 to-transparent" />
           </div>
         </div>
       </div>
