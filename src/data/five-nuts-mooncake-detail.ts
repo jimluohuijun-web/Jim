@@ -64,17 +64,22 @@ export const fiveNutsMooncakeImages = {
     ratio: "4:3",
   } satisfies DetailImage,
   processNutSelection: {
-    src: "/images/products/five-nuts-mooncake/process-nut-selection.jpg",
+    src: "/images/products/five-nuts-process-1-ingredients.jpg",
     alt: "五仁月饼人工精筛坚果原料工艺展示",
     ratio: "4:3",
   } satisfies DetailImage,
   processFillingMixing: {
-    src: "/images/products/five-nuts-mooncake/process-filling-mixing.jpg",
+    src: "/images/products/five-nuts-process-2-mixing.jpg",
     alt: "五仁月饼精准配比拌馅工艺展示",
     ratio: "4:3",
   } satisfies DetailImage,
+  processWrapping: {
+    src: "/images/products/five-nuts-process-3-wrapping.jpg",
+    alt: "五仁月饼精准称重包馅成型工艺展示",
+    ratio: "4:3",
+  } satisfies DetailImage,
   processBakingResting: {
-    src: "/images/products/five-nuts-mooncake/process-baking-resting.jpg",
+    src: "/images/products/five-nuts-process-4-baking.jpg",
     alt: "广式五仁月饼分段烘烤后静置回油展示",
     ratio: "4:3",
   } satisfies DetailImage,
@@ -218,9 +223,9 @@ export const fiveNutsMooncakeProductData = {
         image: fiveNutsMooncakeImages.processNutSelection,
       },
       {
-        title: "低温烘焙锁香",
-        text: "激发天然熟香，不靠香精。",
-        image: fiveNutsMooncakeImages.baking,
+        title: "精准称重包馅",
+        text: "皮馅比例均衡，手工成型更饱满。",
+        image: fiveNutsMooncakeImages.processWrapping,
       },
       {
         title: "精准配比拌馅",

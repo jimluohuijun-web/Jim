@@ -19,13 +19,23 @@ export const redBeanMooncakeImages = {
     ratio: "16:9",
   } satisfies DetailImage,
   redBeans: {
-    src: "/images/products/red-bean-mooncake/red-beans.jpg",
+    src: "/images/products/red-bean-mooncake-process-1-red-beans.jpg",
     alt: "经典豆沙月饼红小豆原料展示",
     ratio: "4:3",
   } satisfies DetailImage,
   redBeanPaste: {
-    src: "/images/products/red-bean-mooncake/red-bean-paste.jpg",
+    src: "/images/products/red-bean-mooncake-process-2-paste.jpg",
     alt: "经典豆沙月饼低糖豆沙馅展示",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  processWrapping: {
+    src: "/images/products/red-bean-mooncake-process-3-wrapping.jpg",
+    alt: "经典豆沙月饼精准称重包馅工艺展示",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  processFinished: {
+    src: "/images/products/red-bean-mooncake-process-4-finished.jpg",
+    alt: "经典豆沙月饼切面展示深红豆沙馅",
     ratio: "4:3",
   } satisfies DetailImage,
   flour: {
@@ -186,12 +196,12 @@ export const redBeanMooncakeProductData = {
       {
         title: "精准称重包馅",
         text: "皮薄馅足，大小均匀。",
-        image: redBeanMooncakeImages.mooncakeCrust,
+        image: redBeanMooncakeImages.processWrapping,
       },
       {
         title: "分段烘烤回油",
         text: "饼皮柔润，豆香融合。",
-        image: redBeanMooncakeImages.baking,
+        image: redBeanMooncakeImages.processFinished,
       },
     ],
   },
