@@ -227,12 +227,31 @@ export function EggYolkProblems() {
           {problems.items.map((item, index) => {
             const Icon = problemIcons[index] ?? Sparkles;
             return (
-              <DetailCard key={item.title} className="p-5 md:p-7">
-                <span className="mb-5 flex size-11 items-center justify-center rounded-full border border-[rgba(217,180,106,0.34)] text-[#F0C978]">
-                  <Icon className="size-5" strokeWidth={1.45} />
-                </span>
-                <h3 className="font-serif text-[1.55rem] font-semibold text-[#F5E7C8]">{item.title}</h3>
-                <p className="mt-3 text-base leading-7 text-[#CDB98D]">{item.text}</p>
+              <DetailCard
+                key={item.title}
+                className="group flex h-full flex-col rounded-[1.75rem] transition-transform duration-300 hover:-translate-y-1"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden border-b border-[rgba(217,180,106,0.18)] bg-[#120C07]">
+                  <Image
+                    src={item.image.src}
+                    alt={item.image.alt}
+                    fill
+                    sizes="(min-width: 1280px) 30vw, (min-width: 768px) 31vw, 92vw"
+                    className="object-cover brightness-[0.88] saturate-[1.04] transition-transform duration-700 group-hover:scale-[1.035]"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_48%,rgb(8_6_4_/_70%)_100%)]" />
+                </div>
+                <div className="flex flex-1 flex-col p-6 md:p-7">
+                  <span className="mb-5 flex size-12 items-center justify-center rounded-full border border-[rgba(217,180,106,0.38)] bg-[#120C07]/88 text-[#F0C978] shadow-[0_12px_30px_rgb(0_0_0_/_24%)]">
+                    <Icon className="size-5" strokeWidth={1.45} />
+                  </span>
+                  <h3 className="font-serif text-[1.7rem] font-semibold leading-tight text-[#F5E7C8] md:text-[1.9rem]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-[1.05rem] leading-8 text-[#CDB98D] md:text-[1.08rem]">
+                    {item.text}
+                  </p>
+                </div>
               </DetailCard>
             );
           })}

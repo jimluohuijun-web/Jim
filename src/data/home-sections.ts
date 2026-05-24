@@ -70,19 +70,19 @@ export const featuredProducts: HomeProductCard[] = [
     ctaLabel: "了解详情",
   },
   {
-    id: "egg-yolk-lotus-mooncake",
-    name: "经典蛋黄莲蓉月饼",
-    description: "整颗蛋黄遇上低糖莲蓉，复刻地道广式中秋味。",
+    id: "fresh-meat-mooncake",
+    name: "鲜肉月饼",
+    description: "苏式酥皮包裹鲜香肉馅，现烤出炉更酥香。",
     image: {
-      id: "egg-yolk-lotus-mooncake",
-      src: "/images/products/egg-yolk-lotus-mooncake/hero.jpg",
-      alt: "云酥坊经典蛋黄莲蓉月饼产品图",
+      id: "fresh-meat-mooncake",
+      src: "/images/products/fresh-meat-mooncake/fresh-meat-mooncake-hero.webp",
+      alt: "云酥坊苏式鲜肉月饼产品图",
       usage: "PC 首页人气精选产品图",
       ratio: "4:3",
     },
-    href: "/products/egg-yolk-lotus-mooncake",
+    href: "/products/suzhou-fresh-meat-mooncake",
     ctaLabel: "了解详情",
-    note: "中秋主推 / 整颗蛋黄 / 低糖莲蓉",
+    note: "苏式经典 / 鲜香肉馅 / 现烤酥皮",
   },
 ];
 

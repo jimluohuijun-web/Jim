@@ -33,9 +33,34 @@ export const classicEggYolkPastryImages = {
     alt: "蛋黄酥手工开酥层次图",
     ratio: "4:3",
   } satisfies DetailImage,
+  highlightWholeYolk: {
+    src: "/images/products/egg-yolk-pastry-highlight-1.jpg",
+    alt: "切开的蛋黄酥展示完整饱满咸蛋黄与红豆沙层",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  highlightRedBeanPaste: {
+    src: "/images/products/egg-yolk-pastry-highlight-2.jpg",
+    alt: "切开的蛋黄酥展示细腻低糖红豆沙馅",
+    ratio: "4:3",
+  } satisfies DetailImage,
   baking: {
     src: "/images/products/egg-yolk-pastry/baking.jpg",
     alt: "蛋黄酥现做现发烘焙图",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  faqWholeYolk: {
+    src: "/images/products/egg-yolk-faq-1.jpg",
+    alt: "切开的蛋黄酥展示完整饱满咸蛋黄",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  faqRedBean: {
+    src: "/images/products/egg-yolk-faq-2.jpg",
+    alt: "切开的蛋黄酥展示细腻低糖红豆沙馅",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  faqPastryLayers: {
+    src: "/images/products/egg-yolk-faq-3.jpg",
+    alt: "蛋黄酥薄酥层次与自然掉渣细节",
     ratio: "4:3",
   } satisfies DetailImage,
   giftBox: {
@@ -70,9 +95,21 @@ export const classicEggYolkPastryDetailData = {
   problems: {
     title: "先解决蛋黄酥最常见的三个问题",
     items: [
-      { title: "蛋黄碎小？", text: "整颗咸蛋黄完整入馅，切开看得见。" },
-      { title: "豆沙太甜？", text: "低糖红豆沙慢熬，清甜不齁。" },
-      { title: "酥皮厚硬？", text: "36层手工薄酥，轻咬掉渣。" },
+      {
+        title: "蛋黄碎小？",
+        text: "整颗咸蛋黄完整入馅，切开看得见。",
+        image: classicEggYolkPastryImages.faqWholeYolk,
+      },
+      {
+        title: "豆沙太甜？",
+        text: "低糖红豆沙慢熬，清甜不齁。",
+        image: classicEggYolkPastryImages.faqRedBean,
+      },
+      {
+        title: "酥皮厚硬？",
+        text: "36层手工薄酥，轻咬掉渣。",
+        image: classicEggYolkPastryImages.faqPastryLayers,
+      },
     ],
   },
   highlights: {
@@ -81,12 +118,12 @@ export const classicEggYolkPastryDetailData = {
       {
         title: "整颗咸蛋黄",
         text: "饱满出油，沙糯咸香。",
-        image: classicEggYolkPastryImages.saltedYolk,
+        image: classicEggYolkPastryImages.highlightWholeYolk,
       },
       {
         title: "低糖红豆沙",
         text: "细腻顺滑，清甜不腻。",
-        image: classicEggYolkPastryImages.redBeanPaste,
+        image: classicEggYolkPastryImages.highlightRedBeanPaste,
       },
       {
         title: "36层手工薄酥",
