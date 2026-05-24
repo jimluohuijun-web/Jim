@@ -33,6 +33,11 @@ export const fiveNutsMooncakeImages = {
     alt: "五仁月饼杏仁与坚果原料展示",
     ratio: "4:3",
   } satisfies DetailImage,
+  lowSugar: {
+    src: "/images/products/five-nuts-mooncake/five-nuts-low-sugar.jpg",
+    alt: "五仁月饼搭配清茶展示低糖不腻口感",
+    ratio: "4:3",
+  } satisfies DetailImage,
   sunflowerSeeds: {
     src: "/images/products/five-nuts-mooncake/sunflower-seeds.jpg",
     alt: "五仁月饼酥脆瓜子仁原料展示",
@@ -56,6 +61,21 @@ export const fiveNutsMooncakeImages = {
   baking: {
     src: "/images/products/five-nuts-mooncake/baking.jpg",
     alt: "传统广式五仁月饼中秋现做现发展示",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  processNutSelection: {
+    src: "/images/products/five-nuts-mooncake/process-nut-selection.jpg",
+    alt: "五仁月饼人工精筛坚果原料工艺展示",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  processFillingMixing: {
+    src: "/images/products/five-nuts-mooncake/process-filling-mixing.jpg",
+    alt: "五仁月饼精准配比拌馅工艺展示",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  processBakingResting: {
+    src: "/images/products/five-nuts-mooncake/process-baking-resting.jpg",
+    alt: "广式五仁月饼分段烘烤后静置回油展示",
     ratio: "4:3",
   } satisfies DetailImage,
   giftBox: {
@@ -133,7 +153,7 @@ export const fiveNutsMooncakeProductData = {
       {
         title: "低糖原生配方",
         text: "不粘牙，不齁腻。",
-        image: fiveNutsMooncakeImages.almond,
+        image: fiveNutsMooncakeImages.lowSugar,
       },
       {
         title: "广式回油软皮",
@@ -195,7 +215,7 @@ export const fiveNutsMooncakeProductData = {
       {
         title: "人工精筛坚果",
         text: "剔除干瘪、碎末和油耗次品。",
-        image: fiveNutsMooncakeImages.fiveNutsMix,
+        image: fiveNutsMooncakeImages.processNutSelection,
       },
       {
         title: "低温烘焙锁香",
@@ -205,12 +225,12 @@ export const fiveNutsMooncakeProductData = {
       {
         title: "精准配比拌馅",
         text: "果仁分布均匀，馅料扎实。",
-        image: fiveNutsMooncakeImages.sunflowerSeeds,
+        image: fiveNutsMooncakeImages.processFillingMixing,
       },
       {
         title: "分段烘烤回油",
         text: "饼皮柔润，风味融合。",
-        image: fiveNutsMooncakeImages.mooncakeCrust,
+        image: fiveNutsMooncakeImages.processBakingResting,
       },
     ],
   },

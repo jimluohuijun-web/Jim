@@ -19,13 +19,13 @@ export const matchaPastryImages = {
     ratio: "16:9",
   } satisfies DetailImage,
   matchaPowder: {
-    src: "/images/products/matcha-pastry/matcha-powder.jpg",
-    alt: "日本抹茶粉与茶筅原料展示",
+    src: "/images/products/matcha-pastry-feature-matcha.jpg",
+    alt: "抹茶酥搭配日本抹茶粉与茶器展示",
     ratio: "4:3",
   } satisfies DetailImage,
   saltedYolk: {
-    src: "/images/products/matcha-pastry/salted-yolk.jpg",
-    alt: "金黄色咸蛋黄原料特写",
+    src: "/images/products/matcha-pastry-feature-egg-yolk.jpg",
+    alt: "抹茶酥切面展示整颗金黄咸蛋黄",
     ratio: "4:3",
   } satisfies DetailImage,
   redBeanPaste: {

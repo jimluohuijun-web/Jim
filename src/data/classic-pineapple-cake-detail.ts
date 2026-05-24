@@ -9,8 +9,8 @@ type DetailImage = Pick<SiteImage, "src" | "alt" | "ratio">;
 
 export const classicPineappleCakeImages = {
   hero: {
-    src: "/images/products/pineapple-cake/hero.jpg",
-    alt: "云酥坊经典凤梨酥黑金茶席主图",
+    src: "/images/products/pineapple-cake-hero.jpg",
+    alt: "云酥坊经典凤梨酥切面凤梨果馅 Hero 图",
     ratio: "16:9",
   } satisfies DetailImage,
   cutOpen: {
@@ -19,28 +19,38 @@ export const classicPineappleCakeImages = {
     ratio: "16:9",
   } satisfies DetailImage,
   pineapple: {
-    src: "/images/products/pineapple-cake/pineapple-fruit.jpg",
-    alt: "金钻凤梨果肉原料展示",
+    src: "/images/products/pineapple-cake-feature-fruit.jpg",
+    alt: "切开的凤梨酥展示金钻凤梨果肉纤维",
     ratio: "4:3",
   } satisfies DetailImage,
   pastryLayers: {
-    src: "/images/products/pineapple-cake/pastry-layers.jpg",
-    alt: "凤梨酥薄酥皮层次展示",
+    src: "/images/products/pineapple-cake-feature-thin-crust.jpg",
+    alt: "凤梨酥薄酥皮与自然酥屑细节",
+    ratio: "4:3",
+  } satisfies DetailImage,
+  lowSugar: {
+    src: "/images/products/pineapple-cake-feature-low-sugar.jpg",
+    alt: "凤梨酥搭配清茶展示低糖酸甜平衡口感",
     ratio: "4:3",
   } satisfies DetailImage,
   baking: {
-    src: "/images/products/pineapple-cake/baking.jpg",
-    alt: "凤梨酥现做现发烘焙展示",
+    src: "/images/products/pineapple-cake-feature-fresh-baked.jpg",
+    alt: "刚出炉凤梨酥现做现发工艺图",
     ratio: "4:3",
   } satisfies DetailImage,
   giftBox: {
-    src: "/images/products/pineapple-cake/gift-box.jpg",
-    alt: "云酥坊经典凤梨酥黑金礼盒展示",
+    src: "/images/products/pineapple-cake-gift-box-scene.jpg",
+    alt: "云酥坊经典凤梨酥节日礼盒包装场景",
     ratio: "16:9",
   } satisfies DetailImage,
   teaScene: {
     src: "/images/products/pineapple-cake/tea-scene.jpg",
     alt: "凤梨酥搭配中式茶具下午茶场景",
+    ratio: "16:9",
+  } satisfies DetailImage,
+  tasteOverview: {
+    src: "/images/products/pineapple-cake-feature-overview.jpg",
+    alt: "凤梨酥外酥果香清爽口感总览图",
     ratio: "16:9",
   } satisfies DetailImage,
 };
@@ -70,10 +80,10 @@ export const classicPineappleCakeDetailData = {
       { label: "经典凤梨酥", href: "/products/classic-pineapple-cake" },
     ],
     title: "云酥坊 · 经典凤梨酥",
-    headline: "一口爆汁锁鲜",
+    headline: "一口爆馅凤梨香",
     subtitle: "馅多皮薄，酸甜不齁腻",
     description:
-      "精选金钻凤梨果肉，低糖慢熬成馅，搭配36层手工薄酥。外酥内润，果香清爽，自食解馋，送礼体面。",
+      "精选金钻凤梨果肉，低糖慢熬成果馅，搭配36层手工薄酥。外酥内润，果香清爽，自食解馋，送礼也体面。",
     image: classicPineappleCakeImages.hero,
     primaryCta: { href: "/reserve", label: "立即抢购" } satisfies DetailLink,
     secondaryCta: { href: "#gift-specs", label: "查看礼盒规格" } satisfies DetailLink,
@@ -103,7 +113,7 @@ export const classicPineappleCakeDetailData = {
       {
         title: "低糖配方",
         text: "酸甜平衡，清爽不腻。",
-        image: classicPineappleCakeImages.cutOpen,
+        image: classicPineappleCakeImages.lowSugar,
       },
       {
         title: "现做现发",
@@ -124,7 +134,7 @@ export const classicPineappleCakeDetailData = {
   },
   taste: {
     title: "外酥 · 果香 · 清爽",
-    image: classicPineappleCakeImages.cutOpen,
+    image: classicPineappleCakeImages.tasteOverview,
     items: [
       { title: "外层薄酥", text: "层层酥脆，入口不噎。" },
       { title: "中层果馅", text: "果肉饱满，酸甜平衡。" },
