@@ -1,0 +1,20 @@
+[Unit]
+Description=YunsuCake Next.js standalone service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/var/www/yunsucake/current
+EnvironmentFile=/etc/yunsufang.env
+Environment=NODE_ENV=production
+Environment=HOSTNAME=127.0.0.1
+Environment=PORT=3000
+ExecStart=/usr/local/bin/node /var/www/yunsucake/current/server.js
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
