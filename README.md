@@ -12,7 +12,8 @@
 - Framer Motion
 - shadcn/ui
 - lucide-react
-- Vercel
+- nginx standalone 正式部署
+- Vercel 预览 / 备份
 
 ## 页面结构
 
@@ -91,7 +92,42 @@ AIRTABLE_TABLE_NAME=Reservations
 
 其中 `Interested Products` 建议为 Multiple select，`Preferred Time`、`Reservation Type`、`Status` 建议为 Single select，`Notify Me` 建议为 Checkbox，`Notes` 建议为 Long text。`Source` 默认由网站写入 `website`，`Status` 默认写入 `New`。
 
-## Vercel 部署
+## 正式部署
+
+正式域名：
+
+- `https://www.yunsucake.com`
+- `https://yunsucake.com`
+
+正式域名继续指向 nginx 服务器，由服务器上的 Next.js standalone 服务提供页面。Vercel 只作为预览和备份环境，不作为正式域名的上线来源。
+
+每次修改完成后的固定流程：
+
+```bash
+npm run lint
+npm run build
+npm run check:pages
+scripts/deploy-nginx.sh
+scripts/deploy-nginx.sh --activate
+```
+
+部署后必须检查：
+
+```bash
+curl -I https://www.yunsucake.com/
+curl -I https://www.yunsucake.com/events
+curl -I https://www.yunsucake.com/images/pages/events-tasting.jpg
+```
+
+正式部署注意事项：
+
+- 不要把正式域名切到 Vercel。
+- 不要直接覆盖服务器旧目录 `/www/wwwroot/yunsufang`。
+- 不要删除服务器 backups / releases。
+- 不要提交 `.env`、`.env.local`、`.next`、`node_modules`、`test-results` 或任何密钥文件。
+- 部署细节见 `DEPLOY_NGINX.md`，最近一次激活记录见 `DEPLOY_NGINX_ACTIVATION_REPORT.md`。
+
+## Vercel 预览 / 备份
 
 本项目是标准 Next.js App Router 项目，可直接部署到 Vercel。
 
@@ -99,6 +135,8 @@ AIRTABLE_TABLE_NAME=Reservations
 - Install Command: 使用 Vercel 默认设置
 - Output Directory: Next.js 项目无需手动设置
 - Environment Variables: 未配置 Airtable 时可使用 mock fallback；正式收集预约前请配置 Airtable 变量
+
+注意：Vercel 不承载正式域名，只用于预览、备份和对照验收。
 
 ## 项目结构
 

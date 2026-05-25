@@ -14,7 +14,7 @@
 - Framer Motion
 - shadcn/ui
 - lucide-react
-- Vercel 部署
+- nginx 服务器正式部署，Vercel 仅作为预览 / 备份
 
 ## 视觉规范
 - 主色：温暖米白、象牙白、Jade Green 玉绿色、Deep Jade 深墨绿色、Champagne Gold 香槟金、Brown 茶棕色
@@ -47,3 +47,25 @@
 - 图标使用 lucide-react
 - 样式优先使用 Tailwind CSS
 - 代码要适合后续上线部署
+
+## 正式上线规则
+- 正式域名 `www.yunsucake.com` / `yunsucake.com` 必须继续走 nginx 服务器，不要切到 Vercel。
+- Vercel 只作为预览环境或备份环境，不作为正式域名 Production 来源。
+- 正式发布必须使用 Next.js standalone + nginx + systemd 流程。
+- 每次修改完成后，固定执行：
+  ```bash
+  npm run lint
+  npm run build
+  npm run check:pages
+  scripts/deploy-nginx.sh
+  scripts/deploy-nginx.sh --activate
+  ```
+- 部署后必须检查：
+  ```bash
+  curl -I https://www.yunsucake.com/
+  curl -I https://www.yunsucake.com/events
+  curl -I https://www.yunsucake.com/images/pages/events-tasting.jpg
+  ```
+- 禁止直接覆盖服务器旧目录 `/www/wwwroot/yunsufang`。
+- 禁止删除服务器 backups / releases。
+- 禁止提交 `.env`、`.env.local`、`.next`、`node_modules`、`test-results` 或任何密钥文件。

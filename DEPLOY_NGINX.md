@@ -2,6 +2,41 @@
 
 更新时间：2026-05-25
 
+## 0. 正式上线原则
+
+正式域名：
+
+- `https://www.yunsucake.com`
+- `https://yunsucake.com`
+
+正式域名继续指向 nginx 服务器。Vercel 只作为预览 / 备份环境，不承载正式域名。
+
+每次修改完成后的固定上线流程：
+
+```bash
+npm run lint
+npm run build
+npm run check:pages
+scripts/deploy-nginx.sh
+scripts/deploy-nginx.sh --activate
+```
+
+部署后必须检查：
+
+```bash
+curl -I https://www.yunsucake.com/
+curl -I https://www.yunsucake.com/events
+curl -I https://www.yunsucake.com/images/pages/events-tasting.jpg
+```
+
+禁止事项：
+
+- 不要把正式域名切到 Vercel。
+- 不要直接覆盖服务器旧目录 `/www/wwwroot/yunsufang`。
+- 不要删除服务器 backups / releases。
+- 不要提交 `.env`、`.env.local`、`.next`、`node_modules`、`test-results` 或任何密钥文件。
+- 不要把服务器密码、token、环境变量内容写入文档或命令。
+
 ## 1. 本地项目判断
 
 当前项目是 Next.js App Router + TypeScript + Tailwind。
@@ -120,11 +155,11 @@ test -d .next/standalone && echo "standalone ok"
 test -d .next/static && echo "static ok"
 ```
 
-## 5. 部署脚本草案
+## 5. 部署脚本
 
 脚本文件：`scripts/deploy-nginx.sh`
 
-注意：脚本已创建，但尚未执行正式部署。不要在脚本里写密码，应使用 SSH key。
+注意：不要在脚本里写密码，应使用 SSH key。
 
 ```bash
 scripts/deploy-nginx.sh --plan
@@ -206,32 +241,35 @@ cp -a /etc/yunsufang.env "/root/yunsucake-backups/$STAMP/"
 cp -a /www/wwwroot/yunsufang "/root/yunsucake-backups/$STAMP/yunsufang-old"
 ```
 
-## 8. 下一步手动部署建议
+## 8. 标准部署步骤
 
-1. 确认是否允许增加 `output: "standalone"`。
-2. 确认使用 PM2 还是沿用 systemd。
-3. 确认发布目录：
-   - 推荐：`/var/www/yunsucake`
-   - 保守：`/www/wwwroot/yunsufang`
-4. 确认环境变量文件：
-   - 当前：`/etc/yunsufang.env`
-   - 推荐共享：`/var/www/yunsucake/shared/.env.production`
-5. 首次部署前备份：
-   - 当前旧站：`/www/wwwroot/yunsufang`
-   - 当前 nginx 配置：`/www/server/panel/vhost/nginx/yunsufang.conf`
-   - 当前 systemd service：`/etc/systemd/system/yunsufang.service`
-6. 上传新版本到 release 目录。
-7. 启动新 Node 服务并本机验证：
-   - `curl -I http://127.0.0.1:3010/`
-   - `curl -I http://127.0.0.1:3010/events`
-8. nginx 指向新端口。
-9. `nginx -t`
-10. reload nginx。
-11. 正式域名验收：
-    - `https://www.yunsucake.com/`
-    - `https://www.yunsucake.com/events`
-    - `https://www.yunsucake.com/images/pages/events-tasting.jpg`
-    - `https://www.yunsucake.com/products/winter-melon-mooncake`
+当前采用：
+
+- release/current 根目录：`/var/www/yunsucake`
+- systemd：`/etc/systemd/system/yunsufang.service`
+- 环境变量文件：`/etc/yunsufang.env`
+- nginx proxy：`127.0.0.1:3000`
+
+执行：
+
+```bash
+npm run lint
+npm run build
+npm run check:pages
+scripts/deploy-nginx.sh
+scripts/deploy-nginx.sh --activate
+```
+
+验收：
+
+```bash
+curl -I http://127.0.0.1:3000/
+curl -I https://www.yunsucake.com/
+curl -I https://www.yunsucake.com/events
+curl -I https://www.yunsucake.com/images/pages/events-tasting.jpg
+```
+
+如需完整截图验收，使用 Playwright 保存到 `test-results/`，但不要提交该目录。
 
 ## 9. 回滚方案
 
