@@ -49,12 +49,6 @@ export function FeaturedProducts() {
                   ) : null}
                 </div>
 
-                {product.note ? (
-                  <p className="rounded-xl border border-soft-gold/18 bg-rice-white/55 px-3 py-2 text-xs leading-5 text-muted-foreground">
-                    {product.note}
-                  </p>
-                ) : null}
-
                 <Link
                   href={product.href}
                   className="ysf-button-secondary mt-auto inline-flex min-h-11 items-center justify-center gap-2 px-5 text-sm font-medium"
