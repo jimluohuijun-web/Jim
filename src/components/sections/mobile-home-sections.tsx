@@ -315,9 +315,9 @@ export function MobileHomeSections() {
               {brandStory.title}
             </h2>
             <p className="mt-3 line-clamp-3 whitespace-pre-line text-sm leading-6 text-[#BCA77F]">
-              云酥坊，源于对东方酥点的热爱与传承。
-              {"\n"}我们甄选优质原料，坚持现做工艺，
-              {"\n"}让传统糕点更精致，也更适合现代人的口味。
+              云酥坊的品牌灵感，取自短暂而神秘的闽国风物。
+              {"\n"}我们尊重传统手艺，也用低糖口味与东方审美，
+              {"\n"}把雅致、温情与团圆，做成可以入口的点心。
             </p>
             <Link
               href={brandStory.cta.href}

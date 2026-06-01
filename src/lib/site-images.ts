@@ -226,10 +226,10 @@ export const productImages = productImageMap;
 export const pageMoodImages = {
   aboutStory: {
     id: "about-story-01",
-    src: "/images/pages/about-story-01.webp",
-    alt: "云酥坊品牌故事东方手作点心氛围图",
+    src: "/images/home/brand-story.jpg",
+    alt: "云酥坊品牌故事黑金茶席中式酥点图",
     usage: "关于页面品牌故事",
-    ratio: "3:2",
+    ratio: "16:9",
   },
   aboutFounder: {
     id: "about-story-02",

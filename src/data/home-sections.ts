@@ -146,14 +146,14 @@ export const productSeries: HomeProductCard[] = [
 ];
 
 export const brandStory = {
-  title: "品牌故事 · 东方烘点美学",
+  title: "云起闽山，酥藏花月",
   description:
-    "云酥坊，源于对东方酥点的热爱与传承。\n我们甄选优质原料，坚持现做工艺，\n希望把传统糕点做得更精致，也更适合现代人的口味。\n不只是一口酥香，更是一份东方生活美学的记忆。",
+    "云酥坊的品牌灵感，取自短暂而神秘的闽国风物。\n我们尊重传统手艺，也用更适合现代人的低糖口味、干净配方与东方审美，\n把东方人的雅致、温情与团圆，做成一枚可以入口的点心。",
   cta: { href: "/about", label: "了解更多" } satisfies HomeLink,
   image: {
     id: "home-brand-story",
     src: "/images/home/brand-story.jpg",
-    alt: "云酥坊品牌故事东方烘点美学横幅图",
+    alt: "云酥坊品牌故事黑金茶席中式酥点图",
     usage: "PC 首页品牌故事图",
     ratio: "16:9",
   } satisfies SiteImage,
