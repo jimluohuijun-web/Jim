@@ -2,11 +2,22 @@ import type { Metadata } from "next";
 
 import { getJournalHref, journalArticles } from "@/data/brand-journal";
 
+function normalizeSiteDomain(domain?: string) {
+  const fallback = "https://www.yunsucake.com";
+  const rawDomain = (domain || fallback).replace(/\/+$/, "");
+
+  if (rawDomain.includes("yunsucake.com")) {
+    return rawDomain.replace(/^http:\/\//, "https://");
+  }
+
+  return rawDomain;
+}
+
 export const seoSite = {
   name: "云酥坊 Yun Su Fang",
   shortName: "云酥坊",
   englishName: "Yun Su Fang",
-  domain: process.env.NEXT_PUBLIC_SITE_URL || "https://www.yunsucake.com",
+  domain: normalizeSiteDomain(process.env.NEXT_PUBLIC_SITE_URL),
   defaultTitle: "云酥坊 Yun Su Fang｜加拿大中式手工酥点与中秋月饼礼盒",
   titleTemplate: "%s｜云酥坊 Yun Su Fang",
   defaultDescription:
