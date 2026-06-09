@@ -36,7 +36,7 @@ export function ReserveInfoCard() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
-      className="relative overflow-hidden rounded-[1.75rem] border border-[#D89A42]/28 bg-[linear-gradient(145deg,rgb(42_23_16_/_76%),rgb(18_9_5_/_88%))] p-7 shadow-[0_26px_80px_rgb(0_0_0_/_34%)] md:p-8"
+      className="relative overflow-hidden rounded-[1.75rem] border border-[#D89A42]/34 bg-[linear-gradient(145deg,rgb(42_23_16_/_88%),rgb(18_9_5_/_96%))] p-7 shadow-[0_28px_86px_rgb(0_0_0_/_42%)] md:p-8"
     >
       <div className="absolute -right-24 top-10 size-72 rounded-full border border-[#F2C36B]/14" />
       <div className="absolute -bottom-20 left-6 size-64 rounded-full bg-[#D89A42]/10 blur-3xl" />
@@ -62,21 +62,21 @@ export function ReserveInfoCard() {
           className="rounded-[1.35rem] border border-[#D89A42]/24 shadow-[0_20px_58px_rgb(0_0_0_/_28%)]"
         />
 
-        <div className="grid gap-4">
+        <div className="grid gap-3">
           {details.map((detail) => {
             const Icon = detail.icon;
 
             return (
               <div
                 key={detail.label}
-                className="grid grid-cols-[2.5rem_1fr] gap-4 border-t border-[#D89A42]/18 pt-4"
+                className="grid grid-cols-[2.75rem_1fr] gap-4 rounded-[1.1rem] border border-[#D89A42]/24 bg-[#120905]/66 p-4 shadow-[inset_0_1px_0_rgb(248_230_191_/_6%)]"
               >
-                <span className="flex size-10 items-center justify-center rounded-full border border-[#F2C36B]/28 bg-[#1A0F0A]/72 text-[#F2C36B]">
+                <span className="flex size-11 items-center justify-center rounded-full border border-[#F2C36B]/42 bg-[#1A0F0A] text-[#F2C36B] shadow-[0_10px_24px_rgb(0_0_0_/_22%)]">
                   <Icon data-icon="inline-start" />
                 </span>
                 <div className="flex flex-col gap-1">
-                  <span className="text-sm text-[#D89A42]">{detail.label}</span>
-                  <span className="text-base leading-7 text-[#E8CFA4]/82">{detail.value}</span>
+                  <span className="text-sm font-semibold text-[#F2C36B]">{detail.label}</span>
+                  <span className="text-base leading-7 text-[#F8E6BF]/92">{detail.value}</span>
                 </div>
               </div>
             );

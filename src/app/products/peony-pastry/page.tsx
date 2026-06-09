@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { ProductSeoJsonLd } from "@/components/seo/product-seo-json-ld";
 import {
   PeonyCTA,
   PeonyCraft,
@@ -9,17 +10,16 @@ import {
   PeonyProblems,
   PeonyTaste,
 } from "@/components/sections/peony-detail-page";
+import { buildMetadata, productSeoMap } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "牡丹酥｜云酥坊 YUN SU FANG",
-  description:
-    "云酥坊牡丹酥详情页，主打手工牡丹造型、低糖紫薯馅、36层手工薄酥和现做现发，花开富贵寓意，适合自食与礼盒预订。",
-  keywords: ["云酥坊", "牡丹酥", "低糖紫薯馅", "花开富贵", "中式糕点礼盒", "现做现发"],
-};
+const productPath = "/products/peony-pastry";
+
+export const metadata: Metadata = buildMetadata(productSeoMap[productPath]);
 
 export default function PeonyPastryPage() {
   return (
-    <main className="overflow-hidden bg-[#070604] text-[#BCA77F]">
+    <main className="overflow-hidden bg-[#070604] text-[#D6C09A]">
+      <ProductSeoJsonLd path={productPath} category="中式手工酥点" />
       <PeonyHero />
       <PeonyProblems />
       <PeonyHighlights />

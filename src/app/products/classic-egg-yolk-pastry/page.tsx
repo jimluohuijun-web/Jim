@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { ProductSeoJsonLd } from "@/components/seo/product-seo-json-ld";
 import {
   EggYolkCTA,
   EggYolkCraft,
@@ -9,17 +10,16 @@ import {
   EggYolkProblems,
   EggYolkTaste,
 } from "@/components/sections/classic-egg-yolk-pastry-detail-page";
+import { buildMetadata, productSeoMap } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "经典蛋黄酥｜云酥坊 YUN SU FANG",
-  description:
-    "云酥坊经典蛋黄酥详情页，主打整颗咸蛋黄、低糖红豆沙、36层手工薄酥和现做现发，适合自食、节日伴手礼与礼盒预订。",
-  keywords: ["云酥坊", "经典蛋黄酥", "蛋黄酥", "咸蛋黄", "低糖红豆沙", "中式糕点礼盒"],
-};
+const productPath = "/products/classic-egg-yolk-pastry";
+
+export const metadata: Metadata = buildMetadata(productSeoMap[productPath]);
 
 export default function ClassicEggYolkPastryPage() {
   return (
-    <main className="overflow-hidden bg-[#070604] text-[#BCA77F]">
+    <main className="overflow-hidden bg-[#070604] text-[#D6C09A]">
+      <ProductSeoJsonLd path={productPath} category="中式手工酥点" />
       <EggYolkHero />
       <EggYolkProblems />
       <EggYolkHighlights />

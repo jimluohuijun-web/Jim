@@ -82,9 +82,9 @@ export const classicEggYolkPastryDetailData = {
       { label: "产品系列", href: "/products" },
       { label: "经典蛋黄酥", href: "/products/classic-egg-yolk-pastry" },
     ],
-    title: "云酥坊 · 经典蛋黄酥",
+    title: "加拿大手工蛋黄酥",
     headline: "整颗咸蛋黄爆沙流心",
-    subtitle: "低糖红豆沙包裹，咸甜不腻一口满足",
+    subtitle: "手工开酥，低糖红豆沙包裹，咸甜不腻一口满足",
     description:
       "严选整颗饱满咸蛋黄，搭配慢熬低糖红豆沙，裹上36层手工薄酥。外酥内软，咸甜平衡，自食解馋，送礼体面。",
     image: classicEggYolkPastryImages.hero,

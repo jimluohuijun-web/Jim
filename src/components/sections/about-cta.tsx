@@ -23,7 +23,7 @@ export function AboutCta() {
               <h2 className="text-balance text-4xl font-semibold leading-tight text-[#F8E6BF] md:text-5xl">
                 想先尝一口云酥坊？
               </h2>
-              <p className="text-base leading-8 text-[#E8CFA4]/76 md:text-lg">
+              <p className="text-base leading-8 text-[#E8CFA4]/88 md:text-lg">
                 从产品系列了解口味矩阵，或留下新品试吃预约，让我们在名额开放时优先联系你。
               </p>
             </div>

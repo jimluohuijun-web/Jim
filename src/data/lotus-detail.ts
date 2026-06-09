@@ -83,7 +83,7 @@ export const lotusProductData = {
       { label: "产品系列", href: "/products" },
       { label: "荷花酥", href: "/products/lotus-pastry" },
     ],
-    title: "云酥坊 · 荷花酥",
+    title: "层层绽放的中式荷花酥",
     headline: "层层荷花绽放",
     subtitle: "莲香温润清甜，36层酥皮一口酥到心里",
     description:

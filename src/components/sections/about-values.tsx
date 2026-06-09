@@ -36,7 +36,7 @@ export function AboutValues() {
           <h2 className="text-balance text-4xl font-semibold leading-tight text-[#F8E6BF] md:text-5xl">
             值得被选择的四个理由
           </h2>
-          <p className="text-base leading-8 text-[#E8CFA4]/76 md:text-lg">
+          <p className="text-base leading-8 text-[#E8CFA4]/88 md:text-lg">
             从原料、工序、口味到礼赠体验，建立云酥坊的稳定信任感。
           </p>
         </div>
@@ -67,7 +67,7 @@ export function AboutValues() {
                     <h3 className="text-2xl font-semibold leading-tight text-[#F8E6BF]">
                       {value.title}
                     </h3>
-                    <p className="text-base leading-7 text-[#E8CFA4]/76">{value.description}</p>
+                    <p className="text-base leading-7 text-[#E8CFA4]/88">{value.description}</p>
                   </div>
                 </div>
               </motion.article>

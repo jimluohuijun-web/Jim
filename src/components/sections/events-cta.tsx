@@ -23,7 +23,7 @@ export function EventsCta() {
               <h2 className="text-balance text-4xl font-semibold leading-tight text-[#F8E6BF] md:text-5xl">
                 想参与下一场云酥坊试吃活动？
               </h2>
-              <p className="text-base leading-8 text-[#E8CFA4]/76 md:text-lg">
+              <p className="text-base leading-8 text-[#E8CFA4]/88 md:text-lg">
                 留下试吃预约，或直接联系合作，让一场东方糕点茶席进入你的活动现场。
               </p>
             </div>

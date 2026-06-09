@@ -74,7 +74,7 @@ export function ContactEntryCards() {
                       <h3 className="text-3xl font-semibold leading-tight text-[#F8E6BF]">
                         {entry.title}
                       </h3>
-                      <p className="text-base leading-7 text-[#E8CFA4]/76">
+                      <p className="text-base leading-7 text-[#E8CFA4]/88">
                         {entry.description}
                       </p>
                     </div>

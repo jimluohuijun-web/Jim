@@ -83,7 +83,7 @@ export const peonyProductData = {
       { label: "产品系列", href: "/products" },
       { label: "牡丹酥", href: "/products/peony-pastry" },
     ],
-    title: "云酥坊 · 牡丹酥",
+    title: "大气国风牡丹酥",
     headline: "花开富贵牡丹形",
     subtitle: "酥香藏馅，一口绵甜不腻口",
     description:

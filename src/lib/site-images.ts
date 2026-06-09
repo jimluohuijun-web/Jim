@@ -18,8 +18,8 @@ export const fallbackImage: SiteImage = {
 
 export const heroHome: SiteImage = {
   id: "home-hero-main",
-  src: "/images/home/hero-main.jpg",
-  alt: "云酥坊首页黑金东方酥点木托盘茶席主视觉",
+  src: "/images/home/hero-main-mooncake-box.png",
+  alt: "云酥坊首页黑金茶席木盒中式酥点主视觉",
   usage: "首页 Hero 主视觉",
   ratio: "16:9",
 };

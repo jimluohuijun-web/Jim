@@ -5,16 +5,20 @@ import { EventsCta } from "@/components/sections/events-cta";
 import { EventsHero } from "@/components/sections/events-hero";
 import { EventsPreview } from "@/components/sections/events-preview";
 import { EventsProcess } from "@/components/sections/events-process";
+import { JsonLd } from "@/components/seo/json-ld";
+import { buildBreadcrumbJsonLd, buildMetadata, pageSeoMap } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "活动 / 快闪｜云酥坊温哥华计划",
-  description:
-    "查看云酥坊 2026 年 7-8 月温哥华第一阶段活动计划预告，包括小批量试吃、下午茶分享、礼盒咨询和轻量快闪合作意向。",
-};
+export const metadata: Metadata = buildMetadata(pageSeoMap.events);
 
 export default function EventsPage() {
   return (
     <main className="ysf-pc-home overflow-hidden bg-[#1A0F0A] text-[#E8CFA4]">
+      <JsonLd
+        data={buildBreadcrumbJsonLd([
+          { name: "首页", path: "/" },
+          { name: "活动快闪", path: "/events" },
+        ])}
+      />
       <EventsHero />
       <EventsPreview />
       <EventsCollaboration />

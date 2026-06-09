@@ -31,8 +31,10 @@ export type HomeGiftHighlight = {
 };
 
 export const homeHeroContent = {
-  title: "一口酥香，东方新味",
-  subtitle: "匠心手作中式酥点，传承经典，创新东方味道",
+  title: "加拿大华人喜爱的 中式手工酥点",
+  subtitle: "蛋黄酥、花酥与中秋月饼礼盒，低糖不腻，手工开酥。",
+  description:
+    "云酥坊 Yun Su Fang 面向加拿大华人客户，准备中式手工酥点、国风点心与中秋月饼礼盒。\n适合节日送礼、华人家庭下午茶、春节伴手礼与企业团购咨询。",
   primaryCta: { href: "#featured-products", label: "立即探索产品" } satisfies HomeLink,
   secondaryCta: { href: "#tasting-register", label: "预约新品试吃" } satisfies HomeLink,
   highlights: ["甄选原料", "匠心手作", "新鲜现做", "东方礼感"],

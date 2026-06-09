@@ -20,7 +20,7 @@ export function TrialRegistration() {
         <div className="mx-auto mb-8 flex max-w-3xl flex-col items-center gap-3 text-center md:mb-10">
           <p className="text-sm uppercase tracking-[0.34em] text-soft-gold">Tasting Register</p>
           <h2 className="ysj-title-lg text-balance text-[#F5E7C8]">新品试吃登记</h2>
-          <p className="max-w-2xl text-base leading-8 text-[#BCA77F] md:text-lg">
+          <p className="max-w-2xl text-base leading-8 text-[#D6C09A] md:text-lg">
             填写信息，优先获得新品试吃与上市通知
           </p>
         </div>

@@ -30,7 +30,7 @@ export function GiftSection() {
           <div className="ysf-section-head flex flex-col items-start gap-5">
             <span className="h-px w-16 bg-soft-gold" />
             <h2 className="ysj-title-lg text-balance text-[#F5E7C8]">{giftSection.title}</h2>
-            <p className="max-w-sm text-base leading-8 text-[#BCA77F] md:text-lg">
+            <p className="max-w-sm text-base leading-8 text-[#D6C09A] md:text-lg">
               {giftSection.description}
             </p>
             <Link

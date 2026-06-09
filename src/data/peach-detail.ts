@@ -76,7 +76,7 @@ export const peachProductData = {
       { label: "产品系列", href: "/products" },
       { label: "桃花酥", href: "/products/peach-blossom-pastry" },
     ],
-    title: "云酥坊 · 桃花酥",
+    title: "东方花型手工桃花酥",
     headline: "粉嫩桃花造型",
     subtitle: "酥香藏馅，清甜不腻",
     description:

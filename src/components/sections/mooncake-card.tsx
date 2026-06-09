@@ -35,12 +35,12 @@ export function MooncakeCard({ mooncake, tone = "light", anchorId }: MooncakeCar
         />
         <div className="flex flex-col gap-3 p-2 pt-5">
           <div className="flex flex-col gap-1">
-            <p className={isDark ? "text-xs uppercase tracking-[0.2em] text-[#E8CFA4]/54" : "text-xs uppercase tracking-[0.24em] text-muted-foreground"}>
+            <p className={isDark ? "text-xs uppercase tracking-[0.2em] text-[#E8CFA4]/88" : "text-xs uppercase tracking-[0.24em] text-muted-foreground"}>
               {mooncake.englishName}
             </p>
             <h3 className={isDark ? "text-xl font-semibold leading-tight text-[#F8E6BF]" : "text-2xl font-semibold leading-tight text-foreground"}>{mooncake.name}</h3>
           </div>
-          <p className={isDark ? "text-sm leading-6 text-[#E8CFA4]/72" : "text-sm leading-7 text-muted-foreground"}>{mooncake.tagline}</p>
+          <p className={isDark ? "text-sm leading-6 text-[#E8CFA4]/86" : "text-sm leading-7 text-muted-foreground"}>{mooncake.tagline}</p>
           <span className={isDark ? "mt-auto w-fit rounded-full border border-[#F2C36B]/30 bg-[#1A0F0A]/50 px-3 py-1 text-xs text-[#F2C36B]" : "mt-auto w-fit rounded-full border border-soft-gold/35 bg-cloud-white/60 px-3 py-1 text-xs text-primary"}>
             {mooncake.ctaLabel ?? mooncake.status}
           </span>

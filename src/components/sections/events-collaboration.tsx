@@ -64,7 +64,7 @@ export function EventsCollaboration() {
                     <h3 className="text-2xl font-semibold leading-tight text-[#F8E6BF]">
                       {item.title}
                     </h3>
-                    <p className="text-base leading-7 text-[#E8CFA4]/76">{item.description}</p>
+                    <p className="text-base leading-7 text-[#E8CFA4]/88">{item.description}</p>
                   </div>
                 </div>
               </motion.article>

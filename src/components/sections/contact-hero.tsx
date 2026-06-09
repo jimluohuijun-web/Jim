@@ -30,7 +30,7 @@ export function ContactHero() {
               <h1 className="text-balance text-5xl font-semibold leading-[1.05] text-[#F8E6BF] md:text-7xl">
                 联系我们
               </h1>
-              <p className="max-w-4xl text-lg leading-8 text-[#E8CFA4]/82 md:text-xl md:leading-9">
+              <p className="max-w-4xl text-lg leading-8 text-[#E8CFA4]/90 md:text-xl md:leading-9">
                 企业团购、节日礼盒、品牌合作与试吃预约，欢迎联系云酥坊。
               </p>
             </div>
@@ -67,7 +67,7 @@ export function ContactHero() {
                 <span className="flex size-11 items-center justify-center rounded-full border border-[#F2C36B]/30 text-[#F2C36B]">
                   <Handshake className="size-5" />
                 </span>
-                <p className="text-sm leading-6 text-[#E8CFA4]/82">
+                <p className="text-sm leading-6 text-[#E8CFA4]/90">
                   请通过预约表单提交需求，我们会尽快联系确认。
                 </p>
               </div>

@@ -22,7 +22,9 @@ const highlights = [
   { icon: Flower2, label: "新中式花型" },
 ];
 
-const [heroTitleFirstLine, heroTitleSecondLine] = homeHeroContent.title.split("，");
+const [heroTitleFirstLine, heroTitleSecondLine] = homeHeroContent.title.includes(" ")
+  ? homeHeroContent.title.split(" ")
+  : homeHeroContent.title.split("，");
 
 export function HomeHero() {
   return (
@@ -54,7 +56,6 @@ export function HomeHero() {
               <h1 className="ysj-title-display max-w-4xl">
                 <span className="block sm:whitespace-nowrap">
                   {heroTitleFirstLine}
-                  {heroTitleSecondLine ? "，" : ""}
                 </span>
                 {heroTitleSecondLine ? (
                   <span className="block sm:whitespace-nowrap">{heroTitleSecondLine}</span>
@@ -65,10 +66,10 @@ export function HomeHero() {
               </span>
             </div>
             <div className="flex flex-col gap-2">
-              <p className="text-2xl font-medium tracking-[0.18em] text-foreground md:text-[2rem]">
+              <p className="text-2xl font-medium tracking-[0.18em] text-[#F5E7C8] md:text-[2rem]">
                 云酥坊 YUN SU FANG
               </p>
-              <p className="max-w-xl text-base leading-8 tracking-[0.08em] text-soft-gold md:text-xl md:tracking-[0.16em]">
+              <p className="max-w-xl text-base leading-8 tracking-[0.08em] text-[#F0C978] md:text-xl md:tracking-[0.16em]">
                 {homeHeroContent.subtitle}
               </p>
             </div>
@@ -79,9 +80,9 @@ export function HomeHero() {
             animate="visible"
             variants={fadeUp}
             transition={{ duration: 0.78, delay: 0.16, ease }}
-            className="max-w-xl text-base leading-8 text-muted-foreground md:text-lg"
+            className="max-w-xl whitespace-pre-line text-base leading-8 text-[#E9D8B7]/88 md:text-lg"
           >
-            蛋黄酥、荷花酥、桃花酥与中式礼盒正在小批量筹备中，把东方酥香做成日常分享与节令礼赠的心意。
+            {homeHeroContent.description}
           </motion.p>
 
           <motion.div

@@ -23,7 +23,7 @@ export function ContactCta() {
               <h2 className="text-balance text-4xl font-semibold leading-tight text-[#F8E6BF] md:text-5xl">
                 准备定制一份体面的东方糕点礼？
               </h2>
-              <p className="text-base leading-8 text-[#E8CFA4]/76 md:text-lg">
+              <p className="text-base leading-8 text-[#E8CFA4]/88 md:text-lg">
                 留下预约、团购或合作需求，云酥坊会根据产品档期与交付需求为你确认下一步。
               </p>
             </div>

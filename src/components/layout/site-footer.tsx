@@ -11,17 +11,17 @@ export function SiteFooter() {
         <div className="flex items-center gap-4 lg:gap-5 lg:pl-16">
           <span className="relative block size-20 shrink-0 overflow-visible lg:size-32">
             <Image
-              src="/images/logo/yunsufang-logo-current.webp"
+              src="/images/logo/yunsucake-seal-logo.png"
               alt="云酥坊品牌 Logo"
               fill
               sizes="(min-width: 1024px) 128px, 80px"
-              className="object-contain drop-shadow-[0_0_16px_rgb(242_195_107_/_16%)]"
+              className="object-contain p-1 drop-shadow-[0_0_14px_rgb(242_195_107_/_14%)]"
             />
           </span>
           <div className="flex flex-col gap-2">
             <p className="text-xl font-semibold text-[#fffaf4]">{siteConfig.name}</p>
             <p className="text-xs uppercase tracking-[0.22em] text-soft-gold">YUNSUFANG</p>
-            <p className="text-xs leading-5 text-[#E8CFA4]/76 lg:hidden">一口酥香，东方新味</p>
+            <p className="text-xs leading-5 text-[#E8CFA4]/88 lg:hidden">一口酥香，东方新味</p>
           </div>
         </div>
 

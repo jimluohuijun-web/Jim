@@ -83,7 +83,7 @@ export const eggYolkLotusMooncakeProductData = {
       { label: "产品系列", href: "/products" },
       { label: "蛋黄莲蓉月饼", href: "/products/egg-yolk-lotus-mooncake" },
     ],
-    title: "云酥坊 · 经典蛋黄莲蓉月饼",
+    title: "广式蛋黄莲蓉月饼",
     headline: "整颗沙糯蛋黄",
     subtitle: "低糖莲蓉，一口流心不腻口",
     description:

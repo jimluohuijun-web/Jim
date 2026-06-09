@@ -177,7 +177,7 @@ export const winterMelonMooncakeProductData = {
       { label: "产品系列", href: "/products" },
       { label: "冬翅月饼", href: "/products/winter-melon-mooncake" },
     ],
-    title: "云酥坊 · 特色古法冬翅月饼",
+    title: "特色低糖冬翅月饼",
     headline: "古法冬瓜熬冬翅",
     headlineLines: ["古法冬瓜", "熬冬翅"],
     subtitle: "清甜解腻，解锁中秋新式正统味",

@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "云酥坊",
   englishName: "yunsucake",
   description:
-    "云酥坊 yunsucake 是一个面向温哥华市场的新中式手作点心品牌，主打手作酥点、加拿大本地季节风味与中秋节日礼盒预告。",
+    "云酥坊 Yun Su Fang 是面向加拿大华人客户的中式手工酥点品牌，主打蛋黄酥、花酥、凤梨酥、抹茶酥与中秋月饼礼盒。",
   locale: "zh-CN",
   market: "Vancouver",
   navItems: [
@@ -20,6 +20,10 @@ export const seoKeywords = [
   "yunsucake",
   "新中式甜点",
   "新中式酥点",
+  "加拿大中式酥点",
+  "加拿大手工酥点",
+  "加拿大月饼礼盒",
+  "加拿大华人伴手礼",
   "温哥华甜点",
   "手作点心",
   "东方点心",

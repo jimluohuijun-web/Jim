@@ -79,9 +79,9 @@ export const classicPineappleCakeDetailData = {
       { label: "产品系列", href: "/products" },
       { label: "经典凤梨酥", href: "/products/classic-pineapple-cake" },
     ],
-    title: "云酥坊 · 经典凤梨酥",
+    title: "酸甜酥香的手工凤梨酥",
     headline: "一口爆馅凤梨香",
-    subtitle: "馅多皮薄，酸甜不齁腻",
+    subtitle: "适合加拿大华人下午茶与伴手礼，馅多皮薄，酸甜不齁腻",
     description:
       "精选金钻凤梨果肉，低糖慢熬成果馅，搭配36层手工薄酥。外酥内润，果香清爽，自食解馋，送礼也体面。",
     image: classicPineappleCakeImages.hero,

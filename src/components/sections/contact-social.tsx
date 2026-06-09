@@ -36,7 +36,7 @@ export function ContactSocial() {
               联系方式
             </h2>
           </div>
-          <p className="max-w-2xl text-base leading-8 text-[#E8CFA4]/76 md:justify-self-end md:text-lg">
+          <p className="max-w-2xl text-base leading-8 text-[#E8CFA4]/88 md:justify-self-end md:text-lg">
             当前为温哥华第一阶段准备期。若信息尚未开放，请优先通过预约表单提交需求，我们会尽快联系确认。
           </p>
         </div>
@@ -67,7 +67,7 @@ export function ContactSocial() {
                     <h3 className="text-2xl font-semibold leading-tight text-[#F8E6BF]">
                       {social.name}
                     </h3>
-                    <p className="text-sm leading-7 text-[#E8CFA4]/72">{social.note}</p>
+                    <p className="text-sm leading-7 text-[#E8CFA4]/86">{social.note}</p>
                     <span className="w-fit rounded-full border border-[#F2C36B]/25 bg-[#1A0F0A]/50 px-3 py-1 text-sm text-[#F2C36B]">
                       {social.status}
                     </span>

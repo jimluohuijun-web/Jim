@@ -40,7 +40,7 @@ export function AboutFounder() {
               从日常酥点到节令礼盒
             </h2>
           </div>
-          <p className="text-base leading-8 text-[#E8CFA4]/76 md:text-lg">
+          <p className="text-base leading-8 text-[#E8CFA4]/88 md:text-lg">
             云酥坊围绕自食、送礼、企业福利与节令预订，形成清晰的东方糕点产品矩阵。
           </p>
         </div>
@@ -79,7 +79,7 @@ export function AboutFounder() {
                         <h3 className="text-2xl font-semibold leading-tight text-[#F8E6BF]">
                           {family.title}
                         </h3>
-                        <p className="text-sm leading-6 text-[#E8CFA4]/74 md:text-base">
+                        <p className="text-sm leading-6 text-[#E8CFA4]/88 md:text-base">
                           {family.description}
                         </p>
                       </div>

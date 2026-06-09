@@ -83,9 +83,9 @@ export const matchaProductData = {
       { label: "产品系列", href: "/products" },
       { label: "抹茶酥", href: "/products/matcha-pastry" },
     ],
-    title: "云酥坊 · 抹茶酥",
+    title: "茶香清新的新中式抹茶酥",
     headline: "抹茶浓醇回甘",
-    subtitle: "咸蛋流心爆浆，36层酥皮一口锁香",
+    subtitle: "低甜茶香与咸蛋流心，36层酥皮一口锁香",
     description:
       "甄选日本抹茶粉，搭配低糖红豆沙与整颗咸蛋黄，手工层层开酥。茶香清雅，咸甜平衡，酥香不腻。",
     image: matchaPastryImages.hero,

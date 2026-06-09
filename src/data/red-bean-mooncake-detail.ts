@@ -100,7 +100,7 @@ export const redBeanMooncakeProductData = {
       { label: "产品系列", href: "/products" },
       { label: "豆沙月饼", href: "/products/red-bean-mooncake" },
     ],
-    title: "云酥坊 · 经典豆沙月饼",
+    title: "低糖经典豆沙月饼",
     headline: "一口红豆香",
     subtitle: "低糖不齁腻，复刻温润广式中秋味",
     description:

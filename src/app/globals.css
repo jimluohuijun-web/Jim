@@ -84,7 +84,7 @@
   --secondary: #efe7db;
   --secondary-foreground: #4f5f4e;
   --muted: #efe7db;
-  --muted-foreground: #6a6258;
+  --muted-foreground: #8a7b65;
   --accent: #f3d8d8;
   --accent-foreground: #4f5f4e;
   --destructive: oklch(0.577 0.245 27.325);
@@ -313,6 +313,7 @@
     --ysf-gold-dark: #a96828;
     --ysf-cream: #f8e6bf;
     --ysf-cream-muted: #e8cfa4;
+    --muted-foreground: #eedab8;
     --ysf-border-gold: rgb(216 154 66 / 35%);
     --ysf-border-soft: rgb(216 154 66 / 22%);
     --ysf-shadow: 0 26px 90px rgb(0 0 0 / 42%);
@@ -416,7 +417,7 @@
   }
 
   .ysf-pc-home .text-muted-foreground {
-    color: rgb(232 207 164 / 78%);
+    color: rgb(238 218 184 / 92%) !important;
   }
 
   .ysf-pc-home .text-soft-gold {

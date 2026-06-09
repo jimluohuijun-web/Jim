@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { ProductSeoJsonLd } from "@/components/seo/product-seo-json-ld";
 import {
   MatchaCTA,
   MatchaCraft,
@@ -9,17 +10,16 @@ import {
   MatchaProblems,
   MatchaTaste,
 } from "@/components/sections/matcha-detail-page";
+import { buildMetadata, productSeoMap } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "抹茶酥｜云酥坊 YUN SU FANG",
-  description:
-    "云酥坊抹茶酥详情页，主打日本抹茶粉、整颗咸蛋黄、低糖红豆沙、36层手工酥皮和现做现发，适合自食与礼盒预订。",
-  keywords: ["云酥坊", "抹茶酥", "日本抹茶粉", "咸蛋黄", "低糖红豆沙", "中式糕点礼盒"],
-};
+const productPath = "/products/matcha-pastry";
+
+export const metadata: Metadata = buildMetadata(productSeoMap[productPath]);
 
 export default function MatchaPastryPage() {
   return (
-    <main className="overflow-hidden bg-[#070604] text-[#BCA77F]">
+    <main className="overflow-hidden bg-[#070604] text-[#D6C09A]">
+      <ProductSeoJsonLd path={productPath} category="中式手工酥点" />
       <MatchaHero />
       <MatchaProblems />
       <MatchaHighlights />

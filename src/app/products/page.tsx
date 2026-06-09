@@ -10,15 +10,14 @@ import {
 
 import { MooncakeCard } from "@/components/sections/mooncake-card";
 import { ProductCard } from "@/components/sections/product-card";
+import { JsonLd } from "@/components/seo/json-ld";
+import { SeoFaqSection, SeoInternalLinks } from "@/components/seo/seo-content-blocks";
 import { BrandImage } from "@/components/ui/brand-image";
 import { mooncakePreview, signatureProducts } from "@/data/products";
 import { pageMoodImages } from "@/data/images";
+import { buildBreadcrumbJsonLd, buildFaqJsonLd, buildMetadata, pageSeoMap } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "云酥坊点心系列｜云酥坊 yunsucake",
-  description:
-    "查看云酥坊 yunsucake 招牌酥点、加拿大本地季节风味与 2026 中秋月饼礼盒预告，包括蛋黄酥、牡丹花酥、凤梨酥和中秋月饼。",
-};
+export const metadata: Metadata = buildMetadata(pageSeoMap.products);
 
 const heroTags = ["酥点系列", "花酥系列", "中秋月饼", "企业团购"];
 
@@ -48,6 +47,31 @@ const giftServices = [
   },
 ];
 
+const productsFaqs = [
+  {
+    question: "云酥坊有哪些适合加拿大华人的中式手工酥点？",
+    answer:
+      "目前重点展示蛋黄酥、桃花酥、荷花酥、牡丹酥、凤梨酥、抹茶酥，以及中秋月饼礼盒预告，适合下午茶、亲友伴手礼和节日送礼。",
+  },
+  {
+    question: "中式酥点礼盒可以用于企业团购吗？",
+    answer:
+      "可以。云酥坊可根据节日、预算、口味偏好和送礼场景，沟通酥点礼盒、中秋月饼礼盒与企业福利团购方案。",
+  },
+  {
+    question: "产品页中的月饼什么时候适合预订？",
+    answer:
+      "中秋月饼属于季节性批次，建议提前登记试吃或咨询礼盒提醒，方便优先了解蛋黄莲蓉、豆沙、五仁、冬翅和苏式鲜肉月饼的开放信息。",
+  },
+];
+
+const productsInternalLinks = [
+  { label: "中秋月饼礼盒", href: "/mooncakes", description: "查看加拿大华人中秋送礼月饼口味" },
+  { label: "中式酥点礼盒", href: "/gift-box", description: "了解伴手礼、节日礼盒与企业团购" },
+  { label: "试吃登记", href: "/reserve", description: "加入新品酥点与月饼礼盒提醒名单" },
+  { label: "品牌故事", href: "/about", description: "阅读云酥坊公司新闻、重要案例与制作方法文章" },
+];
+
 export default function ProductsPage() {
   const pastryProducts = signatureProducts.slice(0, 3);
   const flowerPastryProducts = signatureProducts.slice(3);
@@ -55,6 +79,13 @@ export default function ProductsPage() {
 
   return (
     <main className="ysf-pc-home overflow-hidden bg-[#1A0F0A] text-[#E8CFA4]">
+      <JsonLd
+        data={buildBreadcrumbJsonLd([
+          { name: "首页", path: "/" },
+          { name: "产品系列", path: "/products" },
+        ])}
+      />
+      <JsonLd data={buildFaqJsonLd(productsFaqs)} />
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_14%,rgb(242_195_107_/_16%),transparent_28rem),radial-gradient(circle_at_84%_18%,rgb(116_67_32_/_30%),transparent_26rem),linear-gradient(180deg,#1A0F0A,#120905_62%,#1A0F0A)]" />
         <div className="pointer-events-none absolute left-[-10rem] top-20 size-[26rem] rounded-full border border-[#D89A42]/12" />
@@ -73,10 +104,10 @@ export default function ProductsPage() {
             </div>
             <div className="flex flex-col gap-5">
               <h1 className="text-balance text-5xl font-semibold leading-[1.05] text-[#F8E6BF] md:text-7xl">
-                云酥坊点心系列
+                中式手工酥点系列
               </h1>
-              <p className="max-w-3xl text-lg leading-8 text-[#E8CFA4]/82 md:text-xl md:leading-9">
-                从日常酥点到中秋礼盒，一站式挑选东方糕点好礼。
+              <p className="max-w-3xl text-lg leading-8 text-[#E8CFA4]/90 md:text-xl md:leading-9">
+                从蛋黄酥、花酥到月饼礼盒，云酥坊为加拿大华人家庭准备适合送礼与分享的中式点心。
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
@@ -173,8 +204,8 @@ export default function ProductsPage() {
                 经典酥点，适合日常分享与伴手礼
               </h2>
             </div>
-            <p className="text-base leading-8 text-[#E8CFA4]/76 md:text-lg">
-              蛋黄酥、凤梨酥与抹茶酥是云酥坊的基础主力，覆盖咸甜经典、果香伴手礼与茶点偏好。
+            <p className="text-base leading-8 text-[#E8CFA4]/88 md:text-lg">
+              蛋黄酥、凤梨酥与抹茶酥是云酥坊的基础主力，覆盖手工开酥、果香伴手礼、低糖茶点与加拿大华人日常下午茶偏好。
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -202,8 +233,8 @@ export default function ProductsPage() {
                 花型开酥，适合礼盒与茶席
               </h2>
             </div>
-            <p className="text-base leading-8 text-[#E8CFA4]/76 md:text-lg">
-              桃花酥、荷花酥与牡丹酥保留东方花型意象，作为礼盒中的视觉记忆点。
+            <p className="text-base leading-8 text-[#E8CFA4]/88 md:text-lg">
+              桃花酥、荷花酥与牡丹酥保留东方花型意象，是国风点心、花酥礼盒与节日伴手礼中的视觉记忆点。
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -235,8 +266,8 @@ export default function ProductsPage() {
                 中秋月饼 · 五款风味预告
               </h2>
             </div>
-            <p className="text-base leading-8 text-[#E8CFA4]/76 md:text-lg">
-              从蛋黄莲蓉、豆沙、五仁、冬翅到苏式鲜肉，把东方中秋做成一组值得期待的温柔礼物。
+            <p className="text-base leading-8 text-[#E8CFA4]/88 md:text-lg">
+              从蛋黄莲蓉、豆沙、五仁、冬翅到苏式鲜肉，把加拿大华人中秋月饼礼盒做成适合家庭团圆、节日送礼与企业团购的温柔礼物。
             </p>
           </div>
 
@@ -263,8 +294,8 @@ export default function ProductsPage() {
                   <h2 className="text-balance text-4xl font-semibold leading-tight text-[#F8E6BF] md:text-5xl">
                     节日礼盒与企业团购
                   </h2>
-                  <p className="text-base leading-8 text-[#E8CFA4]/76 md:text-lg">
-                    支持多规格礼盒、员工福利、客户答谢与批量定制咨询。
+                  <p className="text-base leading-8 text-[#E8CFA4]/88 md:text-lg">
+                    支持中秋送礼、春节伴手礼、员工福利、客户答谢、华人家庭聚会与企业团购礼盒方案咨询。
                   </p>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-3">
@@ -274,7 +305,7 @@ export default function ProductsPage() {
                       className="rounded-2xl border border-[#D89A42]/20 bg-[#1A0F0A]/46 p-4"
                     >
                       <h3 className="text-lg font-semibold text-[#F8E6BF]">{service.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-[#E8CFA4]/72">
+                      <p className="mt-2 text-sm leading-6 text-[#E8CFA4]/86">
                         {service.description}
                       </p>
                       <p className="mt-4 text-xs uppercase tracking-[0.16em] text-[#D89A42]">
@@ -324,7 +355,7 @@ export default function ProductsPage() {
                 <h2 className="text-4xl font-semibold leading-tight text-[#F8E6BF]">
                   想加入试吃或礼盒提醒？
                 </h2>
-                <p className="text-base leading-8 text-[#E8CFA4]/76 md:text-lg">
+                <p className="text-base leading-8 text-[#E8CFA4]/88 md:text-lg">
                   云酥坊正在为温哥华第一阶段小批量试吃、季节风味测试与中秋礼盒预告收集意向。你可以先留下联系方式，我们会在开放时优先通知。
                 </p>
               </div>
@@ -348,6 +379,9 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+
+      <SeoFaqSection eyebrow="Pastry FAQ｜产品常见问题" title="中式手工酥点与礼盒咨询" faqs={productsFaqs} />
+      <SeoInternalLinks title="继续了解云酥坊产品与礼盒" links={productsInternalLinks} />
     </main>
   );
 }

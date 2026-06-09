@@ -74,6 +74,10 @@ const bottomItems = [
   { icon: Phone, label: "联系", href: "/contact" },
 ];
 
+const [mobileHeroTitleFirstLine, mobileHeroTitleSecondLine] = homeHeroContent.title.includes(" ")
+  ? homeHeroContent.title.split(" ")
+  : homeHeroContent.title.split("，");
+
 function SectionHeading({
   eyebrow,
   title,
@@ -97,7 +101,7 @@ function SectionHeading({
           {title}
         </h2>
         {description ? (
-          <p className="mt-2 max-w-[19rem] text-sm leading-6 text-[#BCA77F]">{description}</p>
+          <p className="mt-2 max-w-[19rem] text-sm leading-6 text-[#D6C09A]">{description}</p>
         ) : null}
       </div>
       {action ? (
@@ -115,7 +119,7 @@ function SectionHeading({
 
 export function MobileHomeSections() {
   return (
-    <div className="overflow-hidden bg-[#080604] pb-[calc(5.75rem+env(safe-area-inset-bottom))] text-[#BCA77F] lg:hidden">
+    <div className="overflow-hidden bg-[#080604] pb-[calc(5.75rem+env(safe-area-inset-bottom))] text-[#D6C09A] lg:hidden">
       <section id="home" className="relative isolate min-h-[620px] scroll-mt-20 overflow-hidden px-5 pb-7 pt-8">
         <Image
           src={heroHome.src}
@@ -135,18 +139,16 @@ export function MobileHomeSections() {
               云酥坊 YUN SU FANG
             </p>
             <h1 className="font-serif text-[clamp(2.55rem,11.6vw,4.3rem)] font-semibold leading-[0.98] tracking-[0.03em] text-[#F8E6BF]">
-              一口酥香，
+              {mobileHeroTitleFirstLine}
               <br />
-              东方新味
+              {mobileHeroTitleSecondLine}
             </h1>
             <span className="h-px w-20 bg-[linear-gradient(90deg,#F0C978,transparent)]" />
             <p className="max-w-[17rem] whitespace-pre-line text-[0.92rem] leading-6 text-[#E8CFA4] md:max-w-[26rem]">
-              匠心手作中式酥点，
-              <br />
-              传承经典，创新东方味道
+              {homeHeroContent.subtitle}
             </p>
-            <p className="max-w-[19rem] text-sm leading-6 text-[#BCA77F]/82 md:max-w-[28rem]">
-              蛋黄酥、凤梨酥、花酥与中式礼盒正在小批量筹备中，把东方酥香做成日常分享与节令礼赠的心意。
+            <p className="max-w-[19rem] whitespace-pre-line text-sm leading-6 text-[#D6C09A]/82 md:max-w-[28rem]">
+              {homeHeroContent.description}
             </p>
           </div>
 
@@ -214,7 +216,7 @@ export function MobileHomeSections() {
                 <h3 className="font-serif text-[1.35rem] font-semibold leading-tight text-[#F5E7C8]">
                   {product.name}
                 </h3>
-                <p className="line-clamp-1 text-xs leading-5 text-[#BCA77F]">
+                <p className="line-clamp-1 text-xs leading-5 text-[#D6C09A]">
                   {product.description}
                 </p>
                 <div className="mt-1 flex items-end justify-between gap-3">
@@ -248,7 +250,7 @@ export function MobileHomeSections() {
                 <h3 className="font-serif text-base font-semibold text-[#F5E7C8]">
                   {item.title}
                 </h3>
-                <p className="mt-2 line-clamp-2 text-xs leading-5 text-[#BCA77F]">{item.description}</p>
+                <p className="mt-2 line-clamp-2 text-xs leading-5 text-[#D6C09A]">{item.description}</p>
               </article>
             );
           })}
@@ -292,7 +294,7 @@ export function MobileHomeSections() {
                 <h3 className="font-serif text-lg font-semibold text-[#F5E7C8]">
                   {product.name}
                 </h3>
-                <p className="mt-1.5 line-clamp-2 text-xs leading-5 text-[#BCA77F]">
+                <p className="mt-1.5 line-clamp-2 text-xs leading-5 text-[#D6C09A]">
                   {product.description}
                 </p>
                 <span className="mt-auto inline-flex items-center gap-1 pt-2 text-xs font-semibold text-[#F0C978]">
@@ -314,7 +316,7 @@ export function MobileHomeSections() {
             <h2 className="font-serif text-[1.55rem] font-semibold leading-tight text-[#F5E7C8]">
               {brandStory.title}
             </h2>
-            <p className="mt-3 line-clamp-3 whitespace-pre-line text-sm leading-6 text-[#BCA77F]">
+            <p className="mt-3 line-clamp-3 whitespace-pre-line text-sm leading-6 text-[#D6C09A]">
               云酥坊的品牌灵感，取自短暂而神秘的闽国风物。
               {"\n"}我们尊重传统手艺，也用低糖口味与东方审美，
               {"\n"}把雅致、温情与团圆，做成可以入口的点心。
@@ -383,7 +385,7 @@ export function MobileHomeSections() {
             <h2 className="font-serif text-[1.6rem] font-semibold leading-tight text-[#F5E7C8]">
               {giftSection.title}
             </h2>
-            <p className="mt-2 text-sm leading-6 text-[#BCA77F]">{giftSection.description}</p>
+            <p className="mt-2 text-sm leading-6 text-[#D6C09A]">{giftSection.description}</p>
           </div>
           <div className="relative h-[220px] overflow-hidden">
             <Image
@@ -440,7 +442,7 @@ export function MobileHomeSections() {
           <h2 className="font-serif text-[1.75rem] font-semibold text-[#F5E7C8]">
             新品试吃登记
           </h2>
-          <p className="mx-auto mt-2 max-w-[20rem] text-sm leading-6 text-[#BCA77F]">
+          <p className="mx-auto mt-2 max-w-[20rem] text-sm leading-6 text-[#D6C09A]">
             填写信息，优先获得新品试吃与上市通知
           </p>
         </div>
@@ -450,7 +452,7 @@ export function MobileHomeSections() {
       <section id="contact" className="scroll-mt-20 bg-[#080604] px-5 py-6">
         <div className="rounded-[1.2rem] border border-[#D9B46A]/22 bg-[#120C07]/78 p-4">
           <h2 className="font-serif text-2xl font-semibold text-[#F5E7C8]">联系我们</h2>
-          <p className="mt-2 text-sm leading-7 text-[#BCA77F]">
+          <p className="mt-2 text-sm leading-7 text-[#D6C09A]">
             如需试吃登记、企业团购或礼盒定制，可以通过联系入口与云酥坊沟通。
           </p>
           <Link

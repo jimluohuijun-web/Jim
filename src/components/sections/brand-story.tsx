@@ -28,7 +28,7 @@ export function BrandStory() {
             <h2 className="font-serif text-[1.75rem] font-semibold leading-tight tracking-[0.04em] text-[#F5E7C8] md:text-[2.15rem]">
               {brandStory.title}
             </h2>
-            <p className="whitespace-pre-line text-sm leading-[1.95] text-[#BCA77F] md:text-[0.95rem]">
+            <p className="whitespace-pre-line text-sm leading-[1.95] text-[#D6C09A] md:text-[0.95rem]">
               {brandStory.description}
             </p>
           </div>

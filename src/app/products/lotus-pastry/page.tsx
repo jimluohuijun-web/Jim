@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { ProductSeoJsonLd } from "@/components/seo/product-seo-json-ld";
 import {
   LotusCTA,
   LotusCraft,
@@ -9,17 +10,16 @@ import {
   LotusProblems,
   LotusTaste,
 } from "@/components/sections/lotus-detail-page";
+import { buildMetadata, productSeoMap } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "荷花酥｜云酥坊 YUN SU FANG",
-  description:
-    "云酥坊荷花酥详情页，主打手工荷花造型、低糖莲蓉馅、36层手工薄酥和现做现发，适合自食、长辈礼赠与企业礼赠。",
-  keywords: ["云酥坊", "荷花酥", "低糖莲蓉", "中式糕点礼盒", "长辈礼赠", "企业礼赠"],
-};
+const productPath = "/products/lotus-pastry";
+
+export const metadata: Metadata = buildMetadata(productSeoMap[productPath]);
 
 export default function LotusPastryPage() {
   return (
-    <main className="overflow-hidden bg-[#070604] text-[#BCA77F]">
+    <main className="overflow-hidden bg-[#070604] text-[#D6C09A]">
+      <ProductSeoJsonLd path={productPath} category="中式手工酥点" />
       <LotusHero />
       <LotusProblems />
       <LotusHighlights />

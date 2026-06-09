@@ -39,7 +39,7 @@ export function EventsHero() {
                 <span className="block sm:inline">活动快闪</span>
                 <span className="block sm:inline">与新品试吃</span>
               </h1>
-              <p className="max-w-4xl text-lg leading-8 text-[#E8CFA4]/82 md:text-xl md:leading-9">
+              <p className="max-w-4xl text-lg leading-8 text-[#E8CFA4]/90 md:text-xl md:leading-9">
                 用一场东方糕点茶席，遇见云酥坊的新鲜风味。
               </p>
             </div>
@@ -76,7 +76,7 @@ export function EventsHero() {
                 <span className="flex size-11 items-center justify-center rounded-full border border-[#F2C36B]/30 text-[#F2C36B]">
                   <Sparkles className="size-5" />
                 </span>
-                <p className="text-sm leading-6 text-[#E8CFA4]/82">
+                <p className="text-sm leading-6 text-[#E8CFA4]/90">
                   试吃、快闪、茶歇与节令预订，都从真实见面开始。
                 </p>
               </div>

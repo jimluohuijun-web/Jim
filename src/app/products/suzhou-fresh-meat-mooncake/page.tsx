@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { ProductSeoJsonLd } from "@/components/seo/product-seo-json-ld";
 import {
   FreshMeatCTA,
   FreshMeatCraft,
@@ -10,17 +11,16 @@ import {
   FreshMeatProblems,
   FreshMeatTaste,
 } from "@/components/sections/suzhou-meat-mooncake-detail-page";
+import { buildMetadata, productSeoMap } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "苏式鲜肉月饼｜云酥坊 YUN SU FANG",
-  description:
-    "云酥坊苏式鲜肉月饼详情页，主打黑毛猪鲜肉爆汁、12层酥皮、现烤现发与咸香不腻口感，适合中秋礼盒、企业团购和试吃预订。",
-  keywords: ["云酥坊", "苏式鲜肉月饼", "鲜肉月饼", "黑毛猪", "12层酥皮", "中秋礼盒"],
-};
+const productPath = "/products/suzhou-fresh-meat-mooncake";
+
+export const metadata: Metadata = buildMetadata(productSeoMap[productPath]);
 
 export default function SuzhouFreshMeatMooncakePage() {
   return (
-    <main className="overflow-hidden bg-[#070604] text-[#BCA77F]">
+    <main className="overflow-hidden bg-[#070604] text-[#D6C09A]">
+      <ProductSeoJsonLd path={productPath} category="中秋月饼礼盒" />
       <FreshMeatHero />
       <FreshMeatProblems />
       <FreshMeatHighlights />

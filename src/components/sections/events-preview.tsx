@@ -110,14 +110,14 @@ export function EventsPreview() {
 
                   <div className="flex flex-col gap-5">
                     <div className="flex flex-col gap-2">
-                      <p className="text-sm uppercase tracking-[0.22em] text-[#E8CFA4]/54">
+                      <p className="text-sm uppercase tracking-[0.22em] text-[#E8CFA4]/88">
                         {event.time}
                       </p>
                       <h3 className="text-2xl font-semibold leading-tight text-[#F8E6BF]">
                         {event.title}
                       </h3>
                     </div>
-                    <p className="text-base leading-7 text-[#E8CFA4]/76">{event.description}</p>
+                    <p className="text-base leading-7 text-[#E8CFA4]/88">{event.description}</p>
                     <Link
                       href={event.href}
                       className="ysj-button-secondary inline-flex min-h-11 w-fit items-center justify-center gap-2 px-5 text-sm font-medium"

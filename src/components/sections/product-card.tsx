@@ -120,7 +120,7 @@ export function ProductCard({
                   <p
                     className={cn(
                       "text-xs uppercase tracking-[0.22em]",
-                      isDark ? "text-[#E8CFA4]/54" : "text-muted-foreground"
+                      isDark ? "text-[#E8CFA4]/88" : "text-muted-foreground"
                     )}
                   >
                     {product.englishName}
@@ -144,14 +144,14 @@ export function ProductCard({
                 </span>
               </div>
 
-              <p className={cn("text-base leading-7", isDark ? "text-[#E8CFA4]/78" : "text-foreground/78")}>
+              <p className={cn("text-base leading-7", isDark ? "text-[#E8CFA4]/88" : "text-foreground/78")}>
                 {product.tagline}
               </p>
               <p
                 className={cn(
                   "rounded-2xl border px-4 py-3 text-sm leading-6",
                   isDark
-                    ? "border-[#D89A42]/20 bg-[#1A0F0A]/42 text-[#E8CFA4]/70"
+                    ? "border-[#D89A42]/20 bg-[#1A0F0A]/42 text-[#E8CFA4]/84"
                     : "border-soft-gold/20 bg-white/32 text-muted-foreground"
                 )}
               >

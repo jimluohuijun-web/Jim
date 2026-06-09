@@ -72,7 +72,7 @@ function SectionTitle({
       <h2 className="font-serif text-[1.75rem] font-semibold leading-tight tracking-[0.04em] text-[#F8E6BF] text-balance md:text-5xl">
         {title}
       </h2>
-      {subtitle ? <p className="mt-4 text-base leading-8 text-[#BCA77F] md:text-lg">{subtitle}</p> : null}
+      {subtitle ? <p className="mt-4 text-base leading-8 text-[#D6C09A] md:text-lg">{subtitle}</p> : null}
     </div>
   );
 }
@@ -132,7 +132,7 @@ export function FreshMeatHero() {
 
       <div className="ysj-container grid gap-7 py-10 md:min-h-[720px] md:gap-10 md:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div className="flex flex-col gap-5 md:gap-7">
-          <nav className="flex flex-wrap items-center gap-2 text-xs tracking-[0.12em] text-[#BCA77F]">
+          <nav className="flex flex-wrap items-center gap-2 text-xs tracking-[0.12em] text-[#D6C09A]">
             {breadcrumb.map((item, index) => (
               <span key={item.href} className="inline-flex items-center gap-2">
                 <Link href={item.href} className="transition-colors hover:text-[#F0C978]">
@@ -153,7 +153,7 @@ export function FreshMeatHero() {
             <p className="text-lg font-medium leading-8 tracking-[0.04em] text-[#D9B46A] md:text-2xl md:tracking-[0.08em]">
               {hero.subtitle}
             </p>
-            <p className="max-w-2xl text-sm leading-7 text-[#BCA77F] md:text-lg md:leading-8">{hero.description}</p>
+            <p className="max-w-2xl text-sm leading-7 text-[#D6C09A] md:text-lg md:leading-8">{hero.description}</p>
           </div>
 
           <div className="grid gap-3 sm:flex sm:flex-row">
@@ -179,7 +179,7 @@ export function FreshMeatHero() {
                     </span>
                     <div>
                       <h3 className="font-serif text-lg font-semibold text-[#F5E7C8]">{item.title}</h3>
-                      <p className="mt-1 text-sm leading-6 text-[#BCA77F]">{item.text}</p>
+                      <p className="mt-1 text-sm leading-6 text-[#D6C09A]">{item.text}</p>
                     </div>
                   </div>
                 </DetailCard>
@@ -219,7 +219,7 @@ export function FreshMeatProblems() {
                   </span>
                   <div>
                     <h3 className="font-serif text-2xl font-semibold text-[#F5E7C8]">{item.title}</h3>
-                    <p className="mt-3 text-base leading-7 text-[#BCA77F]">{item.text}</p>
+                    <p className="mt-3 text-base leading-7 text-[#D6C09A]">{item.text}</p>
                   </div>
                 </div>
               </DetailCard>
@@ -259,7 +259,7 @@ export function FreshMeatHighlights() {
                     <Icon className="size-5" strokeWidth={1.45} />
                   </span>
                   <h3 className="font-serif text-2xl font-semibold text-[#F5E7C8]">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-[#BCA77F]">{item.text}</p>
+                  <p className="mt-3 text-sm leading-7 text-[#D6C09A]">{item.text}</p>
                 </div>
               </DetailCard>
             );
@@ -388,19 +388,19 @@ export function FreshMeatInfo() {
                 >
                   <Icon className="size-8 text-[#F0C978]" strokeWidth={1.45} />
                   <p className="mt-4 font-serif text-xl font-semibold text-[#F5E7C8]">{item.label}</p>
-                  <p className="mt-2 text-base text-[#BCA77F]">{item.value}</p>
+                  <p className="mt-2 text-base text-[#D6C09A]">{item.value}</p>
                 </div>
               );
             })}
           </div>
 
-          <p className="mt-6 border-t border-[rgba(217,180,106,0.16)] pt-5 text-sm leading-7 text-[#BCA77F]">
+          <p className="mt-6 border-t border-[rgba(217,180,106,0.16)] pt-5 text-sm leading-7 text-[#D6C09A]">
             {info.note}
           </p>
           <div className="mt-5 flex flex-col gap-3 rounded-[1rem] border border-[rgba(217,180,106,0.2)] bg-[#070604]/70 p-4 md:flex-row md:items-center md:justify-between md:p-5">
             <div>
               <p className="font-serif text-lg font-semibold text-[#F5E7C8]">想确认试吃名额或礼盒规格？</p>
-              <p className="mt-1 text-sm leading-6 text-[#BCA77F]">留下信息，我们为你确认现烤批次、礼盒规格与企业团购方案。</p>
+              <p className="mt-1 text-sm leading-6 text-[#D6C09A]">留下信息，我们为你确认现烤批次、礼盒规格与企业团购方案。</p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row md:shrink-0">
               <GoldButton href="/reserve">预约试吃</GoldButton>
@@ -431,7 +431,7 @@ export function FreshMeatGift() {
                 <DetailCard key={item.title} className="p-4 md:p-5">
                   <Icon className="size-8 text-[#F0C978]" strokeWidth={1.45} />
                   <h3 className="mt-4 font-serif text-xl font-semibold text-[#F5E7C8]">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-[#BCA77F]">{item.text}</p>
+                  <p className="mt-2 text-sm leading-7 text-[#D6C09A]">{item.text}</p>
                 </DetailCard>
               );
             })}
@@ -454,7 +454,7 @@ export function FreshMeatCTA() {
         <h2 className="font-serif text-[2rem] font-semibold leading-tight text-[#F8E6BF] text-balance md:text-6xl">
           {bottomCta.title}
         </h2>
-        <p className="mt-4 text-base leading-7 text-[#BCA77F] md:text-lg">{bottomCta.subtitle}</p>
+        <p className="mt-4 text-base leading-7 text-[#D6C09A] md:text-lg">{bottomCta.subtitle}</p>
         <div className="mt-7 grid justify-center gap-3 sm:flex sm:flex-row">
           <GoldButton href={bottomCta.primaryCta.href}>
             <ShoppingCart className="size-5" />

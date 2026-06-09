@@ -5,13 +5,12 @@ import { BriefcaseBusiness, CalendarCheck, Gift, Moon, Sparkles } from "lucide-r
 import { BrandImage } from "@/components/ui/brand-image";
 import { ReserveForm } from "@/components/sections/reserve-form";
 import { ReserveInfoCard } from "@/components/sections/reserve-info-card";
+import { JsonLd } from "@/components/seo/json-ld";
+import { SeoFaqSection, SeoInternalLinks } from "@/components/seo/seo-content-blocks";
 import { pageMoodImages } from "@/data/images";
+import { buildBreadcrumbJsonLd, buildFaqJsonLd, buildMetadata, pageSeoMap } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "新品尝鲜与中秋预订｜云酥坊 yunsucake",
-  description:
-    "提前锁定云酥坊新品试吃名额，咨询中秋礼盒预订、企业福利团购与温哥华小批量试吃安排。",
-};
+export const metadata: Metadata = buildMetadata(pageSeoMap.reserve);
 
 const reserveTags = ["新品试吃", "中秋礼盒", "企业团购", "现做现发"];
 
@@ -33,9 +32,41 @@ const reserveScenes = [
   },
 ];
 
+const reserveFaqs = [
+  {
+    question: "云酥坊试吃登记适合哪些用户？",
+    answer:
+      "适合想提前了解加拿大中式手工酥点、蛋黄酥、花酥、凤梨酥、抹茶酥和中秋月饼礼盒的华人客户、家庭用户与企业团购联系人。",
+  },
+  {
+    question: "登记后会马上确认订单吗？",
+    answer:
+      "试吃登记主要用于收集口味偏好和礼盒需求。云酥坊会根据新品批次、产能和中秋礼盒开放时间，再通知试吃、预订或团购咨询安排。",
+  },
+  {
+    question: "中秋月饼礼盒也可以通过这里登记吗？",
+    answer:
+      "可以。登记时可说明月饼礼盒、企业团购、家庭送礼或具体口味偏好，方便后续优先接收中秋月饼礼盒开放提醒。",
+  },
+];
+
+const reserveLinks = [
+  { label: "产品系列", href: "/products", description: "浏览蛋黄酥、花酥、凤梨酥与抹茶酥" },
+  { label: "中秋月饼礼盒", href: "/mooncakes", description: "查看加拿大中秋送礼月饼口味" },
+  { label: "中式酥点礼盒", href: "/gift-box", description: "了解伴手礼、节日礼盒和企业团购" },
+  { label: "联系我们", href: "/contact", description: "咨询批量礼盒、活动合作与预订问题" },
+];
+
 export default function ReservePage() {
   return (
     <main className="ysf-pc-home overflow-hidden bg-[#1A0F0A] text-[#E8CFA4]">
+      <JsonLd
+        data={buildBreadcrumbJsonLd([
+          { name: "首页", path: "/" },
+          { name: "试吃登记", path: "/reserve" },
+        ])}
+      />
+      <JsonLd data={buildFaqJsonLd(reserveFaqs)} />
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,rgb(242_195_107_/_16%),transparent_27rem),radial-gradient(circle_at_82%_16%,rgb(116_67_32_/_28%),transparent_24rem),linear-gradient(180deg,#1A0F0A,#120905_62%,#1A0F0A)]" />
         <div className="pointer-events-none absolute left-[-10rem] top-20 size-[26rem] rounded-full border border-[#D89A42]/12" />
@@ -54,10 +85,10 @@ export default function ReservePage() {
             </div>
             <div className="flex flex-col gap-5">
               <h1 className="text-balance text-5xl font-semibold leading-[1.05] text-[#F8E6BF] md:text-7xl">
-                新品尝鲜与中秋预订
+                云酥坊中式酥点试吃登记
               </h1>
-              <p className="max-w-3xl text-lg leading-8 text-[#E8CFA4]/82 md:text-xl md:leading-9">
-                提前锁定云酥坊新品试吃名额，或咨询中秋礼盒与企业团购方案。
+              <p className="max-w-3xl text-lg leading-8 text-[#E8CFA4]/90 md:text-xl md:leading-9">
+                提前了解云酥坊蛋黄酥、花酥、凤梨酥、抹茶酥和中秋月饼礼盒批次，登记试吃、预订提醒或企业团购需求。
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
@@ -95,6 +126,14 @@ export default function ReservePage() {
       </section>
 
       <section className="ysj-section-tight border-y border-[#D89A42]/16 bg-[#120905]">
+        <div className="ysj-container max-w-4xl">
+          <p className="text-base leading-8 text-[#E8CFA4]/90 md:text-lg md:leading-9">
+            云酥坊试吃登记页面用于收集加拿大华人客户对中式手工酥点的真实偏好。无论你想先尝试经典蛋黄酥、桃花酥、荷花酥、牡丹酥、凤梨酥、抹茶酥，还是想提前了解中秋月饼礼盒、春节伴手礼、企业福利团购和家庭聚会点心，都可以在这里留下需求。我们会根据小批量现做、手工开酥、低糖不腻和礼盒批次安排，优先通知合适的试吃、预订与咨询机会。
+          </p>
+        </div>
+      </section>
+
+      <section className="ysj-section-tight border-y border-[#D89A42]/16 bg-[#120905]">
         <div className="ysj-container grid gap-5 md:grid-cols-3">
           {reserveScenes.map((scene) => {
             const Icon = scene.icon;
@@ -111,7 +150,7 @@ export default function ReservePage() {
                   </span>
                   <div className="flex flex-col gap-3">
                     <h2 className="text-2xl font-semibold text-[#F8E6BF]">{scene.title}</h2>
-                    <p className="text-sm leading-7 text-[#E8CFA4]/76">{scene.description}</p>
+                    <p className="text-sm leading-7 text-[#E8CFA4]/88">{scene.description}</p>
                   </div>
                 </div>
               </article>
@@ -138,7 +177,7 @@ export default function ReservePage() {
                 <h2 className="text-3xl font-semibold leading-tight text-[#F8E6BF]">
                   想先了解产品再预约？
                 </h2>
-                <p className="text-base leading-8 text-[#E8CFA4]/76 md:text-lg">
+                <p className="text-base leading-8 text-[#E8CFA4]/88 md:text-lg">
                   先查看云酥坊酥点、花酥与中秋月饼系列，再留下试吃或礼盒咨询需求。
                 </p>
               </div>
@@ -160,6 +199,9 @@ export default function ReservePage() {
           </div>
         </div>
       </section>
+
+      <SeoFaqSection eyebrow="Reserve FAQ｜试吃登记常见问题" title="新品试吃与中秋预订提醒" faqs={reserveFaqs} />
+      <SeoInternalLinks title="登记前可先查看这些内容" links={reserveLinks} />
     </main>
   );
 }

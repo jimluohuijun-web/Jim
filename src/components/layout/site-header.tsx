@@ -100,15 +100,15 @@ export function SiteHeader() {
       <div className="ysj-container hidden min-h-[5.75rem] items-center justify-between gap-5 lg:flex">
         <Link
           href="/"
-          className="relative flex size-[5.25rem] shrink-0 items-center rounded-full bg-[radial-gradient(circle,rgb(248_230_191_/_12%),transparent_70%)] lg:ml-12 xl:ml-16"
+          className="relative flex size-[5.25rem] shrink-0 items-center rounded-full bg-[radial-gradient(circle,rgb(248_230_191_/_10%),transparent_70%)] lg:ml-12 xl:ml-16"
           aria-label="云酥坊首页"
         >
           <Image
-            src="/images/logo/yunsufang-logo-current.webp"
+            src="/images/logo/yunsucake-seal-logo.png"
             alt="云酥坊品牌 Logo"
             fill
             sizes="84px"
-            className="object-contain drop-shadow-[0_0_18px_rgb(242_195_107_/_24%)]"
+            className="object-contain p-1 drop-shadow-[0_0_14px_rgb(242_195_107_/_18%)]"
             priority
           />
         </Link>
@@ -125,7 +125,7 @@ export function SiteHeader() {
                 href={item.href}
                 className={cn(
                   "group relative px-1 py-3 text-sm font-medium transition-colors duration-500 hover:text-[#F2C36B]",
-                  isActive ? "text-[#F2C36B]" : "text-[#E8CFA4]/82"
+                  isActive ? "text-[#F2C36B]" : "text-[#E8CFA4]/90"
                 )}
                 aria-current={isActive ? "page" : undefined}
               >
@@ -155,7 +155,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="shrink-0 rounded-full px-2.5 py-2 text-xs text-[#E8CFA4]/72 transition-colors hover:text-[#F2C36B]"
+              className="shrink-0 rounded-full px-2.5 py-2 text-xs text-[#E8CFA4]/86 transition-colors hover:text-[#F2C36B]"
             >
               {item.label}
             </Link>
@@ -167,15 +167,15 @@ export function SiteHeader() {
         <Link
           href="/"
           onClick={(event) => handleMobileNavClick(event, "/")}
-          className="relative size-14 shrink-0 rounded-full bg-[radial-gradient(circle,rgb(248_230_191_/_12%),transparent_70%)]"
+          className="relative size-14 shrink-0 rounded-full bg-[radial-gradient(circle,rgb(248_230_191_/_10%),transparent_70%)]"
           aria-label="云酥坊首页"
         >
           <Image
-            src="/images/logo/yunsufang-logo-current.webp"
+            src="/images/logo/yunsucake-seal-logo.png"
             alt="云酥坊品牌 Logo"
             fill
             sizes="56px"
-            className="object-contain drop-shadow-[0_0_14px_rgb(242_195_107_/_24%)]"
+            className="object-contain p-1 drop-shadow-[0_0_12px_rgb(242_195_107_/_18%)]"
             priority
           />
         </Link>

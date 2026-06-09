@@ -177,7 +177,7 @@ export function ReserveForm({
             <h2 className="text-3xl font-semibold leading-tight text-[#F5E7C8]">
               已收到您的试吃登记
             </h2>
-            <p className="text-base leading-8 text-[#BCA77F]">
+            <p className="text-base leading-8 text-[#D6C09A]">
               我们会尽快与您联系，并优先通知新品试吃名额与上市提醒。
             </p>
           </div>
@@ -296,7 +296,7 @@ export function ReserveForm({
               }}
               placeholder="请输入您的姓名"
               aria-invalid={Boolean(errors.name)}
-              className="min-h-12 rounded-xl border border-[rgba(217,180,106,0.28)] bg-[#050302]/62 px-4 text-sm text-[#F5E7C8] outline-none transition-all duration-300 placeholder:text-[#BCA77F]/58 hover:border-[rgba(217,180,106,0.45)] focus:border-[rgba(240,201,120,0.72)] focus:ring-4 focus:ring-[rgba(240,201,120,0.12)]"
+              className="min-h-12 rounded-xl border border-[rgba(217,180,106,0.28)] bg-[#050302]/62 px-4 text-sm text-[#F5E7C8] outline-none transition-all duration-300 placeholder:text-[#D6C09A]/58 hover:border-[rgba(217,180,106,0.45)] focus:border-[rgba(240,201,120,0.72)] focus:ring-4 focus:ring-[rgba(240,201,120,0.12)]"
             />
             <FieldError message={errors.name} className="text-[#F0C978]" />
           </label>
@@ -311,7 +311,7 @@ export function ReserveForm({
               }}
               placeholder="请输入手机号"
               aria-invalid={Boolean(errors.contact)}
-              className="min-h-12 rounded-xl border border-[rgba(217,180,106,0.28)] bg-[#050302]/62 px-4 text-sm text-[#F5E7C8] outline-none transition-all duration-300 placeholder:text-[#BCA77F]/58 hover:border-[rgba(217,180,106,0.45)] focus:border-[rgba(240,201,120,0.72)] focus:ring-4 focus:ring-[rgba(240,201,120,0.12)]"
+              className="min-h-12 rounded-xl border border-[rgba(217,180,106,0.28)] bg-[#050302]/62 px-4 text-sm text-[#F5E7C8] outline-none transition-all duration-300 placeholder:text-[#D6C09A]/58 hover:border-[rgba(217,180,106,0.45)] focus:border-[rgba(240,201,120,0.72)] focus:ring-4 focus:ring-[rgba(240,201,120,0.12)]"
             />
             <FieldError message={errors.contact} className="text-[#F0C978]" />
           </label>
@@ -324,7 +324,7 @@ export function ReserveForm({
                 setValues((current) => ({ ...current, city: event.target.value }))
               }
               placeholder="请选择所在城市"
-              className="min-h-12 rounded-xl border border-[rgba(217,180,106,0.28)] bg-[#050302]/62 px-4 text-sm text-[#F5E7C8] outline-none transition-all duration-300 placeholder:text-[#BCA77F]/58 hover:border-[rgba(217,180,106,0.45)] focus:border-[rgba(240,201,120,0.72)] focus:ring-4 focus:ring-[rgba(240,201,120,0.12)]"
+              className="min-h-12 rounded-xl border border-[rgba(217,180,106,0.28)] bg-[#050302]/62 px-4 text-sm text-[#F5E7C8] outline-none transition-all duration-300 placeholder:text-[#D6C09A]/58 hover:border-[rgba(217,180,106,0.45)] focus:border-[rgba(240,201,120,0.72)] focus:ring-4 focus:ring-[rgba(240,201,120,0.12)]"
             />
           </label>
 
@@ -364,7 +364,7 @@ export function ReserveForm({
               }
               placeholder="如有特殊口味偏好或其他建议，可在此留言"
               rows={2}
-              className="min-h-14 resize-none rounded-xl border border-[rgba(217,180,106,0.28)] bg-[#050302]/62 px-4 py-3 text-sm leading-7 text-[#F5E7C8] outline-none transition-all duration-300 placeholder:text-[#BCA77F]/58 hover:border-[rgba(217,180,106,0.45)] focus:border-[rgba(240,201,120,0.72)] focus:ring-4 focus:ring-[rgba(240,201,120,0.12)]"
+              className="min-h-14 resize-none rounded-xl border border-[rgba(217,180,106,0.28)] bg-[#050302]/62 px-4 py-3 text-sm leading-7 text-[#F5E7C8] outline-none transition-all duration-300 placeholder:text-[#D6C09A]/58 hover:border-[rgba(217,180,106,0.45)] focus:border-[rgba(240,201,120,0.72)] focus:ring-4 focus:ring-[rgba(240,201,120,0.12)]"
             />
           </label>
 
@@ -399,15 +399,15 @@ export function ReserveForm({
       transition={{ duration: 0.78, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
       onSubmit={handleSubmit}
       className={cn(
-        "ysj-card relative overflow-hidden",
+        "relative overflow-hidden",
         isCompact
           ? "rounded-[1.35rem] border-soft-gold/24 bg-[#fffaf4]/90 p-4 shadow-[0_24px_70px_rgb(79_95_78_/_8%)] md:p-7"
-          : "p-7 md:p-9"
+          : "rounded-[1.75rem] border border-[#D89A42]/34 bg-[linear-gradient(145deg,rgb(42_23_16_/_88%),rgb(18_9_5_/_96%))] p-7 text-[#F8E6BF] shadow-[0_28px_86px_rgb(0_0_0_/_42%)] md:p-9"
       )}
       noValidate
     >
-      <div className="absolute -right-20 top-8 size-64 rounded-full border border-soft-gold/20" />
-      <div className="absolute -bottom-24 left-4 size-72 rounded-full bg-mist-gray/30 blur-3xl" />
+      <div className={cn("absolute -right-20 top-8 size-64 rounded-full", isCompact ? "border border-soft-gold/20" : "border border-[#F2C36B]/14")} />
+      <div className={cn("absolute -bottom-24 left-4 size-72 rounded-full blur-3xl", isCompact ? "bg-mist-gray/30" : "bg-[#D89A42]/10")} />
       {isCompact ? (
         <>
           <div className="pointer-events-none absolute -right-10 top-5 size-72 rounded-full border border-soft-gold/16" />
@@ -420,17 +420,17 @@ export function ReserveForm({
       <div className="relative z-10 flex flex-col gap-7">
         <div className={cn("flex items-start justify-between gap-5", isCompact && "sr-only")}>
           <div className="flex flex-col gap-3">
-            <p className="text-sm uppercase tracking-[0.28em] text-primary/80">Tasting Register</p>
-            <h2 className="text-3xl font-semibold leading-tight text-balance">新品试吃登记</h2>
+            <p className="text-sm uppercase tracking-[0.28em] text-[#D89A42]">Tasting Register</p>
+            <h2 className="text-3xl font-semibold leading-tight text-balance text-[#F8E6BF]">新品试吃登记</h2>
           </div>
-          <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-soft-gold/35 bg-cloud-white/55 text-primary">
+          <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-[#F2C36B]/42 bg-[#1A0F0A] text-[#F2C36B]">
             <Sparkles data-icon="inline-start" />
           </span>
         </div>
 
         <div className={cn("grid gap-4", isCompact ? "md:grid-cols-2" : "gap-5 md:grid-cols-2")}>
           <label className="flex flex-col gap-2">
-            <span className="text-sm text-foreground">姓名</span>
+            <span className={cn("text-sm font-medium", isCompact ? "text-foreground" : "text-[#F2C36B]")}>姓名</span>
             <input
               value={values.name}
               onChange={(event) => {
@@ -440,15 +440,17 @@ export function ReserveForm({
               placeholder="请输入你的姓名"
               aria-invalid={Boolean(errors.name)}
               className={cn(
-                "rounded-xl border bg-cloud-white/72 px-4 text-sm outline-none transition-colors duration-500 placeholder:text-muted-foreground/60 focus:border-primary/60 focus:ring-4 focus:ring-primary/10",
-                isCompact ? "min-h-[46px] border-soft-gold/30 bg-[#fffaf4]/88" : "min-h-11 border-border"
+                "rounded-xl border px-4 text-sm outline-none transition-colors duration-500",
+                isCompact
+                  ? "min-h-[46px] border-soft-gold/30 bg-[#fffaf4]/88 placeholder:text-muted-foreground/60 focus:border-primary/60 focus:ring-4 focus:ring-primary/10"
+                  : "min-h-12 border-[#D89A42]/30 bg-[#0D0704]/76 text-[#F8E6BF] placeholder:text-[#E8CFA4]/48 hover:border-[#F2C36B]/46 focus:border-[#F2C36B]/72 focus:ring-4 focus:ring-[#F2C36B]/12"
               )}
             />
             <FieldError message={errors.name} />
           </label>
 
           <label className="flex flex-col gap-2">
-            <span className="text-sm text-foreground">联系方式</span>
+            <span className={cn("text-sm font-medium", isCompact ? "text-foreground" : "text-[#F2C36B]")}>联系方式</span>
             <input
               value={values.contact}
               onChange={(event) => {
@@ -458,15 +460,17 @@ export function ReserveForm({
               placeholder="微信 / 邮箱 / 手机号"
               aria-invalid={Boolean(errors.contact)}
               className={cn(
-                "rounded-xl border bg-cloud-white/72 px-4 text-sm outline-none transition-colors duration-500 placeholder:text-muted-foreground/60 focus:border-primary/60 focus:ring-4 focus:ring-primary/10",
-                isCompact ? "min-h-[46px] border-soft-gold/30 bg-[#fffaf4]/88" : "min-h-11 border-border"
+                "rounded-xl border px-4 text-sm outline-none transition-colors duration-500",
+                isCompact
+                  ? "min-h-[46px] border-soft-gold/30 bg-[#fffaf4]/88 placeholder:text-muted-foreground/60 focus:border-primary/60 focus:ring-4 focus:ring-primary/10"
+                  : "min-h-12 border-[#D89A42]/30 bg-[#0D0704]/76 text-[#F8E6BF] placeholder:text-[#E8CFA4]/48 hover:border-[#F2C36B]/46 focus:border-[#F2C36B]/72 focus:ring-4 focus:ring-[#F2C36B]/12"
               )}
             />
             <FieldError message={errors.contact} />
           </label>
 
           <label className={cn("flex flex-col gap-2", isCompact && "md:col-span-2")}>
-            <span className="text-sm text-foreground">{isCompact ? "所在城市" : "所在城市 / City"}</span>
+            <span className={cn("text-sm font-medium", isCompact ? "text-foreground" : "text-[#F2C36B]")}>{isCompact ? "所在城市" : "所在城市 / City"}</span>
             <input
               value={values.city}
               onChange={(event) =>
@@ -474,14 +478,16 @@ export function ReserveForm({
               }
               placeholder="例如 Vancouver / Richmond / Burnaby"
               className={cn(
-                "rounded-xl border bg-cloud-white/72 px-4 text-sm outline-none transition-colors duration-500 placeholder:text-muted-foreground/60 focus:border-soft-gold/80 focus:ring-4 focus:ring-soft-gold/15",
-                isCompact ? "min-h-[46px] border-soft-gold/30 bg-[#fffaf4]/88" : "min-h-11 border-border"
+                "rounded-xl border px-4 text-sm outline-none transition-colors duration-500",
+                isCompact
+                  ? "min-h-[46px] border-soft-gold/30 bg-[#fffaf4]/88 placeholder:text-muted-foreground/60 focus:border-soft-gold/80 focus:ring-4 focus:ring-soft-gold/15"
+                  : "min-h-12 border-[#D89A42]/30 bg-[#0D0704]/76 text-[#F8E6BF] placeholder:text-[#E8CFA4]/48 hover:border-[#F2C36B]/46 focus:border-[#F2C36B]/72 focus:ring-4 focus:ring-[#F2C36B]/12"
               )}
             />
           </label>
 
           <label className={cn("flex flex-col gap-2", isCompact && "hidden")}>
-            <span className="text-sm text-foreground">期望品尝时间 / Preferred time</span>
+            <span className="text-sm font-medium text-[#F2C36B]">期望品尝时间 / Preferred time</span>
             <select
               value={values.preferredTime}
               onChange={(event) =>
@@ -490,7 +496,7 @@ export function ReserveForm({
                   preferredTime: event.target.value as PreferredTime,
                 }))
               }
-              className="min-h-11 rounded-xl border border-border bg-cloud-white/72 px-4 text-sm outline-none transition-colors duration-500 focus:border-soft-gold/80 focus:ring-4 focus:ring-soft-gold/15"
+              className="min-h-12 rounded-xl border border-[#D89A42]/30 bg-[#0D0704]/76 px-4 text-sm text-[#F8E6BF] outline-none transition-colors duration-500 hover:border-[#F2C36B]/46 focus:border-[#F2C36B]/72 focus:ring-4 focus:ring-[#F2C36B]/12"
             >
               {preferredTimes.map((time) => (
                 <option key={time} value={time}>
@@ -502,7 +508,7 @@ export function ReserveForm({
         </div>
 
         <fieldset className="flex flex-col gap-3">
-          <legend className="text-sm text-foreground">想了解的产品</legend>
+          <legend className={cn("text-sm font-medium", isCompact ? "text-foreground" : "text-[#F2C36B]")}>想了解的产品</legend>
           <div className={cn("grid gap-3", isCompact ? "md:grid-cols-3" : "sm:grid-cols-2")}>
             {products.map((product) => {
               const checked = values.productIds.includes(product.id);
@@ -511,13 +517,15 @@ export function ReserveForm({
                 <label
                   key={product.id}
                   className={cn(
-                    "flex cursor-pointer items-center gap-3 rounded-xl border bg-cloud-white/58 px-3 py-2.5 transition-all duration-500",
+                    "flex cursor-pointer items-center gap-3 rounded-xl border px-3 py-2.5 transition-all duration-500",
                     isCompact && "min-h-[46px] border-soft-gold/30 bg-[#fffaf4]/78",
                     checked
-                      ? "border-primary/45 shadow-[0_12px_30px_rgb(22_60_51_/_10%)]"
+                      ? isCompact
+                        ? "border-primary/45 shadow-[0_12px_30px_rgb(22_60_51_/_10%)]"
+                        : "border-[#F2C36B]/64 bg-[#D89A42]/16 shadow-[0_14px_34px_rgb(0_0_0_/_26%)]"
                       : isCompact
                         ? "border-soft-gold/30 hover:border-soft-gold/60"
-                        : "border-border hover:border-soft-gold/60"
+                        : "border-[#D89A42]/24 bg-[#0D0704]/62 hover:border-[#F2C36B]/46"
                   )}
                 >
                   <input
@@ -526,11 +534,11 @@ export function ReserveForm({
                     aria-label={product.name}
                     checked={checked}
                     onChange={() => updateProduct(product.id)}
-                    className="size-4 accent-primary"
+                    className={cn("size-4", isCompact ? "accent-primary" : "accent-[#F2C36B]")}
                   />
                   <span className="flex min-w-0 flex-col gap-0.5">
-                    <span className="text-sm text-foreground">{product.name}</span>
-                    <span className={cn("text-xs uppercase tracking-[0.14em] text-muted-foreground", isCompact && "hidden")}>
+                    <span className={cn("text-sm", isCompact ? "text-foreground" : "font-medium text-[#F8E6BF]")}>{product.name}</span>
+                    <span className={cn("text-xs uppercase tracking-[0.14em]", isCompact ? "text-muted-foreground" : "text-[#E8CFA4]/70", isCompact && "hidden")}>
                       {product.englishName}
                     </span>
                   </span>
@@ -542,7 +550,7 @@ export function ReserveForm({
         </fieldset>
 
         <fieldset className={cn("flex flex-col gap-3", isCompact && "hidden")}>
-          <legend className="text-sm text-foreground">预约类型 / Reservation type</legend>
+          <legend className="text-sm font-medium text-[#F2C36B]">预约类型 / Reservation type</legend>
           <div className="grid gap-3 sm:grid-cols-2">
             {reservationTypes.map((type) => {
               const checked = values.reservationType === type;
@@ -551,8 +559,10 @@ export function ReserveForm({
                 <label
                   key={type}
                   className={cn(
-                    "flex cursor-pointer items-center gap-3 rounded-2xl border bg-cloud-white/48 p-4 transition-all duration-500",
-                    checked ? "border-primary/45" : "border-border hover:border-soft-gold/60"
+                    "flex cursor-pointer items-center gap-3 rounded-2xl border p-4 transition-all duration-500",
+                    checked
+                      ? "border-[#F2C36B]/64 bg-[#D89A42]/16 shadow-[0_14px_34px_rgb(0_0_0_/_24%)]"
+                      : "border-[#D89A42]/24 bg-[#0D0704]/62 hover:border-[#F2C36B]/46"
                   )}
                 >
                   <input
@@ -564,9 +574,9 @@ export function ReserveForm({
                     onChange={() =>
                       setValues((current) => ({ ...current, reservationType: type }))
                     }
-                    className="size-4 accent-primary"
+                    className="size-4 accent-[#F2C36B]"
                   />
-                  <span className="text-base text-foreground">{type}</span>
+                  <span className="text-base font-medium text-[#F8E6BF]">{type}</span>
                 </label>
               );
             })}
@@ -574,29 +584,31 @@ export function ReserveForm({
         </fieldset>
 
         <label className="flex flex-col gap-2">
-          <span className="text-sm text-foreground">{isCompact ? "备注" : "备注 / Notes"}</span>
+          <span className={cn("text-sm font-medium", isCompact ? "text-foreground" : "text-[#F2C36B]")}>{isCompact ? "备注" : "备注 / Notes"}</span>
           <textarea
             value={values.notes}
             onChange={(event) => setValues((current) => ({ ...current, notes: event.target.value }))}
             placeholder="例如口味偏好、低糖需求、过敏信息、取货区域等"
             rows={isCompact ? 2 : 4}
             className={cn(
-              "resize-none rounded-xl border bg-cloud-white/72 px-4 py-3 text-sm leading-7 outline-none transition-colors duration-500 placeholder:text-muted-foreground/60 focus:border-soft-gold/80 focus:ring-4 focus:ring-soft-gold/15",
-              isCompact ? "border-soft-gold/30 bg-[#fffaf4]/88" : "border-border"
+              "resize-none rounded-xl border px-4 py-3 text-sm leading-7 outline-none transition-colors duration-500",
+              isCompact
+                ? "border-soft-gold/30 bg-[#fffaf4]/88 placeholder:text-muted-foreground/60 focus:border-soft-gold/80 focus:ring-4 focus:ring-soft-gold/15"
+                : "border-[#D89A42]/30 bg-[#0D0704]/76 text-[#F8E6BF] placeholder:text-[#E8CFA4]/48 hover:border-[#F2C36B]/46 focus:border-[#F2C36B]/72 focus:ring-4 focus:ring-[#F2C36B]/12"
             )}
           />
         </label>
 
-        <label className={cn("flex cursor-pointer items-center gap-3 rounded-xl border border-border bg-cloud-white/42 p-4", isCompact && "hidden")}>
+        <label className={cn("flex cursor-pointer items-center gap-3 rounded-xl border border-[#D89A42]/24 bg-[#0D0704]/62 p-4 transition-colors hover:border-[#F2C36B]/46", isCompact && "hidden")}>
           <input
             type="checkbox"
             checked={values.notify}
             onChange={(event) =>
               setValues((current) => ({ ...current, notify: event.target.checked }))
             }
-            className="size-4 accent-primary"
+            className="size-4 accent-[#F2C36B]"
           />
-          <span className="text-base text-foreground">开放预约时通知我</span>
+          <span className="text-base font-medium text-[#F8E6BF]">开放预约时通知我</span>
         </label>
 
         <button
@@ -607,18 +619,18 @@ export function ReserveForm({
           {isSubmitting ? "正在提交..." : "提交试吃登记"}
         </button>
 
-        <p className="text-center text-xs leading-6 text-muted-foreground">
+        <p className={cn("text-center text-xs leading-6", isCompact ? "text-muted-foreground" : "text-[#E8CFA4]/72")}>
           你提交的信息仅用于云酥坊预约意向沟通与试吃通知，我们不会公开展示或出售你的联系方式。
         </p>
 
         {submitError ? (
-          <p className="rounded-2xl border border-primary/20 bg-primary/8 px-4 py-3 text-center text-sm leading-6 text-primary/90">
+          <p className={cn("rounded-2xl px-4 py-3 text-center text-sm leading-6", isCompact ? "border border-primary/20 bg-primary/8 text-primary/90" : "border border-[#F2C36B]/30 bg-[#F2C36B]/10 text-[#F2C36B]")}>
             {submitError}
           </p>
         ) : null}
 
         {selectedProducts.length > 0 ? (
-          <p className="text-center text-sm leading-6 text-muted-foreground">
+          <p className={cn("text-center text-sm leading-6", isCompact ? "text-muted-foreground" : "text-[#E8CFA4]/82")}>
             已选择：{selectedProducts.map((product) => product.name).join(" / ")}
           </p>
         ) : null}

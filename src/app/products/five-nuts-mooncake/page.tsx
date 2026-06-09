@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { ProductSeoJsonLd } from "@/components/seo/product-seo-json-ld";
 import {
   FiveNutsMooncakeCTA,
   FiveNutsMooncakeCraft,
@@ -11,17 +12,16 @@ import {
   FiveNutsMooncakeRecommendations,
   FiveNutsMooncakeTaste,
 } from "@/components/sections/five-nuts-mooncake-detail-page";
+import { buildMetadata, productSeoMap } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "传统广式五仁月饼｜云酥坊 YUN SU FANG",
-  description:
-    "云酥坊传统广式五仁月饼详情页，主打无青红丝、真五仁满料、低糖不腻、广式回油软皮、坚果本香和中秋现做现发，适合长辈礼赠与企业团购。",
-  keywords: ["云酥坊", "五仁月饼", "传统广式五仁月饼", "无青红丝", "低糖月饼", "中秋礼盒", "企业团购"],
-};
+const productPath = "/products/five-nuts-mooncake";
+
+export const metadata: Metadata = buildMetadata(productSeoMap[productPath]);
 
 export default function FiveNutsMooncakePage() {
   return (
-    <main className="overflow-hidden bg-[#070604] text-[#BCA77F]">
+    <main className="overflow-hidden bg-[#070604] text-[#D6C09A]">
+      <ProductSeoJsonLd path={productPath} category="中秋月饼礼盒" />
       <FiveNutsMooncakeHero />
       <FiveNutsMooncakeProblems />
       <FiveNutsMooncakeHighlights />

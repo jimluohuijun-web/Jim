@@ -110,7 +110,7 @@ function SectionTitle({
       <h2 className="font-serif text-[1.35rem] font-semibold leading-snug tracking-[0.02em] text-[#F8E6BF] break-all md:text-5xl md:leading-tight md:tracking-[0.04em]">
         {title}
       </h2>
-      {subtitle ? <p className="mt-4 text-base leading-8 text-[#BCA77F] md:text-lg">{subtitle}</p> : null}
+      {subtitle ? <p className="mt-4 text-base leading-8 text-[#D6C09A] md:text-lg">{subtitle}</p> : null}
     </div>
   );
 }
@@ -139,7 +139,7 @@ export function FiveNutsMooncakeHero() {
 
       <div className="ysj-container grid gap-6 py-6 md:min-h-[640px] md:gap-8 md:py-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-12 lg:py-12">
         <div className="relative z-10 flex max-w-[42rem] flex-col gap-4 md:gap-5 lg:gap-6">
-          <nav className="flex flex-wrap items-center gap-2 text-[0.72rem] text-[#BCA77F] md:text-sm">
+          <nav className="flex flex-wrap items-center gap-2 text-[0.72rem] text-[#D6C09A] md:text-sm">
             {hero.breadcrumb.map((item, index) => (
               <span key={item.href} className="inline-flex items-center gap-2">
                 <Link href={item.href} className="transition-colors hover:text-[#F0C978]">
@@ -161,7 +161,7 @@ export function FiveNutsMooncakeHero() {
             <p className="mt-4 max-w-2xl text-lg font-medium leading-8 text-[#F8E6BF] md:text-[1.65rem] md:leading-10">
               {hero.subtitle}
             </p>
-            <p className="mt-4 max-w-[37rem] text-sm leading-7 text-[#BCA77F] md:text-base md:leading-8">
+            <p className="mt-4 max-w-[37rem] text-sm leading-7 text-[#D6C09A] md:text-base md:leading-8">
               {hero.description}
             </p>
           </div>
@@ -519,7 +519,7 @@ export function FiveNutsMooncakeCTA() {
         <h2 className="font-serif text-[2rem] font-semibold leading-tight text-[#F8E6BF] text-balance md:text-6xl">
           {bottomCta.title}
         </h2>
-        <p className="mt-4 text-base leading-7 text-[#BCA77F] md:text-lg">{bottomCta.subtitle}</p>
+        <p className="mt-4 text-base leading-7 text-[#D6C09A] md:text-lg">{bottomCta.subtitle}</p>
         <div className="mt-7 grid justify-center gap-3 sm:flex sm:flex-row">
           <GoldButton href={bottomCta.primaryCta.href}>
             <ArrowRight className="size-5" />

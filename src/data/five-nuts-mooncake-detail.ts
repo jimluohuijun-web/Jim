@@ -129,7 +129,7 @@ export const fiveNutsMooncakeProductData = {
       { label: "产品系列", href: "/products" },
       { label: "五仁月饼", href: "/products/five-nuts-mooncake" },
     ],
-    title: "云酥坊 · 传统广式五仁月饼",
+    title: "传统广式五仁月饼",
     headline: "无青红丝真五仁",
     subtitle: "满料坚果香，一口地道老式中秋味",
     description:

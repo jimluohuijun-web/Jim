@@ -33,7 +33,7 @@ export function ContactCollaboration() {
                   合作流程
                 </h2>
               </div>
-              <p className="text-base leading-8 text-[#E8CFA4]/76 md:text-lg">
+              <p className="text-base leading-8 text-[#E8CFA4]/88 md:text-lg">
                 企业福利、客户答谢、节日礼盒与品牌联名，可以先提交需求。我们会根据数量、预算、交付时间与口味偏好，整理合适的糕点礼方案。
               </p>
               <div className="grid gap-3 sm:grid-cols-2">

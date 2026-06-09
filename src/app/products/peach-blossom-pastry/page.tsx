@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { ProductSeoJsonLd } from "@/components/seo/product-seo-json-ld";
 import {
   PeachCTA,
   PeachCraft,
@@ -9,17 +10,16 @@ import {
   PeachProblems,
   PeachTaste,
 } from "@/components/sections/peach-detail-page";
+import { buildMetadata, productSeoMap } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "桃花酥｜云酥坊 YUN SU FANG",
-  description:
-    "云酥坊桃花酥详情页，主打手工桃花造型、低糖红豆沙、36层手工薄酥和现做现发，适合自食与礼盒预订。",
-  keywords: ["云酥坊", "桃花酥", "桃花造型", "低糖红豆沙", "中式糕点礼盒", "现做现发"],
-};
+const productPath = "/products/peach-blossom-pastry";
+
+export const metadata: Metadata = buildMetadata(productSeoMap[productPath]);
 
 export default function PeachBlossomPastryPage() {
   return (
-    <main className="overflow-hidden bg-[#070604] text-[#BCA77F]">
+    <main className="overflow-hidden bg-[#070604] text-[#D6C09A]">
+      <ProductSeoJsonLd path={productPath} category="中式手工酥点" />
       <PeachHero />
       <PeachProblems />
       <PeachHighlights />
